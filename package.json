@@ -1,0 +1,17 @@
+{
+  "name": "vite-css",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "prettier": "^3.1.1",
+    "vite": "^5.0.8"
+  }
+}
