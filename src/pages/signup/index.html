@@ -24,8 +24,23 @@
     <script type="module" src="/src/pages/signup/signup.js"></script>
   </head>
   <body>
-    <div id="signup">
-      <div class="name"></div>
+    <div class="signup">
+      <h1 class="title">티빙 회원가입</h1>
+      <p class="comment">아이디와 이메일로 간편하게 티빙을 시작하세요!</p>
+      <form class="signup-form" action="/">
+        <div class="signup-id">
+          <label for="input-id">아이디</label>
+          <input id="input-id" class="input-id" type="text" />
+          <span class="id-condition">영문 또는 영문, 숫자 조합 6~12자리</span>
+        </div>
+        <div class="signup-password">
+          <label for="input-password">아이디</label>
+          <input id="input-password" class="input-password" type="text" />
+          <span class="password-condition"
+            >특수문자(~!@#$%^&*) 조합 6~16자리</span
+          >
+        </div>
+      </form>
     </div>
   </body>
 </html>
