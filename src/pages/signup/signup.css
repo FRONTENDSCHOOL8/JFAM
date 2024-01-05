@@ -1,2 +1,85 @@
-#signup .name {
+* {
+  box-sizing: border-box;
+}
+
+.signup {
+  width: 100%;
+  height: min-content;
+  min-height: 100vh;
+  background-color: var(--brand--dark-bg-2);
+  color: var(--gray-400, #898989);
+  font-family: Pretendard;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.signup .title {
+  color: var(--white, #fff);
+  font-weight: 700;
+  line-height: 140%;
+  padding-top: 0.75rem;
+}
+
+.signup .comment {
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 150%;
+  padding-top: 1rem;
+}
+
+.signup .signup-form {
+  width: inherit;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5625rem;
+}
+
+.signup-input-wrapper {
+  width: inherit;
+}
+
+.signup-input-wrapper input {
+  width: 90%;
+  max-width: 416px;
+  margin: auto;
+  display: block;
+  border-radius: 4px;
+  border: none;
+  background: var(--gray-600, #565656);
+  height: 46px;
+  padding: 0px 20px 0px 16px;
+  color: var(--white);
+}
+
+.signup-input-wrapper input:focus {
+  outline: 1px solid var(--gray-100, #e1e1e1);
+}
+
+.signup-input-wrapper label,
+.signup-input-wrapper span {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+.signup-agree-all,
+.signup-agree-checkbox {
+  text-align: left;
+  width: 90%;
+  max-width: 416px;
+}
+
+@media screen and (min-width: 768px) {
+  .signup-input-wrapper input {
+    max-width: 416px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .signup-input-wrapper input {
+    max-width: 732px;
+  }
 }

@@ -21,6 +21,7 @@
     <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.png" />
     <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="stylesheet" href="/src/styles/reset.css" />
+    <link rel="stylesheet" href="/src/pages/signup/signup.css" />
     <script type="module" src="/src/pages/signup/signup.js"></script>
   </head>
   <body>
@@ -28,18 +29,111 @@
       <h1 class="title">티빙 회원가입</h1>
       <p class="comment">아이디와 이메일로 간편하게 티빙을 시작하세요!</p>
       <form class="signup-form" action="/">
-        <div class="signup-id">
+        <div class="signup-input-wrapper signup-id">
           <label for="input-id">아이디</label>
           <input id="input-id" class="input-id" type="text" />
           <span class="id-condition">영문 또는 영문, 숫자 조합 6~12자리</span>
         </div>
-        <div class="signup-password">
-          <label for="input-password">아이디</label>
-          <input id="input-password" class="input-password" type="text" />
+        <div class="signup-input-wrapper signup-password">
+          <label for="input-password">비밀번호</label>
+          <input id="input-password" class="input-password" type="password" />
+          <button
+            type="button"
+            class="show-password"
+            id="show-password"
+          ></button>
           <span class="password-condition"
             >특수문자(~!@#$%^&*) 조합 6~16자리</span
           >
         </div>
+        <div class="signup-input-wrapper signup-password-check">
+          <label for="input-password-check">비밀번호 확인</label>
+          <input
+            id="input-password-check"
+            class="input-password-check"
+            type="password"
+          />
+          <button
+            type="button"
+            class="show-password-check"
+            id="show-password-check"
+          ></button>
+        </div>
+        <div class="signup-input-wrapper signup-email">
+          <label for="input-email">이메일</label>
+          <input id="input-email" class="input-email" type="email" />
+          <span class="email-condition"
+            >영문 또는 영문, 숫자 조합 6~12자리</span
+          >
+        </div>
+        <div class="signup-agree-all">
+          <input type="checkbox" class="agree-check" id="agree-check" />
+          <label for="agree-check"
+            >필수 및 선택 항목 모두 포함하여 동의합니다.</label
+          >
+        </div>
+        <ul class="signup-agree-checkbox">
+          <li class="check-age-list">
+            <input type="checkbox" class="check-age" id="check-age" />
+            <label for="check-age">만 14세 이상입니다</label>
+          </li>
+          <li class="check-age-list">
+            <input type="checkbox" class="check-terms" id="check-terms" />
+            <label for="check-terms">[필수] 서비스 이용약관 동의</label>
+          </li>
+          <li class="check-age-list">
+            <input
+              type="checkbox"
+              class="check-collection"
+              id="check-collection"
+            />
+            <label for="check-collection"
+              >[필수] 개인정보 수집 및 서비스 활용 동의</label
+            >
+          </li>
+          <li class="check-age-list">
+            <input
+              type="checkbox"
+              class="check-provision-homepage"
+              id="check-provision-homepage"
+            />
+            <label for="check-provision-homepage"
+              >[필수] 채널 홈페이지 개인정보 제 3자 제공동의</label
+            >
+          </li>
+          <li class="check-age-list">
+            <input
+              type="checkbox"
+              class="check-provision"
+              id="check-provision"
+            />
+            <label for="check-provision">[선택] 개인정보 제 3자 제공동의</label>
+          </li>
+          <li class="check-age-list">
+            <input
+              type="checkbox"
+              class="check-marketing"
+              id="check-marketing"
+            />
+            <label for="check-marketing"
+              >[선택] 마케팅 정보 수신 동의자세히보기</label
+            >
+            <ul class="marketing-agree-checkbox">
+              <li class="check-sns">
+                <input type="checkbox" class="check-sns" id="check-sns" />
+                <label for="check-sns">[선택] 마케팅 정보 SMS 수신동의</label>
+              </li>
+              <li class="check-email">
+                <input type="checkbox" class="check-email" id="check-email" />
+                <label for="check-email"
+                  >[선택] 마케팅 정보 email 수신동의</label
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <button class="signup-submit" type="submit">확인</button>
       </form>
     </div>
   </body>
