@@ -1,5 +1,6 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 :root {
   --margin-m: 2%;
 }
@@ -75,10 +76,7 @@ a {
   overflow: hidden;
 }
 /* 썸네일 알맹이 */
-.now-see figure,
-.must-see figure,
-.quickvod figure,
-.top-title figure {
+.thumbnail {
   padding-right: var(--margin-m);
 }
 
