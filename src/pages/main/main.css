@@ -1,0 +1,158 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root {
+  --margin-m: 2%;
+}
+* {
+  font-family: 'Pretendard-Regular', 'Noto Sans KR', Arial, 'sans-serif';
+}
+a {
+  text-decoration: none;
+}
+.main {
+  background: DarkSlateBlue;
+}
+/*------------------------------ 최상단배너 ------------------------------*/
+.main .bigbanner {
+  background: yellow;
+  position: relative;
+}
+.bigbanner-img {
+  background: LightBlue;
+  display: block;
+  width: 100%;
+}
+.bigbanner-inner {
+  background: olive;
+  position: absolute;
+  width: 100%;
+  bottom: 5%;
+}
+.bigbanner-container {
+  margin: 0 var(--margin-m);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bigbanner-copy {
+  font-weight: 800;
+  color: white;
+  font-size: 0.75rem;
+}
+.bigbanner-button {
+  font-size: 0.75rem;
+  padding: 4px 6px;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: white;
+  font-weight: 400;
+}
+
+/*-------------------------  콘텐츠  -------------------------*/
+.programs h2 {
+  font-weight: 600;
+  margin-bottom: calc(var(--margin-m) / 2);
+  color: white;
+}
+.programs img {
+  border-radius: 4px;
+  display: block;
+}
+.programs .titles {
+  background: RosyBrown;
+  display: flex;
+}
+
+.now-see,
+.must-see,
+.quickvod,
+.top-title {
+  background: SteelBlue;
+  padding-left: var(--margin-m);
+  margin-bottom: var(--margin-m);
+  font-size: --label---small;
+  overflow: hidden;
+}
+/* 썸네일 알맹이 */
+.now-see figure,
+.must-see figure,
+.quickvod figure,
+.top-title figure {
+  padding-right: var(--margin-m);
+}
+
+.now-see img,
+.must-see img,
+.top-title img {
+  width: 92px;
+}
+.quickvod img {
+  width: 145px;
+}
+
+.now-see figcaption,
+.must-see figcaption {
+  font-size: 0.75rem;
+  color: var(--gray--200);
+}
+/* 페이지 구분: quickvod */
+.quickvod figcaption {
+  font-size: 0.75rem;
+  color: var(--gray--200);
+  font-weight: 600;
+}
+.quickvod p {
+  font-size: 0.75rem;
+  color: var(--gray--300);
+}
+/* 페이지 구분:실시간 인기 프로그램  */
+.top-title figcaption {
+  font-size: 0.75rem;
+  color: var(--gray--200);
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.top-title p {
+  font-family: 'Noto Sans KR';
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+  transform: skew(-15deg);
+}
+
+.top-title figure {
+  background: Goldenrod;
+  position: relative;
+  height: 9.5rem;
+}
+.top-title figcaption {
+  position: absolute;
+  top: 6.4rem;
+  left: 4px;
+}
+/*------------------------------ 구분 ------------------------------*/
+
+.main .top-live {
+  background: tan;
+  height: 170px;
+}
+/*------------------------------ 구분 ------------------------------*/
+
+.main .onlytving {
+  background: SandyBrown;
+  height: 320px;
+}
+/*------------------------------ 구분 ------------------------------*/
+
+.main .ad {
+  background: Peru;
+  height: 60px;
+}
+
+.main .event {
+  background: chocolate;
+  height: 90px;
+}
