@@ -1,4 +1,7 @@
 /* reset */
+*{
+    box-sizing: border-box;
+}
 .footer a{
     color: var(--gray-200, #C4C4C4);
 }
