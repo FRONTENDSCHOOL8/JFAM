@@ -1,4 +1,7 @@
 
+*{
+  box-sizing: border-box;
+}
 /* 스와이퍼 */
 html,
 body {
@@ -16,14 +19,15 @@ body {
 }
 
 .swiper {
-  width: 1000px;
-  height: 100px;
+  width: 1200px;
+  height: 400px;
+  margin: 3% 0;
 }
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   background: black;
   display: flex;
   justify-content: center;
@@ -45,13 +49,14 @@ body {
     color: white;
 }
 
-/* .landing .h1-logo img{
-    position: relative;
-    left: -43%;
-    top: 5px;
+.landing .h1-logo{
+  padding: 5px 15px;
+}
+
+.landing .h1-logo img{
     width: 30px;
     height: 10px;
-} */
+}
 
 .landing section{
     text-align: center;
@@ -61,6 +66,10 @@ body {
     height: 382px;
     position: relative;
     top: 80px;
+    background-image: url('/src/assets/visual.png'),url('/src/assets/visual.png'),;
+    background-position: top left, bottom right;
+    background-repeat: no-repeat, no-repeat;
+
 }
 
 .landing .p-copywriting{
@@ -110,16 +119,47 @@ body {
     line-height: 140%; /* 29.859px */
 }
 
-.landing .sction-popularContent{
-    
+
+@keyframes sliding{
+  from{
+    transform: translate(0);
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
+
+.landing .div-slider{
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.landing .div-slide__one
+{
+  display: inline-block;
+  animation: 20s sliding infinite linear;
+}
+
+.landing .div-slide__two
+{
+  display: inline-block;
+  animation: 15s sliding infinite linear;
+}
+
+.landing .div-slide img{
+  height: 102px;
+  padding: 0 5px;
 }
 
 .landing .section-promotionBottom{
+  padding: 52px 0px;
+}
+
+.landing .section-promotionBottom div{
+    margin: 0 auto;
     position: relative;
-    left: 36%;
     display: flex;
     width: 320px;
-    padding: 52px 0px;
     flex-direction: column;
     align-items: center;
     gap: 18px;
