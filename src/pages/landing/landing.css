@@ -1,0 +1,132 @@
+
+/* 스와이퍼 */
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 1000px;
+  height: 100px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid white;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* reset */
+
+/* landing 페이지 */
+.landing{
+    background-color: black;
+    color: white;
+}
+
+/* .landing .h1-logo img{
+    position: relative;
+    left: -43%;
+    top: 5px;
+    width: 30px;
+    height: 10px;
+} */
+
+.landing section{
+    text-align: center;
+}
+
+.landing .section-promotionTop{
+    height: 382px;
+    position: relative;
+    top: 80px;
+}
+
+.landing .p-copywriting{
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 22.4px */
+}
+
+.landing .p-promoMessage{
+    color: var(--gray-400, #898989);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* Paragraph/Small */
+    font-size: 12.003px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 19.205px */
+}
+
+.landing .a-signupLink{
+    margin: 1rem auto;
+    color: white;
+    display: flex;
+    width: 283px;
+    height: 48px;
+    padding: 0px 28px 0px 24px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: var(--brand-red-2, #1C358E);
+    background-image: url('/src/assets/button_before_logo.png');
+    background-repeat: no-repeat;
+    background-size: 38px;
+    background-position: 10px 0;
+  }
+
+.landing .h2-sectionTitle{
+    color: var(--white, #FFF);
+    text-align: center;
+
+    /* Heading/Large */
+    font-family: Pretendard;
+    font-size: 21.328px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 29.859px */
+}
+
+.landing .sction-popularContent{
+    
+}
+
+.landing .section-promotionBottom{
+    position: relative;
+    left: 36%;
+    display: flex;
+    width: 320px;
+    padding: 52px 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 0 auto;
+}
+
+.landing .section-promotionBottom .img-logo{
+    width: 83px;
+    height: 32px;
+}
