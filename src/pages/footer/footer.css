@@ -47,6 +47,17 @@
     line-height: 160%; /* 34.125px */
 }
 
+.footer .div-companyInfo a{
+    color: var(--gray-500, #6B6B6B);
+    text-decoration: underline;
+}
+
+.footer .span-division{
+    padding: 0 4px;
+    font-size: 10px;
+    color: #474747;
+}
+
 .footer .ul-sns{
     display: flex;
     align-items: flex-start;
