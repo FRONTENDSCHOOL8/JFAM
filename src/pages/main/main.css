@@ -6,6 +6,9 @@
 }
 * {
   font-family: 'Pretendard-Regular', 'Noto Sans KR', Arial, 'sans-serif';
+    line-height: 1.7;
+    box-sizing: border-box;
+    word-break: keep-all;
 }
 a {
   text-decoration: none;
@@ -50,51 +53,54 @@ a {
   font-weight: 400;
 }
 
-/*-------------------------  콘텐츠  -------------------------*/
+/*------------------------- 프로그램 영역 -------------------------*/
 .programs h2 {
   font-weight: 600;
-  margin-bottom: calc(var(--margin-m) / 2);
+  margin-bottom: calc(var(--margin-m) / 4);
   color: white;
 }
 .programs img {
   border-radius: 4px;
   display: block;
 }
-.programs .titles {
+.programs .thumbnail-wrap {
   background: RosyBrown;
   display: flex;
+  gap: var(--margin-m);
+
 }
 
 .now-see,
 .must-see,
 .quickvod,
-.top-title {
+.top-title,
+.top-live,
+.onlytving {
   background: SteelBlue;
   padding-left: var(--margin-m);
   margin-bottom: var(--margin-m);
-  font-size: --label---small;
   overflow: hidden;
 }
-/* 썸네일 알맹이 */
-.thumbnail {
-  padding-right: var(--margin-m);
-}
+/* 썸네일 */
 
-.now-see img,
-.must-see img,
-.top-title img {
+.thumbnail-vertical {
   width: 92px;
 }
-.quickvod img {
+.thumbnail-horizontal {
   width: 145px;
 }
+.thumbnail-long {
+  width: 140px;
+}
 
+/* 페이지 구분 */
 .now-see figcaption,
 .must-see figcaption {
   font-size: 0.75rem;
   color: var(--gray--200);
 }
-/* 페이지 구분: quickvod */
+
+/* 페이지 구분  quickvod */
 .quickvod figcaption {
   font-size: 0.75rem;
   color: var(--gray--200);
@@ -104,53 +110,80 @@ a {
   font-size: 0.75rem;
   color: var(--gray--300);
 }
-/* 페이지 구분:실시간 인기 프로그램  */
+
+/* 페이지 구분 top-title */
 .top-title figcaption {
   font-size: 0.75rem;
   color: var(--gray--200);
+  font-weight: 600;
   display: flex;
   align-items: baseline;
-  flex-wrap: wrap;
-  gap: 5px;
+  gap: 4px;
 }
-.top-title p {
+.top-title em {
   font-family: 'Noto Sans KR';
   font-size: 2.2rem;
   font-weight: 700;
   color: white;
   transform: skew(-15deg);
+  line-height: 0;
+}
+/* 페이지 구분 top-live  */
+.top-live figcaption {
+  font-size: 0.75rem;
+  color: var(--gray--200);
+  font-weight: 400;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.top-live em {
+  font-family: 'Noto Sans KR';
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+  transform: skew(-15deg);
+  line-height: 0;
+}
+.top-live span{
+  line-height: 1.4;
+
+}
+.top-live figcaption p {
+  font-weight: 400;
+  color: var(--gray--300);
 }
 
-.top-title figure {
-  background: Goldenrod;
-  position: relative;
-  height: 9.5rem;
-}
-.top-title figcaption {
-  position: absolute;
-  top: 6.4rem;
-  left: 4px;
-}
-/*------------------------------ 구분 ------------------------------*/
-
-.main .top-live {
-  background: tan;
-  height: 170px;
-}
-/*------------------------------ 구분 ------------------------------*/
-
-.main .onlytving {
-  background: SandyBrown;
-  height: 320px;
-}
-/*------------------------------ 구분 ------------------------------*/
-
-.main .ad {
-  background: Peru;
-  height: 60px;
+/* 페이지 구분 onlytving  */
+.onlytving figcaption{
+  display: none;
 }
 
-.main .event {
-  background: chocolate;
-  height: 90px;
+/*------------------------------ 광고 영역 ------------------------------*/
+
+.ad-area{
+  background: SteelBlue;
+  width: 100%;
+  padding: calc(var(--margin-m) * 1.5) var(--margin-m);
+}
+.ad-area img{
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+}
+.event-area {
+  background: indianred;
+  padding-left: var(--margin-m);
+  padding-bottom: calc(var(--margin-m) * 2);
+  overflow: hidden;
+}
+.event-banner-wrap{
+  background: salmon;
+  display: flex;
+  gap: var(--margin-m);
+}
+.event-area img{
+  border-radius: 4px;
+  display: block;
+  width: 145px;
 }
