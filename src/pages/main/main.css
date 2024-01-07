@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-  --margin-m: 2%;
+  --margin-m: 2vw;
 }
 * {
   font-family: 'Pretendard-Regular', 'Noto Sans KR', Arial, 'sans-serif';
@@ -10,27 +10,31 @@
     box-sizing: border-box;
     word-break: keep-all;
 }
-a {
-  text-decoration: none;
-}
+
 .main {
-  background: DarkSlateBlue;
+  background: black;
 }
-/*------------------------------ 최상단배너 ------------------------------*/
-.main .bigbanner {
-  background: yellow;
+/* -------------------------------------------------------------------------- */
+/* 최상단 영역 */
+
+.bigbanner {
+  /* background: blueviolet; */
+  width: 100%;
   position: relative;
 }
-.bigbanner-img {
-  background: LightBlue;
-  display: block;
+.bigbanner img{
   width: 100%;
+  display: block;
+  max-height: 80vh;
+  min-height: 140px;
+  object-fit: cover;
 }
+
 .bigbanner-inner {
-  background: olive;
+  /* background: olive; */
   position: absolute;
   width: 100%;
-  bottom: 5%;
+  bottom: calc(var(--margin-m)*2);
 }
 .bigbanner-container {
   margin: 0 var(--margin-m);
@@ -39,34 +43,38 @@ a {
   justify-content: space-between;
 }
 
-.bigbanner-copy {
+.bigbanner h3 {
   font-weight: 800;
   color: white;
   font-size: 0.75rem;
 }
-.bigbanner-button {
+.bigbanner a {
+  color: white;
+  font-weight: 400;
   font-size: 0.75rem;
   padding: 4px 6px;
   border: 1px solid white;
   border-radius: 4px;
-  color: white;
-  font-weight: 400;
 }
 
-/*------------------------- 프로그램 영역 -------------------------*/
+
+/* -------------------------------------------------------------------------- */
+/* 프로그램 영영 */
+
 .programs h2 {
   font-weight: 600;
-  margin-bottom: calc(var(--margin-m) / 4);
+  margin-bottom: 0.25rem;
   color: white;
+  font-size: 0.75rem;
 }
 .programs img {
   border-radius: 4px;
   display: block;
 }
 .programs .thumbnail-wrap {
-  background: RosyBrown;
+  /* background: RosyBrown; */
   display: flex;
-  gap: var(--margin-m);
+  gap: 0.5rem;
 
 }
 
@@ -76,9 +84,9 @@ a {
 .top-title,
 .top-live,
 .onlytving {
-  background: SteelBlue;
+  /* background: SteelBlue; */
   padding-left: var(--margin-m);
-  margin-bottom: var(--margin-m);
+  margin-bottom: 1rem;
   overflow: hidden;
 }
 /* 썸네일 */
@@ -118,7 +126,7 @@ a {
   font-weight: 600;
   display: flex;
   align-items: baseline;
-  gap: 4px;
+  gap: 0.25rem;
 }
 .top-title em {
   font-family: 'Noto Sans KR';
@@ -135,7 +143,7 @@ a {
   font-weight: 400;
   display: flex;
   align-items: baseline;
-  gap: 4px;
+  gap: 0.25rem;
 }
 .top-live em {
   font-family: 'Noto Sans KR';
@@ -159,12 +167,15 @@ a {
   display: none;
 }
 
-/*------------------------------ 광고 영역 ------------------------------*/
+
+/* -------------------------------------------------------------------------- */
+/* 광고영역 */
+
 
 .ad-area{
-  background: SteelBlue;
+  /* background: SteelBlue; */
   width: 100%;
-  padding: calc(var(--margin-m) * 1.5) var(--margin-m);
+  padding: 1rem var(--margin-m);
 }
 .ad-area img{
   border-radius: 4px;
@@ -172,18 +183,123 @@ a {
   width: 100%;
 }
 .event-area {
-  background: indianred;
+  /* background: indianred; */
   padding-left: var(--margin-m);
-  padding-bottom: calc(var(--margin-m) * 2);
+  padding-bottom: 1rem;
   overflow: hidden;
 }
 .event-banner-wrap{
-  background: salmon;
+  /* background: salmon; */
   display: flex;
-  gap: var(--margin-m);
+  gap: 0.5rem;
 }
 .event-area img{
   border-radius: 4px;
   display: block;
   width: 145px;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* 미디어쿼리 - 태블릿 */
+@media (min-width: 768px) {
+  :root {
+    --margin-m: 4vw;
+  }
+  /* 폰트 사이즈 */
+  .bigbanner-container h3,
+  .programs h2 {
+    font-size: 1rem;
+  }
+  .bigbanner-container a{
+    font-size: 0.8rem;
+    padding: 12px 34px;
+  }
+  /* 여백 */
+  .programs h2 {
+    margin-bottom: 0.5rem;
+  }
+  .now-see,
+  .must-see,
+  .quickvod,
+  .top-title,
+  .top-live,
+  .onlytving,
+  .event-area  {
+    margin-bottom: 1.8rem;
+  }
+  .ad-area{
+    padding: 1.8rem var(--margin-m);
+  }
+  /* 이미지사이즈 */
+  .thumbnail-vertical {
+    width: 130px;
+  }
+  .thumbnail-horizontal {
+    width: 224px;
+  }
+  .thumbnail-long {
+    width: 168px;
+  }
+  .event-area img{
+    width: 214px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* pc 사이즈 */
+@media (min-width: 1920px) {
+  :root {
+    --margin-m: 3vw;
+  }
+  .bigbanner-container h3,
+  .programs h2{
+    font-size:1.8rem;
+  }
+  .bigbanner-container a{
+    font-size: 1.5rem;
+    padding: 22px 64px;
+  }
+
+  .programs h2 {
+    margin-bottom: 0.75rem;
+  }
+  /* 여백 */
+  .programs .thumbnail-wrap {
+    gap: 1rem;
+  }
+  .now-see,
+  .must-see,
+  .quickvod,
+  .top-title,
+  .top-live,
+  .onlytving,
+  .event-area  {
+    margin-bottom: 2.25rem;
+  }
+  .ad-area{
+    padding: 2.25rem var(--margin-m);
+  }
+
+  /* 이미지 크기 */
+  .thumbnail-vertical {
+    width: 240px;
+  }
+  .thumbnail-horizontal {
+    width: 345px;
+  }
+  .thumbnail-long {
+    width: 285px;
+  }
+  .event-area img{
+    width: 346px;
+  }
+  /* 폰트 크기 */
+  .programs figcaption{
+    font-size: 1.3rem;
+  }
+  .quickvod p,
+  .top-live p{
+    font-size: 1rem;
+  }
 }
