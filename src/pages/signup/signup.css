@@ -100,15 +100,36 @@ button:active {
 
 .signup-input-wrapper {
   text-align: left;
-}
-
-.signup-password,
-.signup-password-check {
   position: relative;
 }
 
-.button-show-password,
-.button-show-password-check {
+.signup .button-erase {
+  display: none;
+}
+
+.signup .button-erase.has-input {
+  /* .signup .button-erase { */
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: url(/src/assets/icon/pw_erase.svg) no-repeat 0 0 / 1.25rem 1.25rem;
+  position: absolute;
+  cursor: pointer;
+}
+
+.signup-id .button-erase,
+.signup-email .button-erase {
+  top: 0.8125rem;
+  right: 1.25rem;
+}
+.signup-password .button-erase,
+.signup-password-check .button-erase {
+  top: 0.8125rem;
+  right: 3.5rem;
+}
+
+.signup .button-show-password,
+.signup .button-show-password-check {
   appearance: none;
   width: 1.25rem;
   height: 1.25rem;
@@ -116,20 +137,22 @@ button:active {
   position: absolute;
   top: 0.8125rem;
   right: 1.25rem;
+  cursor: pointer;
 }
 
-.button-show-password:focus,
-.button-show-password-check:focus {
+.signup .button-erase:focus,
+.signup .button-show-password:focus,
+.signup .button-show-password-check:focus {
   outline: 1px solid var(--gray-200, #e1e1e1);
 }
 
-.button-show-password.is-checked,
-.button-show-password-check.is-checked {
+.signup .button-show-password.is-checked,
+.signup .button-show-password-check.is-checked {
   background: url(/src/assets/icon/pw_hide.svg) no-repeat 0 0 / 1.25rem 1.25rem;
 }
 
-.signup-agree-all,
-.signup-agree-checkbox {
+.signup .signup-agree-all,
+.signup .signup-agree-checkbox {
   width: 100%;
   text-align: left;
   font-size: var(--label---small, 0.75rem);
@@ -137,55 +160,55 @@ button:active {
   line-height: 150%;
 }
 
-.signup-agree-checkbox > li {
+.signup .signup-agree-checkbox > li {
   margin-top: 0.5rem;
   display: flex;
   flex-flow: row nowrap;
   align-content: center;
 }
 
-.signup-agree-checkbox:nth-child(n) input {
+.signup .signup-agree-checkbox:nth-child(n) input {
   appearance: none;
   width: 1rem;
   height: 1rem;
   margin-right: 0.25rem;
 }
 
-.check-list input {
+.signup .check-list input {
   background: url(/src/assets/icon/check_white.svg) no-repeat 0 0 / 1rem 1rem;
 }
 
-.check-list input:checked {
+.signup .check-list input:checked {
   background: url(/src/assets/icon/check_blue.svg);
 }
 
-.check-all {
+.signup .check-all {
   background: url(/src/assets/icon/check_filled_white.svg) no-repeat 0 0 / 1rem
     1rem;
 }
 
-.check-all:checked {
+.signup .check-all:checked {
   background: url(/src/assets/icon/check_filled_blue.svg);
 }
 
-.check-list input:hover,
-.check-list label:hover,
-.check-all:hover,
-.check-all-list label:hover {
+.signup .check-list input:hover,
+.signup .check-list label:hover,
+.signup .check-all:hover,
+.signup .check-all-list label:hover {
   cursor: pointer;
 }
 
-.check-list input:focus,
-.check-all-list input:focus {
+.signup .check-list input:focus,
+.signup .check-all-list input:focus {
   outline: 1px solid var(--gray-200, #e1e1e1);
 }
 
-.check-marketing-sns,
-.check-marketing-email {
+.signup .check-marketing-sns,
+.signup .check-marketing-email {
   padding-left: 1rem;
 }
 
-.button-signup-submit {
+.signup .button-signup-submit {
   width: 100%;
   height: 2.625rem;
   color: var(--gray--300, #a6a6a6);
@@ -196,7 +219,7 @@ button:active {
 }
 
 @media screen and (min-width: 768px) {
-  .signup .signup-form {
+  .signup .signup .signup-form {
     max-width: 26rem;
   }
 
@@ -217,12 +240,25 @@ button:active {
     font-size: 1rem;
   }
 
-  .button-show-password,
-  .button-show-password-check {
+  .signup-id .button-erase,
+  .signup-email .button-erase,
+  .signup-password .button-erase,
+  .signup-password-check .button-erase,
+  .signup .button-show-password,
+  .signup .button-show-password-check {
     top: 1.0625rem;
   }
 
-  .button-signup-submit {
+  .signup-id .button-erase,
+  .signup-email .button-erase {
+    right: 1.5rem;
+  }
+  .signup-password .button-erase,
+  .signup-password-check .button-erase {
+    right: 3.75rem;
+  }
+
+  .signup .button-signup-submit {
     margin-top: 0.3125rem;
   }
 }
@@ -244,31 +280,44 @@ button:active {
     gap: 2.125rem;
   }
 
-  .signup-input-wrapper input {
+  .signup .signup-input-wrapper input {
     height: 6rem;
     font-size: 1.7768rem;
   }
 
-  .signup-input-wrapper span {
+  .signup .signup-input-wrapper span {
     font-size: 1.333rem;
   }
 
-  .button-show-password,
-  .button-show-password-check {
+  .signup-id .button-erase,
+  .signup-email .button-erase,
+  .signup-password .button-erase,
+  .signup-password-check .button-erase,
+  .signup .button-show-password,
+  .signup .button-show-password-check {
     width: 2.25rem;
     height: 2.25rem;
     background-size: 2.25rem 2.25rem;
     top: 2rem;
+  }
+
+  .signup-id .button-erase,
+  .signup-email .button-erase {
     right: 1.5rem;
   }
 
-  .button-show-password.is-checked,
-  .button-show-password-check.is-checked {
+  .signup-password .button-erase,
+  .signup-password-check .button-erase {
+    right: 5.75rem;
+  }
+
+  .signup .button-show-password.is-checked,
+  .signup .button-show-password-check.is-checked {
     background-size: 2.25rem 2.25rem;
   }
 
-  .signup-agree-all,
-  .signup-agree-checkbox {
+  .signup .signup-agree-all,
+  .signup .signup-agree-checkbox {
     font-size: var(--label---large, 1.33rem);
   }
 }

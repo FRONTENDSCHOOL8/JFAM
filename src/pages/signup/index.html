@@ -29,6 +29,7 @@
       <h1 class="title">티빙 회원가입</h1>
       <p class="comment">아이디와 이메일로 간편하게 티빙을 시작하세요!</p>
       <form class="signup-form" action="/">
+        <h2 class="sr-only">티빙 회원가입 폼</h2>
         <div class="signup-input-wrapper signup-id">
           <label class="sr-only" for="input-id">아이디</label>
           <input
@@ -37,6 +38,7 @@
             type="text"
             placeholder="아이디"
           />
+          <button type="button" class="button-erase"></button>
           <span class="id-condition">영문 또는 영문, 숫자 조합 6~12자리</span>
         </div>
         <div class="signup-input-wrapper signup-password">
@@ -47,6 +49,7 @@
             type="password"
             placeholder="비밀번호"
           />
+          <button type="button" class="button-erase"></button>
           <button
             type="button"
             class="button-show-password"
@@ -66,6 +69,7 @@
             type="password"
             placeholder="비밀번호 확인"
           />
+          <button type="button" class="button-erase"></button>
           <button
             type="button"
             class="button-show-password-check is-checked"
@@ -80,6 +84,7 @@
             type="email"
             placeholder="이메일"
           />
+          <button type="button" class="button-erase"></button>
           <span class="email-condition"></span>
         </div>
         <ul class="signup-agree-checkbox">
@@ -140,7 +145,6 @@
             <label for="check-email">[선택] 마케팅 정보 email 수신동의</label>
           </li>
         </ul>
-
         <button class="button-signup-submit" type="submit">확인</button>
       </form>
     </div>
