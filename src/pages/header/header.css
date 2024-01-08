@@ -24,9 +24,9 @@
 
 .header .button-profile{
     margin: 0 3% 0 0;
-    width: 18px;
-    height: 18px;
-    background-image: url('/src/assets/profile.png');
+    width: 24px;
+    height: 24px;
+    background-image: url('/src/assets/header/profile.png');
     background-size: cover;
     cursor: pointer;
 }
@@ -35,12 +35,12 @@
 @media screen and (min-width: 768px){
     .header{ height: 3.5rem; }
     .header .heading-logo svg{ width: 77px; height: 24px;}
-    .header .button-profile{ width:24px; height: 24px;     cursor: pointer;}
+    .header .button-profile{ width:32px; height: 32px;     cursor: pointer;}
 }
 
 /* 데스크탑 */
 @media screen and (min-width: 1920px){
     .header{ height: 6.25rem;}
-    .header .heading-logo svg{ width: 1920px; height: 100px;}
-    .header .button-profile{ width: 40px; height: 40px;     cursor: pointer;} 
+    .header .heading-logo svg{ width: 132px; height: 42px;}
+    .header .button-profile{ width: 48px; height: 48px;     cursor: pointer;} 
 }
