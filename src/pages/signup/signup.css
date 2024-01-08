@@ -1,2 +1,330 @@
-#signup .name {
+* {
+  box-sizing: border-box;
+}
+
+input,
+button {
+  border: none;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.signup {
+  width: 100%;
+  height: min-content;
+  min-height: 100vh;
+  background-color: var(--black, #000);
+  color: var(--gray-400, #898989);
+  font-family: Pretendard;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem;
+}
+
+.signup .title {
+  font-size: var(--heading---medium, 1rem);
+  color: var(--white, #fff);
+  font-weight: 700;
+  line-height: 140%;
+  margin-top: 0.75rem;
+}
+
+.signup .comment {
+  font-size: var(--label---small, 0.75rem);
+  font-weight: 700;
+  line-height: 150%;
+  margin-top: 1rem;
+}
+
+.signup .signup-form {
+  width: inherit;
+  max-width: 26rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: auto;
+  margin-top: 1.5625rem;
+}
+
+.signup-input-wrapper {
+  width: inherit;
+}
+
+.signup-input-wrapper input {
+  width: 100%;
+  height: 2.875rem;
+  margin: auto;
+  display: block;
+  border-radius: 4px;
+  border: none;
+  background: var(--brand-dark-bg-2, #212121);
+  padding: 0px 20px 0px 16px;
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.signup-input-wrapper input::placeholder {
+  color: var(--gray-400, #898989);
+}
+
+.signup-input-wrapper input:focus {
+  outline: 1px solid var(--gray-200, #e1e1e1);
+}
+
+.signup-input-wrapper span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 160%;
+}
+
+.signup-input-wrapper span.warning {
+  color: var(--brand-red-1, #2f50c6);
+}
+
+.signup-input-wrapper {
+  text-align: left;
+  position: relative;
+}
+
+.signup .button-erase {
+  display: none;
+}
+
+.signup .button-erase.has-input {
+  display: block;
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: url(/src/assets/signup/pw_erase.svg) no-repeat 0 0 / 1.25rem
+    1.25rem;
+  position: absolute;
+  cursor: pointer;
+}
+
+.signup-id .button-erase,
+.signup-email .button-erase {
+  top: 0.8125rem;
+  right: 1.25rem;
+}
+.signup-password .button-erase,
+.signup-password-check .button-erase {
+  top: 0.8125rem;
+  right: 3.5rem;
+}
+
+.signup .button-show-password,
+.signup .button-show-password-check {
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: url(/src/assets/signup/pw_show.svg) no-repeat 0 0 / 1.25rem
+    1.25rem;
+  position: absolute;
+  top: 0.8125rem;
+  right: 1.25rem;
+  cursor: pointer;
+}
+
+.signup .button-erase:focus,
+.signup .button-show-password:focus,
+.signup .button-show-password-check:focus {
+  outline: 1px solid var(--gray-200, #e1e1e1);
+}
+
+.signup .button-show-password.is-checked,
+.signup .button-show-password-check.is-checked {
+  background: url(/src/assets/signup/pw_hide.svg) no-repeat 0 0 / 1.25rem
+    1.25rem;
+}
+
+.signup .signup-agree-all,
+.signup .signup-agree-checkbox {
+  width: 100%;
+  text-align: left;
+  font-size: var(--label---small, 0.75rem);
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.signup .signup-agree-checkbox > li {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: center;
+}
+
+.signup .signup-agree-checkbox:nth-child(n) input {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.25rem;
+}
+
+.signup .check-list input {
+  background: url(/src/assets/signup/check_white.svg) no-repeat 0 0 / 1rem 1rem;
+}
+
+.signup .check-list input:checked {
+  background: url(/src/assets/signup/check_blue.svg);
+}
+
+.signup .check-all {
+  background: url(/src/assets/signup/check_filled_white.svg) no-repeat 0 0 /
+    1rem 1rem;
+}
+
+.signup .check-all:checked {
+  background: url(/src/assets/signup/check_filled_blue.svg);
+}
+
+.signup .check-list input:hover,
+.signup .check-list label:hover,
+.signup .check-all:hover,
+.signup .check-all-list label:hover {
+  cursor: pointer;
+}
+
+.signup .check-list input:focus,
+.signup .check-all-list input:focus {
+  outline: 1px solid var(--gray-200, #e1e1e1);
+}
+
+.signup .check-marketing-sns,
+.signup .check-marketing-email {
+  padding-left: 1rem;
+}
+
+.signup .button-signup-submit {
+  width: 100%;
+  height: 2.625rem;
+  color: var(--gray--300, #a6a6a6);
+  background: var(--gray-700, #404040);
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+@media screen and (min-width: 768px) {
+  .signup .signup .signup-form {
+    max-width: 26rem;
+  }
+
+  .signup .title {
+    font-size: var(--heading---x-l, 1.78rem);
+  }
+
+  .signup .comment {
+    font-size: var(--label---medium, 1rem);
+  }
+
+  .signup .signup-form {
+    gap: 1.125rem;
+  }
+
+  .signup-input-wrapper input {
+    height: 3.125rem;
+    font-size: 1rem;
+  }
+
+  .signup-id .button-erase,
+  .signup-email .button-erase,
+  .signup-password .button-erase,
+  .signup-password-check .button-erase,
+  .signup .button-show-password,
+  .signup .button-show-password-check {
+    top: 1.0625rem;
+  }
+
+  .signup-id .button-erase,
+  .signup-email .button-erase {
+    right: 1.5rem;
+  }
+  .signup-password .button-erase,
+  .signup-password-check .button-erase {
+    right: 3.75rem;
+  }
+
+  .signup .button-signup-submit {
+    margin-top: 0.3125rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .signup .signup-form {
+    max-width: 45.75rem;
+  }
+
+  .signup .title {
+    font-size: var(--heading---x-x-l, 2.37rem);
+  }
+
+  .signup .comment {
+    font-size: var(--label---x-l, 1.78rem);
+  }
+
+  .signup .signup-form {
+    gap: 2.125rem;
+  }
+
+  .signup .signup-input-wrapper input {
+    height: 6rem;
+    font-size: 1.7768rem;
+  }
+
+  .signup .signup-input-wrapper span {
+    font-size: 1.333rem;
+  }
+
+  .signup-id .button-erase,
+  .signup-email .button-erase,
+  .signup-password .button-erase,
+  .signup-password-check .button-erase,
+  .signup .button-show-password,
+  .signup .button-show-password-check {
+    width: 2.25rem;
+    height: 2.25rem;
+    background-size: 2.25rem 2.25rem;
+    top: 2rem;
+  }
+
+  .signup-id .button-erase,
+  .signup-email .button-erase {
+    right: 1.5rem;
+  }
+
+  .signup-password .button-erase,
+  .signup-password-check .button-erase {
+    right: 5.75rem;
+  }
+
+  .signup .button-show-password.is-checked,
+  .signup .button-show-password-check.is-checked {
+    background-size: 2.25rem 2.25rem;
+  }
+
+  .signup .signup-agree-all,
+  .signup .signup-agree-checkbox {
+    font-size: var(--label---large, 1.33rem);
+  }
 }
