@@ -94,8 +94,12 @@ button:active {
 
 .signup-input-wrapper span {
   font-size: 0.75rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 160%;
+}
+
+.signup-input-wrapper span.warning {
+  color: var(--brand-red-1, #2f50c6);
 }
 
 .signup-input-wrapper {
@@ -108,11 +112,12 @@ button:active {
 }
 
 .signup .button-erase.has-input {
-  /* .signup .button-erase { */
+  display: block;
   appearance: none;
   width: 1.25rem;
   height: 1.25rem;
-  background: url(/src/assets/icon/pw_erase.svg) no-repeat 0 0 / 1.25rem 1.25rem;
+  background: url(/src/assets/signup/pw_erase.svg) no-repeat 0 0 / 1.25rem
+    1.25rem;
   position: absolute;
   cursor: pointer;
 }
@@ -133,7 +138,8 @@ button:active {
   appearance: none;
   width: 1.25rem;
   height: 1.25rem;
-  background: url(/src/assets/icon/pw_show.svg) no-repeat 0 0 / 1.25rem 1.25rem;
+  background: url(/src/assets/signup/pw_show.svg) no-repeat 0 0 / 1.25rem
+    1.25rem;
   position: absolute;
   top: 0.8125rem;
   right: 1.25rem;
@@ -148,7 +154,8 @@ button:active {
 
 .signup .button-show-password.is-checked,
 .signup .button-show-password-check.is-checked {
-  background: url(/src/assets/icon/pw_hide.svg) no-repeat 0 0 / 1.25rem 1.25rem;
+  background: url(/src/assets/signup/pw_hide.svg) no-repeat 0 0 / 1.25rem
+    1.25rem;
 }
 
 .signup .signup-agree-all,
@@ -175,20 +182,20 @@ button:active {
 }
 
 .signup .check-list input {
-  background: url(/src/assets/icon/check_white.svg) no-repeat 0 0 / 1rem 1rem;
+  background: url(/src/assets/signup/check_white.svg) no-repeat 0 0 / 1rem 1rem;
 }
 
 .signup .check-list input:checked {
-  background: url(/src/assets/icon/check_blue.svg);
+  background: url(/src/assets/signup/check_blue.svg);
 }
 
 .signup .check-all {
-  background: url(/src/assets/icon/check_filled_white.svg) no-repeat 0 0 / 1rem
-    1rem;
+  background: url(/src/assets/signup/check_filled_white.svg) no-repeat 0 0 /
+    1rem 1rem;
 }
 
 .signup .check-all:checked {
-  background: url(/src/assets/icon/check_filled_blue.svg);
+  background: url(/src/assets/signup/check_filled_blue.svg);
 }
 
 .signup .check-list input:hover,
