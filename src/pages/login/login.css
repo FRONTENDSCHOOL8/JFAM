@@ -1,3 +1,251 @@
-#login .name {
+/* #login .name {
   background: black;
+} */
+
+/* 데스크탑 스타일 */
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* 모바일 스타일 */
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* 기본 설정 */
+
+body {
+  background: black;
+  text-align: center;
+}
+
+h3 {
+  color: var(--white, #fff);
+
+  /* Heading/XXL */
+  font-family: Pretendard;
+  font-size: 37.897px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 53.056px */
+}
+
+/* 로고 */
+
+.logo {
+  width: 98px;
+  height: 32px;
+  flex-shrink: 0;
+  margin-left: 70px;
+}
+
+/* 로그인 영역 잡기 */
+
+.login-wrapper {
+}
+
+/* 로고 svg 파일 여쭤보기, 파일 svg 어디에 넣어야 하는지 알아보기 ㅠㅠ */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login-wrapper {
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* 아이디 인풋 컨테이너 */
+
+.id-input-container {
+  position: relative;
+}
+
+label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+input[type='text'] {
+  color: var(--gray-600, #565656);
+
+  /* Paragraph/XL */
+  font-family: Pretendard;
+  font-size: 28.43px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 45.488px */
+}
+
+/* 패스워드 인풋 컨테이너 */
+
+.pw-input-container {
+  position: relative;
+}
+
+label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+input[type='text'] {
+  color: var(--gray-600, #565656);
+
+  /* Paragraph/XL */
+  font-family: Pretendard;
+  font-size: 28.43px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 45.488px */
+}
+
+.login-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* 추가: 텍스트 정렬을 가운데로 유지 */
+  /* background-color: #2f50c6; */
+}
+
+.input-id {
+  display: flex;
+  width: 416px;
+  height: 54px;
+  padding: 0px 20px 0px 16px;
+  align-items: center;
+  gap: 339px;
+  border-radius: var(--base, 4px);
+  background: var(--brand-dark-bg-2, #212121);
+}
+
+.find-id {
+  color: var(--gray-300, #a6a6a6);
+  font-family: Pretendard;
+  font-size: 21.328px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 34.125px */
+}
+
+.auto-login {
+  color: var(--gray-500, #6b6b6b);
+
+  /* Label/Large */
+  font-family: Pretendard;
+  font-size: 21.328px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 31.992px */
+}
+
+.find-password {
+  color: var(--gray-300, #a6a6a6);
+  font-family: Pretendard;
+  font-size: 21.328px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 34.125px */
+}
+
+.input-password {
+  display: flex;
+  width: 416px;
+  height: 54px;
+  padding: 0px 20px 0px 16px;
+  align-items: center;
+  gap: 339px;
+  border-radius: var(--base, 4px);
+  background: var(--brand-dark-bg-2, #212121);
+}
+
+.no-account {
+  color: var(--gray-500, #6b6b6b);
+  font-family: Pretendard;
+  font-size: 21.328px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 34.125px */
+}
+
+.icon {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  padding: 6.346px 5.481px;
+  justify-content: center;
+  align-items: center;
+}
+
+footer span {
+  color: var(--gray-500, #6b6b6b);
+  font-family: Pretendard;
+  font-size: var(--heading---large); /* 21.328 */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 34.125px */
+}
+
+label {
+  display: flex;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--white);
+}
+
+footer {
+}
+
+.login-id {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.login-password {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.login-button {
+  display: flex;
+  width: 732px;
+  height: 86px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background: var(--brand-red-1, #2f50c6);
+
+  color: var(--white, #fff);
+
+  /* Label/XL */
+  font-family: Pretendard;
+  font-size: 28.43px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 42.645px */
 }
