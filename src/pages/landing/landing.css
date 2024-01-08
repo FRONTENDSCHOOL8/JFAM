@@ -19,9 +19,9 @@ body {
 }
 
 .swiper {
-  width: 1200px;
-  height: 400px;
-  margin: 3% 0;
+  width: 100%;
+  height: 100%;
+  margin: 30px 0 100px 0;
 }
 
 .swiper-slide {
@@ -46,10 +46,20 @@ body {
 /* landing 페이지 */
 .landing{
     background-color: black;
+    margin-top: 0;
+    padding-top: 0;
     color: white;
+}
+.landing section{
+    text-align: center;
+}
+
+.landing p{
+
 }
 
 .landing .h1-logo{
+  position: absolute;
   padding: 5px 15px;
 }
 
@@ -58,21 +68,17 @@ body {
     height: 10px;
 }
 
-.landing section{
-    text-align: center;
-}
 
 .landing .section-promotionTop{
     height: 382px;
-    position: relative;
-    top: 80px;
-    background-image: url('/src/assets/visual.png'),url('/src/assets/visual.png'),;
-    background-position: top left, bottom right;
-    background-repeat: no-repeat, no-repeat;
-
-}
-
-.landing .p-copywriting{
+    background: linear-gradient(180deg, rgba(0,0,0,0.644429347826087) 0%, rgba(0,0,0,0.9052989130434783) 90%, rgba(0,0,0,1) 100%), url('/src/assets/landing/background-img.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .landing .p-copywriting{
+  padding-top: 5.8rem;
     font-size: 1rem;
     font-style: normal;
     font-weight: 700;
@@ -101,7 +107,7 @@ body {
     justify-content: center;
     border-radius: 4px;
     background: var(--brand-red-2, #1C358E);
-    background-image: url('/src/assets/button_before_logo.png');
+    background-image: url('/src/assets/landing/button_before_logo.png');
     background-repeat: no-repeat;
     background-size: 38px;
     background-position: 10px 0;
