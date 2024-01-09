@@ -1,0 +1,247 @@
+/* 기본 설정 */
+
+* {
+  box-sizing: border-box;
+}
+
+input,
+button {
+  border: none;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.login {
+  width: 100%;
+  height: min-content;
+  min-height: 100vh;
+  background-color: var(--black, #000);
+  color: var(--gray-400, #898989);
+  font-family: Pretendard;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem;
+}
+
+.login-title {
+  margin-top: 1.75rem;
+  color: var(--white, #fff);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 140%; /* 1.4rem */
+}
+
+.login-input {
+  margin: 1.75rem auto 0;
+  max-width: 26rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+
+.input-id,
+.input-password {
+  font-size: 0.75rem;
+  color: white;
+  width: 100%;
+  height: 2.875rem;
+  padding: 0rem 1.25rem 0rem 1rem;
+  border-radius: var(--base, 0.25rem);
+  background: var(--brand-dark-bg-2, #212121);
+}
+
+.input-id::placeholder,
+.input-password::placeholder {
+  color: var(--gray-400, #898989);
+}
+
+.input-id:focus,
+.input-password:focus {
+  outline: 1px solid var(--gray-200, #e1e1e1);
+}
+
+.auto-login {
+  max-width: 26rem;
+  margin: 0.5rem auto 0;
+  text-align: left;
+  color: var(--gray-500, #6b6b6b);
+  font-size: 0.7502rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 1.1253rem */
+}
+
+.button-container {
+  max-width: 26rem;
+  margin: 1rem auto 0;
+}
+
+.login-button {
+  width: 100%;
+  height: 2.625rem;
+  border-radius: 0.25rem;
+  background: var(--brand-red-1, #2f50c6);
+  color: var(--white, #fff);
+  font-size: 0.7502rem;
+  font-weight: 600;
+  line-height: 150%; /* 1.1253rem */
+}
+
+.find-login {
+  margin: 1.25rem auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+  gap: 1.25rem;
+}
+
+.find-id,
+.find-password {
+  color: var(--gray-300, #a6a6a6);
+  font-size: 0.7502rem;
+  font-weight: 400;
+  line-height: 160%; /* 1.2003rem */
+}
+
+.no-account-container {
+  margin: 1.25rem auto 0;
+}
+
+.no-account {
+  color: var(--gray-500, #6b6b6b);
+  font-size: 0.7502rem;
+  font-weight: 400;
+  line-height: 160%; /* 1.2003rem */
+}
+
+.to-signup {
+  color: var(--gray-300, #a6a6a6);
+
+  font-size: 0.7502rem;
+  font-weight: 400;
+  line-height: 160%; /* 1.2003rem */
+}
+
+@media screen and (min-width: 48rem) {
+  .login-title {
+    margin-top: 2.5rem;
+    font-size: 1.75rem;
+  }
+
+  .login-input {
+    margin: 3.375rem auto 0;
+  }
+
+  .input-id,
+  .input-password {
+    height: 3.375rem;
+    font-size: 1rem;
+  }
+
+  .auto-login {
+    margin: 0.75rem auto 0;
+  }
+
+  .login-button {
+    height: 3.125rem;
+    font-size: 1rem;
+  }
+
+  .find-login {
+    margin: 1.5rem auto 0;
+  }
+
+  .find-id,
+  .find-password {
+    font-size: 1rem;
+  }
+
+  .no-account-container {
+    margin: 1rem auto 0;
+  }
+
+  .no-account {
+    font-size: 1rem;
+  }
+
+  .to-signup {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 120rem) {
+  .login-title {
+    margin-top: 4.375rem;
+    font-size: 2.3125rem;
+  }
+
+  .login-input {
+    margin: 3.75rem auto 0;
+    max-width: 45.75rem;
+    gap: 0.9375rem;
+  }
+
+  .input-id,
+  .input-password {
+    font-size: 1.75rem;
+    height: 6rem;
+    padding: 0rem 28.375rem 0rem 1.5rem;
+  }
+
+  .auto-login {
+    max-width: 45.75rem;
+    margin: 1rem auto 2rem;
+    font-size: 1.3125rem;
+  }
+
+  .button-container {
+    max-width: 45.75rem;
+  }
+
+  .login-button {
+    width: 100%;
+    height: 5.375rem;
+    font-size: 1.75rem;
+  }
+
+  .find-login {
+    margin: 3rem auto 0;
+    gap: 2.5938rem;
+  }
+
+  .find-id,
+  .find-password {
+    font-size: 1.3125rem;
+  }
+
+  .no-account-container {
+    margin: 2.75rem auto 0;
+  }
+
+  .no-account {
+    font-size: 1.3125rem;
+  }
+
+  .to-signup {
+    font-size: 1.3125rem;
+  }
+}
