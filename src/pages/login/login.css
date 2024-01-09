@@ -1,251 +1,247 @@
-/* #login .name {
-  background: black;
-} */
-
-/* 데스크탑 스타일 */
-@media screen and (min-width: 768px) {
-  body {
-    font-size: 16px;
-  }
-}
-
-/* 모바일 스타일 */
-@media screen and (max-width: 767px) {
-  body {
-    font-size: 14px;
-  }
-}
-
 /* 기본 설정 */
 
-body {
-  background: black;
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-h3 {
+input,
+button {
+  border: none;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.login {
+  width: 100%;
+  height: min-content;
+  min-height: 100vh;
+  background-color: var(--black, #000);
+  color: var(--gray-400, #898989);
+  font-family: Pretendard;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem;
+}
+
+.login-title {
+  margin-top: 1.75rem;
   color: var(--white, #fff);
-
-  /* Heading/XXL */
-  font-family: Pretendard;
-  font-size: 37.897px;
-  font-style: normal;
+  font-size: 1rem;
   font-weight: 700;
-  line-height: 140%; /* 53.056px */
-}
-
-/* 로고 */
-
-.logo {
-  width: 98px;
-  height: 32px;
-  flex-shrink: 0;
-  margin-left: 70px;
-}
-
-/* 로그인 영역 잡기 */
-
-.login-wrapper {
-}
-
-/* 로고 svg 파일 여쭤보기, 파일 svg 어디에 넣어야 하는지 알아보기 ㅠㅠ */
-
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.login-wrapper {
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-/* 아이디 인풋 컨테이너 */
-
-.id-input-container {
-  position: relative;
-}
-
-label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px;
-  font-size: 14px;
-  color: #555;
-}
-
-input[type='text'] {
-  color: var(--gray-600, #565656);
-
-  /* Paragraph/XL */
-  font-family: Pretendard;
-  font-size: 28.43px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 160%; /* 45.488px */
-}
-
-/* 패스워드 인풋 컨테이너 */
-
-.pw-input-container {
-  position: relative;
-}
-
-label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px;
-  font-size: 14px;
-  color: #555;
-}
-
-input[type='text'] {
-  color: var(--gray-600, #565656);
-
-  /* Paragraph/XL */
-  font-family: Pretendard;
-  font-size: 28.43px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 160%; /* 45.488px */
+  line-height: 140%; /* 1.4rem */
 }
 
 .login-input {
+  margin: 1.75rem auto 0;
+  max-width: 26rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center; /* 추가: 텍스트 정렬을 가운데로 유지 */
-  /* background-color: #2f50c6; */
+  flex-flow: column nowrap;
+  gap: 0.5rem;
 }
 
-.input-id {
-  display: flex;
-  width: 416px;
-  height: 54px;
-  padding: 0px 20px 0px 16px;
-  align-items: center;
-  gap: 339px;
-  border-radius: var(--base, 4px);
+.input-id,
+.input-password {
+  font-size: 0.75rem;
+  color: white;
+  width: 100%;
+  height: 2.875rem;
+  padding: 0rem 1.25rem 0rem 1rem;
+  border-radius: var(--base, 0.25rem);
   background: var(--brand-dark-bg-2, #212121);
 }
 
-.find-id {
-  color: var(--gray-300, #a6a6a6);
-  font-family: Pretendard;
-  font-size: 21.328px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 160%; /* 34.125px */
+.input-id::placeholder,
+.input-password::placeholder {
+  color: var(--gray-400, #898989);
+}
+
+.input-id:focus,
+.input-password:focus {
+  outline: 1px solid var(--gray-200, #e1e1e1);
 }
 
 .auto-login {
+  max-width: 26rem;
+  margin: 0.5rem auto 0;
+  text-align: left;
   color: var(--gray-500, #6b6b6b);
-
-  /* Label/Large */
-  font-family: Pretendard;
-  font-size: 21.328px;
+  font-size: 0.7502rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 150%; /* 31.992px */
+  line-height: 150%; /* 1.1253rem */
 }
 
+.button-container {
+  max-width: 26rem;
+  margin: 1rem auto 0;
+}
+
+.login-button {
+  width: 100%;
+  height: 2.625rem;
+  border-radius: 0.25rem;
+  background: var(--brand-red-1, #2f50c6);
+  color: var(--white, #fff);
+  font-size: 0.7502rem;
+  font-weight: 600;
+  line-height: 150%; /* 1.1253rem */
+}
+
+.find-login {
+  margin: 1.25rem auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+  gap: 1.25rem;
+}
+
+.find-id,
 .find-password {
   color: var(--gray-300, #a6a6a6);
-  font-family: Pretendard;
-  font-size: 21.328px;
-  font-style: normal;
+  font-size: 0.7502rem;
   font-weight: 400;
-  line-height: 160%; /* 34.125px */
+  line-height: 160%; /* 1.2003rem */
 }
 
-.input-password {
-  display: flex;
-  width: 416px;
-  height: 54px;
-  padding: 0px 20px 0px 16px;
-  align-items: center;
-  gap: 339px;
-  border-radius: var(--base, 4px);
-  background: var(--brand-dark-bg-2, #212121);
+.no-account-container {
+  margin: 1.25rem auto 0;
 }
 
 .no-account {
   color: var(--gray-500, #6b6b6b);
-  font-family: Pretendard;
-  font-size: 21.328px;
-  font-style: normal;
+  font-size: 0.7502rem;
   font-weight: 400;
-  line-height: 160%; /* 34.125px */
+  line-height: 160%; /* 1.2003rem */
 }
 
-.icon {
-  display: flex;
-  width: 30px;
-  height: 30px;
-  padding: 6.346px 5.481px;
-  justify-content: center;
-  align-items: center;
-}
+.to-signup {
+  color: var(--gray-300, #a6a6a6);
 
-footer span {
-  color: var(--gray-500, #6b6b6b);
-  font-family: Pretendard;
-  font-size: var(--heading---large); /* 21.328 */
-  font-style: normal;
+  font-size: 0.7502rem;
   font-weight: 400;
-  line-height: 160%; /* 34.125px */
+  line-height: 160%; /* 1.2003rem */
 }
 
-label {
-  display: flex;
-  width: 150px;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  color: var(--white);
+@media screen and (min-width: 48rem) {
+  .login-title {
+    margin-top: 2.5rem;
+    font-size: 1.75rem;
+  }
+
+  .login-input {
+    margin: 3.375rem auto 0;
+  }
+
+  .input-id,
+  .input-password {
+    height: 3.375rem;
+    font-size: 1rem;
+  }
+
+  .auto-login {
+    margin: 0.75rem auto 0;
+  }
+
+  .login-button {
+    height: 3.125rem;
+    font-size: 1rem;
+  }
+
+  .find-login {
+    margin: 1.5rem auto 0;
+  }
+
+  .find-id,
+  .find-password {
+    font-size: 1rem;
+  }
+
+  .no-account-container {
+    margin: 1rem auto 0;
+  }
+
+  .no-account {
+    font-size: 1rem;
+  }
+
+  .to-signup {
+    font-size: 1rem;
+  }
 }
 
-footer {
-}
+@media screen and (min-width: 120rem) {
+  .login-title {
+    margin-top: 4.375rem;
+    font-size: 2.3125rem;
+  }
 
-.login-id {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
+  .login-input {
+    margin: 3.75rem auto 0;
+    max-width: 45.75rem;
+    gap: 0.9375rem;
+  }
 
-.login-password {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-}
+  .input-id,
+  .input-password {
+    font-size: 1.75rem;
+    height: 6rem;
+    padding: 0rem 28.375rem 0rem 1.5rem;
+  }
 
-.login-button {
-  display: flex;
-  width: 732px;
-  height: 86px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  background: var(--brand-red-1, #2f50c6);
+  .auto-login {
+    max-width: 45.75rem;
+    margin: 1rem auto 2rem;
+    font-size: 1.3125rem;
+  }
 
-  color: var(--white, #fff);
+  .button-container {
+    max-width: 45.75rem;
+  }
 
-  /* Label/XL */
-  font-family: Pretendard;
-  font-size: 28.43px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 150%; /* 42.645px */
+  .login-button {
+    width: 100%;
+    height: 5.375rem;
+    font-size: 1.75rem;
+  }
+
+  .find-login {
+    margin: 3rem auto 0;
+    gap: 2.5938rem;
+  }
+
+  .find-id,
+  .find-password {
+    font-size: 1.3125rem;
+  }
+
+  .no-account-container {
+    margin: 2.75rem auto 0;
+  }
+
+  .no-account {
+    font-size: 1.3125rem;
+  }
+
+  .to-signup {
+    font-size: 1.3125rem;
+  }
 }
