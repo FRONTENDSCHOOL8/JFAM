@@ -24,8 +24,8 @@
 
 .header .button-profile{
     margin: 0 3% 0 0;
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     background-image: url('/src/assets/header/profile.png');
     background-size: cover;
     cursor: pointer;
@@ -34,13 +34,13 @@
 /* 태블릿 */
 @media screen and (min-width: 768px){
     .header{ height: 3.5rem; }
-    .header .heading-logo svg{ width: 77px; height: 24px;}
-    .header .button-profile{ width:32px; height: 32px;     cursor: pointer;}
+    .header .heading-logo svg{ width: 4.8125rem; height: 1.5rem;}
+    .header .button-profile{ width:2rem; height: 2rem;     cursor: pointer;}
 }
 
 /* 데스크탑 */
 @media screen and (min-width: 1920px){
     .header{ height: 6.25rem;}
-    .header .heading-logo svg{ width: 132px; height: 42px;}
-    .header .button-profile{ width: 48px; height: 48px;     cursor: pointer;} 
+    .header .heading-logo svg{ width: 8.25rem; height: 2.625rem;}
+    .header .button-profile{ width: 3rem; height: 3rem;     cursor: pointer;} 
 }

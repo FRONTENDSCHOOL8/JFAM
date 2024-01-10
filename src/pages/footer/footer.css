@@ -12,7 +12,7 @@
     background: var(--black, #000);
     display: flex;
     width: 100%;
-    padding: 52px 16px 82px 16px;
+    padding: 3.25rem 1rem 5.125rem 1rem;
     flex-direction: column;
     align-items: flex-start;
 }
@@ -54,7 +54,7 @@
 
 .footer .span-division{
     padding: 0 4px;
-    font-size: 10px;
+    font-size: 0.625rem;
     color: #474747;
 }
 
@@ -83,7 +83,7 @@
 /* 태블릿 */
 @media screen and (min-width: 768px){
     .footer{
-        padding: 70px 40px 100px 40px;
+        padding: 4.375rem 2.5rem 6.25rem 2.5rem;
     }
     .div-footerContent{
         margin: 0 auto;
@@ -112,7 +112,7 @@
 /* 데스크탑 */
 @media screen and (min-width: 1920px){
     .footer{
-        padding: 140px 0px 170px 0px;
+        padding: 8.75rem 0rem 10.625rem 0rem;
     }
     .footer .ul-menu{
         flex-direction: row;
