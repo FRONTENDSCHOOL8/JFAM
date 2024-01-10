@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill-9p4a8sJU.js";/* empty css              *//* empty css              */import{S as i}from"./swiper-core-zPFWeJGx.js";new i(".swiper",{direction:"vertical",loop:!0,pagination:{el:".swiper-pagination"},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}});

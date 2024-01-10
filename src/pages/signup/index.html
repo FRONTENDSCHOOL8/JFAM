@@ -28,7 +28,7 @@
     <div class="signup">
       <h1 class="title">티빙 회원가입</h1>
       <p class="comment">아이디와 이메일로 간편하게 티빙을 시작하세요!</p>
-      <form class="signup-form" action="/">
+      <form class="signup-form" action="/" onsubmit="return false">
         <h2 class="sr-only">티빙 회원가입 폼</h2>
         <div class="signup-input-wrapper signup-id">
           <label class="sr-only" for="input-id">아이디</label>
@@ -37,6 +37,7 @@
             class="form-input input-id"
             type="text"
             placeholder="아이디"
+            autocomplete="username"
           />
           <button type="button" class="button-erase"></button>
           <span class="span-condition id-condition"
@@ -86,6 +87,7 @@
             class="form-input input-email"
             type="email"
             placeholder="이메일"
+            autocomplete="email"
           />
           <button type="button" class="button-erase"></button>
           <span class="span-condition email-condition"></span>
@@ -157,7 +159,7 @@
               class="form-check check-sns"
               id="check-sns"
             />
-            <label for="check-sns">[선택] 마케팅 정보 SMS 수신동의</label>
+            <label for="check-sns">[선택] 마케팅 정보 SNS 수신동의</label>
           </li>
           <li class="check-list check-marketing-email">
             <input

@@ -148,7 +148,8 @@ button:active {
 
 .signup .button-erase:focus,
 .signup .button-show-password:focus,
-.signup .button-show-password-check:focus {
+.signup .button-show-password-check:focus,
+.signup .button-signup-submit:focus {
   outline: 1px solid var(--gray-200, #e1e1e1);
 }
 
@@ -225,7 +226,7 @@ button:active {
   line-height: 150%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48rem) {
   .signup .signup .signup-form {
     max-width: 26rem;
   }
@@ -270,7 +271,7 @@ button:active {
   }
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 120rem) {
   .signup .signup-form {
     max-width: 45.75rem;
   }
