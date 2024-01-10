@@ -9,7 +9,7 @@ const defaultOptions = {
   },
 };
 
-export const crud = async (options) => {
+export const manageData = async (options) => {
   const { url, ...restOptions } = {
     ...defaultOptions,
     ...options,
@@ -27,29 +27,29 @@ export const crud = async (options) => {
   return response;
 };
 
-crud.get = (url, options) =>
-  crud({
+manageData.get = (url, options) =>
+  manageData({
     url,
     ...options,
   });
-crud.post = (url, body, options) =>
-  crud({
+manageData.post = (url, body, options) =>
+  manageData({
     method: 'POST',
     url,
     body: JSON.stringify(body),
     ...options,
   });
-crud.delete = (url, options) =>
-  crud({
+manageData.delete = (url, options) =>
+  manageData({
     method: 'DELETE',
     url,
     ...options,
   });
-crud.put = (url, body, options) =>
-  crud({
+manageData.put = (url, body, options) =>
+  manageData({
     method: 'PUT',
     url,
     body: JSON.stringify(body),
     ...options,
   });
-export default crud;
+export default manageData;
