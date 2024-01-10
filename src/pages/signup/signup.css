@@ -148,7 +148,8 @@ button:active {
 
 .signup .button-erase:focus,
 .signup .button-show-password:focus,
-.signup .button-show-password-check:focus {
+.signup .button-show-password-check:focus,
+.signup .button-signup-submit:focus {
   outline: 1px solid var(--gray-200, #e1e1e1);
 }
 
