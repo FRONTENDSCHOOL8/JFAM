@@ -38,43 +38,50 @@ const regex = {
   regexEmail: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/,
 };
 
-// 중복체크 테스트
-const duplicationCheck = true;
+const userStatus = {
+  id: false,
+  password: false,
+  passwordCheck: false,
+  email: false,
+};
 
-// async function renderUserId() {
-//   const url = 'https://jfam.pockethost.io/';
-//   const response = await crud.get(`${url}/collections/users`);
-// }
+const isValid = (userInput, boolean) => {
+  if (userInput && boolean) {
+    userStatus[userInput] = boolean;
+  }
+};
 
-// const isDuplicationId = async (userId) => {
-//   try {
-//     const result = await pb
-//       .collection('users')
-//       .getFirstListItem(`username="${userId}"`);
-//     return result.promiseResult;
-//   } catch (error) {
-//     return false;
-//   }
-// };
-// console.log(await isDuplicationId('admin123'));
+const isDuplicationId = async (userId) => {
+  try {
+    await pb.collection('users').getFirstListItem(`username="${userId}"`);
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
 
-const handleInputId = () => {
+const handleInputId = async (event) => {
+  event.preventDefault();
   const idValue = inputId.value;
   eraseInputId.classList.add('has-input');
   if (idValue === '') {
     conditionId.textContent = '입력한 내용이 없어요.';
     conditionId.classList.add('warning');
     eraseInputId.classList.remove('is-checked');
+    isValid('id', false);
   } else if (!regex.regexId.test(idValue)) {
     conditionId.textContent =
       '영문 또는 영문, 숫자 조합 6~12자리로 입력해주세요.';
     conditionId.classList.add('warning');
+    isValid('id', false);
   } else if (isDuplicationId(idValue)) {
+    conditionId.textContent = '이미 사용 중인 아이디입니다.';
+    conditionId.classList.add('warning');
+    isValid('id', false);
     console.log(isDuplicationId(idValue));
-    // conditionId.textContent = '이미 사용 중인 아이디입니다.';
-    // conditionId.classList.add('warning');
   } else {
     conditionId.textContent = '';
+    isValid('id', true);
   }
 };
 
@@ -85,13 +92,18 @@ const handleInputPassword = () => {
     conditionPassword.textContent = '입력한 내용이 없어요.';
     conditionPassword.classList.add('warning');
     eraseInputPassword.classList.remove('is-checked');
+    isValid('password', false);
   } else if (!regex.regexPassword.test(passwordValue)) {
     conditionPassword.textContent =
       '특수문자(~!@#$%^&*) 포함 6~16자리로 입력해주세요.';
+    console.log(passwordValue);
     conditionPassword.classList.add('warning');
+    isValid('password', false);
   } else {
     conditionPassword.textContent = '';
+    isValid('password', true);
   }
+  console.log(userStatus.password);
 };
 
 const handleInputPasswordCheck = () => {
@@ -100,12 +112,15 @@ const handleInputPasswordCheck = () => {
   if (passwordCheckValue === '') {
     conditionPasswordCheck.textContent = '입력한 내용이 없어요.';
     conditionPasswordCheck.classList.add('warning');
+    isValid('passwordCheck', false);
   } else if (passwordCheckValue !== inputPassword.value) {
     conditionPasswordCheck.textContent =
       '일치하지 않습니다. 다시 입력해주세요.';
     conditionPasswordCheck.classList.add('warning');
+    isValid('passwordCheck', false);
   } else {
     conditionPasswordCheck.textContent = '';
+    isValid('passwordCheck', true);
   }
 };
 
