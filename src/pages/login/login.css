@@ -13,7 +13,7 @@ input:focus,
 input:active,
 button:focus,
 button:active {
-  outline: none;
+  outline: inline;
   box-shadow: none;
 }
 

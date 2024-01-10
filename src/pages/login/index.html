@@ -38,6 +38,7 @@
               type="text"
               placeholder="아이디"
               autocomplete="username"
+              tabindex="1"
             />
           </div>
           <div class="password-input-container">
@@ -47,15 +48,21 @@
               class="input-password"
               type="text"
               placeholder="비밀번호"
+              tabindex="2"
             />
           </div>
         </div>
         <div class="auto-login">
-          <input type="checkbox" class="form-check auto-login" id="check-all" />
+          <input
+            tabindex="3"
+            type="checkbox"
+            class="form-check auto-login"
+            id="check-all"
+          />
           <label class="auto-login">자동로그인</label>
         </div>
         <div class="button-container">
-          <button class="login-button">로그인하기</button>
+          <button tabindex="4" class="login-button">로그인하기</button>
         </div>
         <div class="find-login">
           <a href="" class="find-id">아이디 찾기</a>
