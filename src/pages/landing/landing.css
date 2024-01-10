@@ -22,6 +22,10 @@
     margin-top: 0;
     padding-top: 0;
     color: white;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
 }
 
 .landing .header{
@@ -45,12 +49,21 @@
 }
 
 .landing .div-account a{
-  border: 1px solid white;
   color: white;
   font-size: 0.7rem;
-  padding: 0.3vw 1.5vw;
-  margin: 0.2vw;
+  padding: 0.4rem 0.3rem;
+  margin: 0.2rem;
   cursor: pointer;
+}
+
+.landing .div-account .signup{
+  background-color: #1C358E;
+  border-radius: 5px;
+}
+
+.landing .div-account .login{
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
 .landing section{
@@ -122,7 +135,8 @@
 .landing .h2-sectionTitle{
     color: var(--white, #FFF);
     text-align: center;
-
+    padding-top: 5vw;
+    
     /* Heading/Large */
     font-family: Pretendard;
     font-size: 21.328px;
@@ -131,6 +145,11 @@
     line-height: 140%; /* 29.859px */
 }
 
+.landing .swiper-slide img{
+  /* margin: 0 50px; */
+  width: 100%;
+  max-width: 270px;
+}
 
 @keyframes sliding{
   from{
@@ -150,16 +169,23 @@
   padding-bottom: 1.5rem;
 }
 
-.landing .div-slide__one
+.landing .div-slide__one,
+.landing .div-slide__two
 {
   display: inline-block;
   animation: 40s sliding infinite linear;
 }
 
-.landing .div-slide__two
+.landing .div-slider img{
+  width: 23vw;
+}
+
+.landing .div-slide__three,
+.landing .div-slide__four
 {
   display: inline-block;
-  animation: 38s sliding infinite linear;
+  animation: 35s sliding infinite linear;
+
 }
 
 .landing .div-slide img{
@@ -188,16 +214,11 @@
 }
 
 @media screen and (min-width: 768px){
-  /* body 추후 수정!! */
-  body {font-size: 1.7769rem;}
   .landing .h1-logo svg{width: 4.8125rem; height: 1.5rem;}
-  .landing .a-signupLink{width: 35%;}
   .landing .section-promotionBottom .svg-logo{width: 8.4375rem; height: 3.25rem;}
 }
 
 @media screen and (min-width: 1920px){
-  /* body 수정!! */
-  body {font-size: 3.1573rem;}
   .landing .h1-logo svg{width: 8.25rem; height: 2.625rem;}
   .landing .section-promotionBottom .svg-logo{width: 17.4375rem; height: 6.875rem;}
 }
