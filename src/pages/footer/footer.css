@@ -1,20 +1,25 @@
+@import "/src/styles/style.css";
+
 /* reset */
-*{
+* {
     box-sizing: border-box;
-}
-.footer a{
-    color: var(--gray-200, #C4C4C4);
 }
 
 /* 푸터 */
 .footer{
-    color: var(--gray-200, #C4C4C4);
     background: var(--black, #000);
-    display: flex;
     width: 100%;
-    padding: 52px 16px 82px 16px;
+    padding: 3.25rem 1rem 5.125rem 1rem;
+
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    /* 드래그 방지 */
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
 }
 
 .footer .ul-menu{
@@ -24,44 +29,36 @@
     gap: var(--base, 4px);
 }
 
-.footer .li-menu__item{
+.footer .li-menu__item a{
+    color: var(--gray--100, #e1e1e1);
     font-size: 0.75rem;
 }
 
 .footer .div-companyInfo{
     display: none;
-    color: var(--gray-500, #6B6B6B);
-    /* Paragraph/Small */
-    font-family: Pretendard;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%; /* 19.205px */
 }
 
 .footer .div-companyInfo p{
-    color: var(--gray-500, #6B6B6B);
-    font-family: Pretendard;
+    color: var(--gray-300,#a6a6a6);
     font-size: 0.7501875rem;
-    font-style: normal;
     font-weight: 400;
     line-height: 160%; /* 34.125px */
 }
 
 .footer .div-companyInfo a{
-    color: var(--gray-500, #6B6B6B);
+    color: var(--gray--300, #a6a6a6);
     text-decoration: underline;
 }
 
 .footer .span-division{
-    padding: 0 4px;
-    font-size: 10px;
-    color: #474747;
+    padding: 0 0.25rem;
+    font-size: 0.625rem;
 }
 
 .footer .ul-sns{
     display: flex;
     align-items: flex-start;
-    gap: var(--space-2, 8px);
+    gap: var(--space-2, 0.5rem);
     padding: 0.75rem 0 0.2rem 0;
 }
 
@@ -71,11 +68,10 @@
 }
 
 .footer .p-copyright{
-    color: var(--gray-500, #6B6B6B);
+    color: var(--gray--400, #898989);
 
     /* Paragraph/Small */
     font-size: 0.75rem;
-    font-style: normal;
     font-weight: 400;
     line-height: 160%; /* 19.205px */
 }
@@ -83,7 +79,7 @@
 /* 태블릿 */
 @media screen and (min-width: 768px){
     .footer{
-        padding: 70px 40px 100px 40px;
+        padding: 4.375rem 2.5rem 6.25rem 2.5rem;
     }
     .div-footerContent{
         margin: 0 auto;
@@ -93,7 +89,7 @@
         padding-bottom: 0.75rem;
         flex-direction: row;
         gap: 2.25rem;
-        border-top: 1px solid var(--gray-800, #212121);;
+        border-top: 1px solid var(--gray--800,#2b2b2b);
     }
     .footer .li-menu__item{
         font-size: 0.7501875rem;
@@ -112,7 +108,7 @@
 /* 데스크탑 */
 @media screen and (min-width: 1920px){
     .footer{
-        padding: 140px 0px 170px 0px;
+        padding: 8.75rem 0rem 10.625rem 0rem;
     }
     .footer .ul-menu{
         flex-direction: row;
