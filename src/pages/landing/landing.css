@@ -71,7 +71,7 @@
     text-align: center;
 }
 
-.landing .h1-jfamLogo svg{
+.landing .h1-jfamLogo img{
     width: calc(35px + 5vw);
     height: calc(15px + 2vw);
 }
@@ -95,7 +95,7 @@
 
 .landing .p-promoMessage{
     margin: 0 auto 2vw auto;
-    color: var(--gray-400, #898989);
+    color: var(--gray-300,#a6a6a6);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
     /* Paragraph/Small */
     font-size: calc(0.3rem + 1vw);
@@ -197,9 +197,9 @@
     padding: 0 auto;
 }
 
-.landing .section-promotion-bottom .svg-logo{
-    width: 5.1875rem;
-    height: 2rem;
+.landing .section-promotion-bottom .img-jfamLogo{
+    width: calc(5.1875rem + 1vw);
+    height: calc(2rem + 1v2);
 }
 
 .landing .section-promotion-bottom p{

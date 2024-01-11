@@ -99,7 +99,7 @@
         flex-direction: column;
         align-items: flex-start;
         align-self: stretch;}
-    .footer .ul-sns li svg{
+    .footer .ul-sns li img{
         width: 1.875rem;
         height: 1.875rem;
     }
@@ -126,7 +126,7 @@
     .footer .div-companyInfo p{
         font-size: 1.333rem;
     }
-    .footer .ul-sns li svg{
+    .footer .ul-sns li img{
         width: 3.25rem;
         height: 3.25rem;
     }
