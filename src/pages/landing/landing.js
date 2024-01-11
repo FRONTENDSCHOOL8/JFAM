@@ -9,7 +9,6 @@ const swiper = new Swiper(".mySwiper", {
     centeredSlides: true,
     breakpoints:{
       1920:{
-        slidesPerView: 3,
       },
     },
   });
@@ -124,3 +123,13 @@ window.addEventListener('resize', initSwiper);
 
 // 추가적으로 필요한 초기화 로직이 있다면 여기에 추가
 renderSmallThumbnail();
+
+
+// 스켈레톤 요소
+const skeletonItem = document.querySelector('.skeleton-loading');
+
+const hideSkeleton = () => {
+  skeletonItem.style.display = 'none';
+};
+
+// window.addEventListener('load', hideSkeleton);
