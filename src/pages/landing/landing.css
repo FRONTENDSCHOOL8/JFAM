@@ -140,6 +140,7 @@
   /* margin: 0 50px; */
   width: 100%;
   max-width: 520px;
+  border-radius: 10px;
 }
 
 @keyframes sliding{
