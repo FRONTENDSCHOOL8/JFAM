@@ -5,6 +5,8 @@ const check = document.querySelectorAll('.form-check');
 const span = document.querySelectorAll('.span-condition');
 const buttonShowPassword = document.querySelectorAll('.button-show');
 const buttonEraseInput = document.querySelectorAll('.button-erase');
+const signupForm = document.querySelector('.signup-form');
+const buttonSubmit = document.querySelector('.button-signup-submit');
 
 const [inputId, inputPassword, inputPasswordCheck, inputEmail] = input;
 
@@ -23,8 +25,6 @@ const [
 const [conditionId, conditionPassword, conditionPasswordCheck, conditionEmail] =
   span;
 
-// const [showPassword, showPasswordCheck] = buttonShowPassword;
-
 const [
   eraseInputId,
   eraseInputPassword,
@@ -38,17 +38,11 @@ const regex = {
   regexEmail: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/,
 };
 
-const userStatus = {
+const checkValid = {
   id: false,
   password: false,
   passwordCheck: false,
   email: false,
-};
-
-const isValid = (userInput, boolean) => {
-  if (userInput && boolean) {
-    userStatus[userInput] = boolean;
-  }
 };
 
 const isDuplicationId = async (userId) => {
@@ -60,82 +54,242 @@ const isDuplicationId = async (userId) => {
   }
 };
 
-const handleInputId = async (event) => {
-  event.preventDefault();
-  const idValue = inputId.value;
-  eraseInputId.classList.add('has-input');
-  if (idValue === '') {
-    conditionId.textContent = '입력한 내용이 없어요.';
-    conditionId.classList.add('warning');
-    eraseInputId.classList.remove('is-checked');
-    isValid('id', false);
-  } else if (!regex.regexId.test(idValue)) {
-    conditionId.textContent =
-      '영문 또는 영문, 숫자 조합 6~12자리로 입력해주세요.';
-    conditionId.classList.add('warning');
-    isValid('id', false);
-  } else if (isDuplicationId(idValue)) {
-    conditionId.textContent = '이미 사용 중인 아이디입니다.';
-    conditionId.classList.add('warning');
-    isValid('id', false);
-    console.log(isDuplicationId(idValue));
+const changeConditionMessage = (node, message) => {
+  const nodeElement = node;
+  nodeElement.textContent = message;
+};
+
+const setClassList = (node, modify, className) => {
+  const nodeElement = node;
+  if (modify === 'add') {
+    nodeElement.classList.add(className);
+  } else if (modify === 'remove') {
+    nodeElement.classList.remove(className);
   } else {
-    conditionId.textContent = '';
-    isValid('id', true);
+    throw new Error('setClassList 함수의 modify는 add 또는 remove 입니다');
   }
 };
 
-const handleInputPassword = () => {
-  const passwordValue = inputPassword.value;
-  eraseInputPassword.classList.add('has-input');
-  if (passwordValue === '') {
-    conditionPassword.textContent = '입력한 내용이 없어요.';
-    conditionPassword.classList.add('warning');
-    eraseInputPassword.classList.remove('is-checked');
-    isValid('password', false);
-  } else if (!regex.regexPassword.test(passwordValue)) {
-    conditionPassword.textContent =
-      '특수문자(~!@#$%^&*) 포함 6~16자리로 입력해주세요.';
-    console.log(passwordValue);
-    conditionPassword.classList.add('warning');
-    isValid('password', false);
-  } else {
-    conditionPassword.textContent = '';
-    isValid('password', true);
+// const handleInputId = async () => {
+//   const idValue = inputId.value;
+//   setClassList(eraseInputId, 'add', 'has-input');
+//   if (idValue.trim() === '') {
+//     changeConditionMessage(conditionId, '입력한 내용이 없어요.');
+//     setClassList(conditionId, 'add', 'warning');
+//     setClassList(eraseInputId, 'remove', 'has-input');
+//   } else if (!regex.regexId.test(idValue)) {
+//     changeConditionMessage(
+//       conditionId,
+//       '영문 또는 영문, 숫자 조합 6~12자리로 입력해주세요.'
+//     );
+//     setClassList(conditionId, 'add', 'warning');
+//   } else if (await isDuplicationId(idValue)) {
+//     changeConditionMessage(conditionId, '이미 사용 중인 아이디입니다.');
+//     setClassList(conditionId, 'add', 'warning');
+//   } else {
+//     changeConditionMessage(conditionId, '');
+//   }
+// };
+
+// const handleInputPassword = () => {
+//   const passwordValue = inputPassword.value;
+//   eraseInputPassword.classList.add('has-input');
+//   if (passwordValue === '') {
+//     changeConditionMessage(conditionPassword, '입력한 내용이 없어요.');
+//     setClassList(conditionPassword, 'add', 'warning');
+//     setClassList(eraseInputPassword, 'remove', 'has-input');
+//   } else if (!regex.regexPassword.test(passwordValue)) {
+//     changeConditionMessage(
+//       conditionPassword,
+//       '특수문자(~!@#$%^&*) 포함 6~16자리로 입력해주세요.'
+//     );
+//     setClassList(conditionPassword, 'add', 'warning');
+//   } else {
+//     changeConditionMessage(conditionPassword, '');
+//   }
+// };
+// const handleInputPasswordCheck = () => {
+//   const passwordCheckValue = inputPasswordCheck.value;
+//   eraseInputPasswordCheck.classList.add('has-input');
+//   if (passwordCheckValue === '') {
+//     changeConditionMessage(conditionPasswordCheck, '입력한 내용이 없어요.');
+//     setClassList(conditionPasswordCheck, 'add', 'warning');
+//     setClassList(eraseInputPasswordCheck, 'remove', 'has-input');
+//   } else if (passwordCheckValue !== inputPassword.value) {
+//     changeConditionMessage(
+//       conditionPasswordCheck,
+//       '일치하지 않습니다. 다시 입력해주세요.'
+//     );
+//     setClassList(conditionPasswordCheck, 'add', 'warning');
+//   } else {
+//     changeConditionMessage(conditionPasswordCheck, '');
+//   }
+// };
+
+// const handleInputEmail = () => {
+//   const emailValue = inputEmail.value;
+//   eraseInputEmail.classList.add('has-input');
+//   if (emailValue === '') {
+//     changeConditionMessage(conditionEmail, '입력한 내용이 없어요.');
+//     setClassList(conditionEmail, 'add', 'warning');
+//     setClassList(eraseInputEmail, 'remove', 'has-input');
+//   } else if (!regex.regexEmail.test(emailValue)) {
+//     changeConditionMessage(
+//       conditionEmail,
+//       '이메일 형식이 맞지 않습니다. 다시 입력해 주세요.'
+//     );
+//     setClassList(conditionEmail, 'add', 'warning');
+//   } else {
+//     changeConditionMessage(conditionEmail, '');
+//   }
+// };
+
+// const manageCondition = (Condition) => {
+//   setClassList(eraseInputId, 'add', 'has-input');
+//   switch (Condition) {
+//     case 'empty':
+//       changeConditionMessage(conditionId, '입력한 내용이 없어요.');
+//       setClassList(conditionId, 'add', 'warning');
+//       setClassList(eraseInputId, 'remove', 'has-input');
+//       break;
+
+//     case 'invalidId':
+//       changeConditionMessage(
+//         conditionId,
+//         '영문 또는 영문, 숫자 조합 6~12자리로 입력해주세요.'
+//       );
+//       setClassList(conditionId, 'add', 'warning');
+//       break;
+
+//     case 'invalidPassword':
+//       changeConditionMessage(
+//         conditionPassword,
+//         '특수문자(~!@#$%^&*) 포함 6~16자리로 입력해주세요.'
+//       );
+//       setClassList(conditionPassword, 'add', 'warning');
+//       break;
+//     case 'invalidEmail':
+//       changeConditionMessage(
+//         conditionEmail,
+//         '이메일 형식이 맞지 않습니다. 다시 입력해 주세요.'
+//       );
+//       setClassList(conditionEmail, 'add', 'warning');
+//       break;
+
+//     case 'duplicationId':
+//       changeConditionMessage(conditionId, '이미 사용 중인 아이디입니다.');
+//       setClassList(conditionId, 'add', 'warning');
+//       break;
+
+//     case 'notMatchedPassword':
+//       changeConditionMessage(
+//         conditionPasswordCheck,
+//         '일치하지 않습니다. 다시 입력해주세요.'
+//       );
+//       setClassList(conditionPasswordCheck, 'add', 'warning');
+//       break;
+//     case 'validId':
+//       changeConditionMessage(conditionId, '');
+//       break;
+//     case 'validPassword':
+//       changeConditionMessage(conditionPassword, '');
+//       break;
+//     case 'validPasswordCheck':
+//       changeConditionMessage(conditionPasswordCheck, '');
+//       break;
+//     case 'validEmail':
+//       changeConditionMessage(conditionEmail, '');
+//       break;
+//     default:
+//       break;
+//   }
+// };
+
+const manageConditionId = (idCondition) => {
+  setClassList(eraseInputId, 'add', 'has-input');
+  switch (idCondition) {
+    case 'empty':
+      changeConditionMessage(conditionId, '입력한 내용이 없어요.');
+      setClassList(conditionId, 'add', 'warning');
+      setClassList(eraseInputId, 'remove', 'has-input');
+      break;
+    case 'invalidId':
+      changeConditionMessage(
+        conditionId,
+        '영문 또는 영문, 숫자 조합 6~12자리로 입력해주세요.'
+      );
+      setClassList(conditionId, 'add', 'warning');
+      break;
+    case 'duplicationId':
+      changeConditionMessage(conditionId, '이미 사용 중인 아이디입니다.');
+      setClassList(conditionId, 'add', 'warning');
+      break;
+    default:
+      changeConditionMessage(conditionId, '');
+      break;
   }
-  console.log(userStatus.password);
 };
 
-const handleInputPasswordCheck = () => {
-  const passwordCheckValue = inputPasswordCheck.value;
-  eraseInputPasswordCheck.classList.add('has-input');
-  if (passwordCheckValue === '') {
-    conditionPasswordCheck.textContent = '입력한 내용이 없어요.';
-    conditionPasswordCheck.classList.add('warning');
-    isValid('passwordCheck', false);
-  } else if (passwordCheckValue !== inputPassword.value) {
-    conditionPasswordCheck.textContent =
-      '일치하지 않습니다. 다시 입력해주세요.';
-    conditionPasswordCheck.classList.add('warning');
-    isValid('passwordCheck', false);
-  } else {
-    conditionPasswordCheck.textContent = '';
-    isValid('passwordCheck', true);
+const manageConditionPassword = (passwordCondition) => {
+  setClassList(eraseInputPassword, 'add', 'has-input');
+  switch (passwordCondition) {
+    case 'empty':
+      changeConditionMessage(conditionPassword, '입력한 내용이 없어요.');
+      setClassList(conditionPassword, 'add', 'warning');
+      setClassList(eraseInputPassword, 'remove', 'has-input');
+      break;
+    case 'invalidPassword':
+      changeConditionMessage(
+        conditionPassword,
+        '특수문자(~!@#$%^&*) 포함 6~16자리로 입력해주세요.'
+      );
+      setClassList(conditionPassword, 'add', 'warning');
+      break;
+    default:
+      changeConditionMessage(conditionPassword, '');
+      break;
   }
 };
 
-const handleInputEmail = () => {
-  const emailValue = inputEmail.value;
-  eraseInputEmail.classList.add('has-input');
-  if (emailValue === '') {
-    conditionEmail.textContent = '입력한 내용이 없어요.';
-    conditionEmail.classList.add('warning');
-  } else if (!regex.regexEmail.test(emailValue)) {
-    conditionEmail.textContent =
-      '이메일 형식이 맞지 않습니다. 다시 입력해 주세요.';
-    conditionEmail.classList.add('warning');
-  } else {
-    conditionEmail.textContent = '';
+const manageConditionPasswordCheck = (passwordCheckCondition) => {
+  setClassList(eraseInputPasswordCheck, 'add', 'has-input');
+  switch (passwordCheckCondition) {
+    case 'empty':
+      changeConditionMessage(conditionPasswordCheck, '입력한 내용이 없어요.');
+      setClassList(conditionPasswordCheck, 'add', 'warning');
+      setClassList(eraseInputPasswordCheck, 'remove', 'has-input');
+      break;
+    case 'notMatchedPassword':
+      changeConditionMessage(
+        conditionPasswordCheck,
+        '일치하지 않습니다. 다시 입력해주세요.'
+      );
+      setClassList(conditionPasswordCheck, 'add', 'warning');
+      break;
+    default:
+      changeConditionMessage(conditionPasswordCheck, '');
+      break;
+  }
+};
+
+const manageConditionEmail = (emailCondition) => {
+  setClassList(eraseInputEmail, 'add', 'has-input');
+  switch (emailCondition) {
+    case 'empty':
+      changeConditionMessage(conditionEmail, '입력한 내용이 없어요.');
+      setClassList(conditionEmail, 'add', 'warning');
+      setClassList(eraseInputEmail, 'remove', 'has-input');
+      break;
+    case 'invalidEmail':
+      changeConditionMessage(
+        conditionEmail,
+        '이메일 형식이 맞지 않습니다. 다시 입력해 주세요.'
+      );
+      setClassList(conditionEmail, 'add', 'warning');
+      break;
+    default:
+      changeConditionMessage(conditionEmail, '');
+      break;
   }
 };
 
@@ -144,10 +298,10 @@ const handlePasswordShow = (e) => {
   const selectedButton = e.target;
   if (selectedInputNode.type === 'text') {
     selectedInputNode.type = 'password';
-    selectedButton.classList.remove('is-checked');
+    setClassList(selectedButton, 'remove', 'is-checked');
   } else {
     selectedInputNode.type = 'text';
-    selectedButton.classList.add('is-checked');
+    setClassList(selectedButton, 'add', 'is-checked');
   }
 };
 
@@ -158,8 +312,8 @@ const handleEraseInput = (e) => {
   const selectedSpanNode =
     selectedSiblingNodes[selectedSiblingNodes.length - 1];
   selectedInputNode.value = '';
-  selectedButtonNode.classList.remove('has-input');
-  selectedSpanNode.textContent = '입력한 내용이 없어요.';
+  setClassList(selectedButtonNode, 'remove', 'has-input');
+  changeConditionMessage(selectedSpanNode, '입력한 내용이 없어요.');
 };
 
 const handleAgreeAll = (e) => {
@@ -186,10 +340,102 @@ const handleAgreeMarketing = (e) => {
   }
 };
 
-inputId.addEventListener('keyup', handleInputId);
-inputPassword.addEventListener('keyup', handleInputPassword);
-inputPasswordCheck.addEventListener('keyup', handleInputPasswordCheck);
-inputEmail.addEventListener('keyup', handleInputEmail);
+const isValidId = async (userInput) => {
+  const id = userInput;
+  if (id.trim() === '') {
+    return 'empty';
+  }
+  if (!regex.regexId.test(id)) {
+    return 'invalidId';
+  }
+  if (await isDuplicationId(id)) {
+    return 'duplicationId';
+  }
+  return 'validId';
+};
+
+const isValidPassword = (userInput) => {
+  const password = userInput;
+  if (password.trim() === '') {
+    return 'empty';
+  }
+  if (!regex.regexPassword.test(password)) {
+    return 'invalidPassword';
+  }
+  return 'validPassword';
+};
+
+const isValidPasswordCheck = () => {
+  const passwordCheck = inputPasswordCheck.value;
+  if (passwordCheck.trim() === '') {
+    return 'empty';
+  }
+  if (passwordCheck !== inputPassword.value) {
+    return 'notMatchedPassword';
+  }
+  return 'validPasswordCheck';
+};
+
+const isValidEmail = (userInput) => {
+  const email = userInput;
+  if (email.trim() === '') {
+    return 'empty';
+  }
+  if (!regex.regexEmail.test(email)) {
+    return 'invalidEmail';
+  }
+  return 'validEmail';
+};
+
+const handleForm = async (e) => {
+  const tag = e.target;
+  switch (tag.id) {
+    case 'input-id':
+      await isValidId(tag.value).then((validStatus) => {
+        manageConditionId(validStatus);
+        checkValid.id = validStatus === 'validId';
+      });
+      break;
+    case 'input-password':
+      manageConditionPassword(isValidPassword(tag.value));
+      manageConditionPasswordCheck(
+        isValidPasswordCheck(inputPasswordCheck.value)
+      );
+      checkValid.password = isValidPassword(tag.value) === 'validPassword';
+      break;
+    case 'input-password-check':
+      manageConditionPasswordCheck(isValidPasswordCheck(tag.value));
+      checkValid.passwordCheck =
+        isValidPasswordCheck(tag.value) === 'validPasswordCheck';
+      break;
+    case 'input-email':
+      manageConditionEmail(isValidEmail(tag.value));
+      checkValid.email = isValidEmail(tag.value) === 'validEmail';
+      break;
+    default:
+      break;
+  }
+
+  if (
+    checkValid.id === true &&
+    checkValid.password === true &&
+    inputPassword.value === inputPasswordCheck.value &&
+    checkValid.email === true &&
+    checkboxAge.checked === true &&
+    checkboxTerms.checked === true &&
+    checkboxCollection.checked === true &&
+    checkboxProvisionHomepage.checked === true
+  ) {
+    buttonSubmit.disabled = false;
+  } else {
+    buttonSubmit.disabled = true;
+  }
+};
+
+// inputId.addEventListener('keyup', handleInputId);
+// inputPassword.addEventListener('keyup', handleInputPassword);
+// inputPasswordCheck.addEventListener('keyup', handleInputPasswordCheck);
+// inputEmail.addEventListener('keyup', handleInputEmail);
 buttonShowPassword.forEach((node) => {
   node.addEventListener('click', handlePasswordShow);
 });
@@ -198,3 +444,7 @@ buttonEraseInput.forEach((node) => {
 });
 checkboxAll.addEventListener('click', handleAgreeAll);
 checkboxMarketing.addEventListener('click', handleAgreeMarketing);
+signupForm.addEventListener('input', handleForm);
+buttonEraseInput.forEach((node) => {
+  node.addEventListener('click', handleForm);
+});
