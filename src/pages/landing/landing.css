@@ -1,9 +1,9 @@
-
+/* reset */
 *{
   box-sizing: border-box;
 }
 
-.sr-only {
+.landing .sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -14,14 +14,14 @@
   border: 0;
 }
 
-/* reset */
-
-/* landing 페이지 */
+/* landing */
 .landing{
     background-color: black;
     margin-top: 0;
     padding-top: 0;
     color: white;
+
+    /* 드래그 방지 */
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
@@ -40,24 +40,25 @@
   display: flex;
   justify-content: space-between;
   padding: 0.7rem 0.9375rem;
-
 }
 
 .landing .div-account{
   position: relative;
-  top: -0.06rem;
+  top: -0.25rem;
+  margin: auto 0;
 }
 
 .landing .div-account a{
   color: white;
-  font-size: 0.7rem;
-  padding: 0.4rem 0.3rem;
-  margin: 0.2rem;
+  font-size: calc(0.5rem + 0.5vw);
+  padding: calc(0.1rem + 0.1vw) calc(0.3rem + 0.5vw);
+  margin: calc(0.2rem);
   cursor: pointer;
 }
 
 .landing .div-account .signup{
   background-color: #1C358E;
+  border: 1px solid #1C358E;
   border-radius: 5px;
 }
 
@@ -70,21 +71,13 @@
     text-align: center;
 }
 
-.landing p{
-
-}
-/* 
-.landing .h1-logo{
-  padding: 0.3125rem 0.9375rem;
-} */
-
-.landing .h1-logo img{
-    width: 1.875rem;
-    height: 0.625rem;
+.landing .h1-jfamLogo svg{
+    width: calc(35px + 5vw);
+    height: calc(15px + 2vw);
 }
 
 
-.landing .section-promotionTop{
+.landing .section-promotion-top{
     padding: 17% 0;
     height: calc(23.875rem + 3%);
     background: linear-gradient(180deg, rgba(0,0,0,0.644429347826087) 0%, rgba(0,0,0,0.9052989130434783) 90%, rgba(0,0,0,1) 100%), url('/src/assets/landing/background-img.png');
@@ -95,31 +88,29 @@
   
   
 .landing .p-copywriting{
-    /* padding-top: 5.8rem; */
-    font-size: 1rem;
-    font-style: normal;
+    font-size: calc(0.4rem + 2vw);
     font-weight: 700;
     line-height: 140%; /* 22.4px */
 }
 
 .landing .p-promoMessage{
+    margin: 0 auto 2vw auto;
     color: var(--gray-400, #898989);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
     /* Paragraph/Small */
-    font-size: 0.75rem;
-    font-style: normal;
+    font-size: calc(0.3rem + 1vw);
     font-weight: 400;
-    line-height: 160%; /* 19.205px */
-    /* padding: 0.2rem 0 1rem 0; */
+    line-height: calc(0.5rem + 1.5vw); /* 19.205px */
 }
 
 .landing .a-signupLink{
     margin: 0 auto;
     color: white;
     display: flex;
-    width: 17rem;
+    width: calc(15rem + 10vw);
+    font-size: calc(0.8rem + 0.3vw);
     /* width: 60%; */
-    height: 3rem;
+    height: calc(2.5rem + 1vw);
     padding: 0rem 1.75rem 0rem 2.7rem;
     flex-direction: column;
     align-items: center;
@@ -128,27 +119,27 @@
     background: var(--brand-red-2, #1C358E);
     background-image: url('/src/assets/landing/button_before_logo.png');
     background-repeat: no-repeat;
-    background-size: 38px;
-    background-position: 10px 0;
+    background-size: calc(2rem + 1vw);
+    background-position: calc(0.6rem + 0.8vw)0;
   }
 
 .landing .h2-sectionTitle{
     color: var(--white, #FFF);
     text-align: center;
-    padding-top: 5vw;
+    padding-top: 10vw;
     
     /* Heading/Large */
     font-family: Pretendard;
-    font-size: 21.328px;
+    font-size:  calc(1rem + 1vw);
     font-style: normal;
     font-weight: 700;
     line-height: 140%; /* 29.859px */
 }
 
-.landing .swiper-slide img{
+.landing .swiper-wrapper img{
   /* margin: 0 50px; */
   width: 100%;
-  max-width: 270px;
+  max-width: 520px;
 }
 
 @keyframes sliding{
@@ -163,10 +154,6 @@
 .landing .div-slider{
   overflow: hidden;
   white-space: nowrap;
-}
-
-.landing .section-popularContent p{
-  padding-bottom: 1.5rem;
 }
 
 .landing .div-slide__one,
@@ -193,11 +180,12 @@
   padding: 0 5px;
 }
 
-.landing .section-promotionBottom{
+.landing .section-promotion-bottom{
   padding: 13vw 0px;
+  height: calc(20rem + 3%);
 }
 
-.landing .section-promotionBottom div{
+.landing .section-promotion-bottom div{
     margin: 0 auto;
     position: relative;
     display: flex;
@@ -208,17 +196,21 @@
     padding: 0 auto;
 }
 
-.landing .section-promotionBottom .svg-logo{
+.landing .section-promotion-bottom .svg-logo{
     width: 5.1875rem;
     height: 2rem;
 }
 
+.landing .section-promotion-bottom p{
+  margin-bottom: calc(1rem);
+}
+
 @media screen and (min-width: 768px){
-  .landing .h1-logo svg{width: 4.8125rem; height: 1.5rem;}
-  .landing .section-promotionBottom .svg-logo{width: 8.4375rem; height: 3.25rem;}
+  /* .landing .h1-jfamLogo svg{width: 4.8125rem; height: 1.5rem;} */
+  .landing .section-promotion-bottom .svg-logo{width: 8.4375rem; height: 3.25rem;}
 }
 
 @media screen and (min-width: 1920px){
-  .landing .h1-logo svg{width: 8.25rem; height: 2.625rem;}
-  .landing .section-promotionBottom .svg-logo{width: 17.4375rem; height: 6.875rem;}
+  /* .landing .h1-jfamLogo svg{width: 8.25rem; height: 2.625rem;} */
+  .landing .section-promotion-bottom .svg-logo{width: 17.4375rem; height: 6.875rem;}
 }

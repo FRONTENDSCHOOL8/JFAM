@@ -7,20 +7,19 @@ var swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     spaceBetween: 30,
     centeredSlides: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+    breakpoints:{
+      1920:{
+        slidesPerView: 4,
+      },
     },
- 
   });
 
 
-  // 헤더 스크롤 배경
+  // 헤더 스크롤
 document.addEventListener("scroll", function() {
   var header = document.querySelector('.landing .header')
   var scrollPosition = window.scrollY;
 
-  // 스크롤 위치에 따라 배경을 변화시키기
   if (scrollPosition > 50) {
     header.style.backgroundColor = "rgba(0, 0, 0)"; // 스크롤 내리면 배경 불투명
   } else {
@@ -30,9 +29,19 @@ document.addEventListener("scroll", function() {
 
 
 // gsap - 적용하면 얘 애니메이션 끝날때까지 기다렸다가 포켓베이스 실행됨
-gsap.from(".p-copywriting",{ y:100, opacity: 0.2, ease: 'steps(30)'});
+// gsap.from(".p-copywriting",{ y:100, opacity: 0.2, ease: 'steps(30)'});
 
 // 포켓베이스
+function insertLast(node, text){  
+  if(typeof node === 'string') node = document.querySelector(node);
+  node.insertAdjacentHTML('beforeend',text);
+}
+
+async function getPbList(recordsName){
+  const response = await pb.collection(recordsName).getList();
+  console.log(response);
+  return response.items;
+}
 
 function getPbImageURL(item,fileName = 'img'){
   return `https://jfam.pockethost.io/api/files/${item.collectionId}/${item.id}/${item[fileName]}`
@@ -47,27 +56,26 @@ async function renderSmallThumbnail(){
     const template = /* html */`
       <img src="${getPbImageURL(item)}" alt="">
     `;
-    document.querySelector('.landing .div-slide__one').insertAdjacentHTML('beforeend',template);
-    document.querySelector('.landing .div-slide__two').insertAdjacentHTML('beforeend',template);
-    document.querySelector('.landing .div-slide__three').insertAdjacentHTML('beforeend',template);
-    document.querySelector('.landing .div-slide__four').insertAdjacentHTML('beforeend',template);
-
+    insertLast('.landing .div-slide__one',template);
+    insertLast('.landing .div-slide__two',template);
+    insertLast('.landing .div-slide__three',template);
+    insertLast('.landing .div-slide__four',template);
+    
   });
 }
 
 async function renderSwiperThumbnail(){
-
+  // const userData_swiper = getPbList('program_thumbnail');
   const response_swiper = await pb.collection('program_thumbnail').getList();
   const userData_swiper = response_swiper.items;
-
+  console.log('userdata', userData_swiper)
   userData_swiper.forEach((item) => {
     console.log(getPbImageURL(item,"image"));
     const template = /* html */`
     <div class="swiper-slide"><img src="${getPbImageURL(item,'image')}" alt="">
     </div>
     `;
-    console.log(template);
-    document.querySelector('.landing .swiper-wrapper').insertAdjacentHTML('beforeend',template);
+    insertLast('.landing .swiper-wrapper',template);
   });
 }
 
