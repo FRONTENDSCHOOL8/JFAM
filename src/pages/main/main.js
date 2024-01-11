@@ -1,9 +1,7 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import pb from "/src/js/pocketbase";
-import '/src/pages/main/main.css'
-// console.log(pb)
-
+import '/src/pages/main/main.css';
 
 /* -------------------------------------------------------------------------- */
 // 스와이퍼
@@ -24,50 +22,133 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
+
 /* -------------------------------------------------------------------------- */
 // 데이터 연동
 
-// 돔 요소 납치하기
+// 함수 ::돔 요소 납치하기
 function getNode(node) {
   if (typeof node !== "string") {
     throw new Error("문자열 아규먼트만 잡아오세요.")
   }
   return document.querySelector(node);
 }
-function getNodes(node) {
-  if (typeof node !== "string") {
-    throw new Error("문자열 아규먼트만 잡아오세요.")
-  }
-  return document.querySelectorAll(node);
-}
-// 돔에 노드 추가
+
+// 함수 ::돔에 노드 추가
 function insertEnd(node,text){
-  node = getNode(node);
-  node.insertAdjacentHTML("beforeend",text)
+  getNode(node).insertAdjacentHTML("beforeend",text)
 }
 
-// 포켓베이스 연동 ::썸네일
-const programThumbnail = await pb.collection('program_thumbnail').getList();
-console.log(programThumbnail)
-const programData = programThumbnail.items;
-console.log(programData)
+/* -------------------------------------------------------------------------- */
+// 함수 ::포켓베이스 이미지 url 가져오기
+function getPbImageURL(item){
+  return `https://jfam.pockethost.io/api/files/${item.collectionName}/${item.id}/${item.image}`
+}
+
+// 포켓베이스 연동 :: 폴더별 연동
+const programData = await pb.collection('program_thumbnail').getFullList({
+  sort: 'rank',
+});
 
 
-// 돔 입력 함수::썸네일
+const vodData = await pb.collection('vod_thumbnail').getFullList({
+  sort: 'created',
+});
+const liveChannelData = await pb.collection('live_thumbnail').getFullList({
+  sort: '-viewership',
+});
+
+
+
+/* -------------------------------------------------------------------------- */
+// 돔 입력 함수
+
+// ::시청 콘텐츠
+programData.forEach((item)=>{
+  if (item.isClicked){
+  const template = /* html */`
+          <figure>
+          <a href="${item.link}">
+          <img
+            class="thumbnail-vertical"
+            src="${getPbImageURL(item)}"
+            alt=""
+          /></a>
+          <figcaption>${item.title}</figcaption></figure>
+          `
+  insertEnd('.now-see > div', template);
+  }
+})
+// ::기본 컨텐츠 
 programData.forEach((item)=>{
   const template = /* html */`
-  <figure>
-  <a href="${item.link}"></a>
-  <img
-    class="thumbnail-vertical"
-    src="/src/assets/main/images/thumbnail_a.png"
-    alt=""
-  />
-  <figcaption>${item.title}</figcaption>
+          <figure>
+          <a href="${item.link}">
+          <img
+            class="thumbnail-vertical"
+            src="${getPbImageURL(item)}"
+            alt=""
+          /></a>
+          <figcaption>${item.title}</figcaption>
+          </figure>
   `
-  console.log(template)
-  insertEnd('.now-see > div', template);
+  insertEnd('.must-see > div', template);
+})
 
+
+// ::vod
+vodData.forEach((item)=>{
+  const template = /* html */`
+          <figure>
+          <a href="${item.link}">
+          <img
+            class="thumbnail-horizontal"
+            src="${getPbImageURL(item)}"
+            alt=""
+          /></a>
+          <figcaption>
+            ${item.title}
+            <p>${item.episode_title}</p>
+          </figcaption>
+          </figure>
+  `
+  insertEnd('.quickvod > div', template);
+})
+// ::실시간 인기 프로그램
+programData.forEach((item)=>{
+  const template = /* html */`
+          <figure>
+          <a href="${item.link}">
+          <img
+            class="thumbnail-vertical"
+            src="${getPbImageURL(item)}"
+            alt=""
+          />
+          <figcaption><em>${item.rank}</em> ${item.title}</figcaption>
+        </figure>
+  `
+  insertEnd('.top-title > div', template);
+})
+// ::인기 LIVE 채널
+liveChannelData.forEach((item)=>{
+const template = /* html */`
+          <figure>
+          <a href="${item.link}">
+          <img
+            class="thumbnail-horizontal"
+            src="${getPbImageURL(item)}"
+            alt=""
+          />
+          <figcaption>
+              <em>${item.rank}</em>
+            <p>
+            ${item.title}<span> ${item.episode_title}<br />${item.viewership}</span>
+            </p>
+          </figcaption>
+          </a>
+          </figure>
+`
+insertEnd('.top-live > div', template);
 })
 
 
@@ -75,35 +156,8 @@ programData.forEach((item)=>{
 
 
 
-
-
-
-
-//이미지 주소 가져오기
-
-// const titlesData = pb.
-// function getPbImageURL(item,fileName){
-//   return `https://jfam.pockethost.io/api/files/${item.collectionName}/${item.id}/${item[fileName]}?thumb=100x300`
-// }
-// console.log(getPbImageURL(titlesData))
-// const url = pb.files.getUrl(record, firstFilename, {'thumb': '100x250'});
-
-
-
 /* -------------------------------------------------------------------------- */
-
-
-//있는 html 에 타이틀 텍스트 변경 : 추가안됨 수정만 가능
-
-// const titlesName = getNodes('.now-see figcaption');
-// titlesName[0].textContent =  getTitle(1)
-// titlesName[1].textContent =  getTitle(2)
-// titlesName[2].textContent =  getTitle(3)
-// titlesName[3].textContent =  getTitle(4)
-
-
-/* -------------------------------------------------------------------------- */
-//n번째의 데이터 뱉는 함수 ⭐️⭐️⭐️⭐️⭐️
+// n번째의 데이터 뱉는 함수 ⭐️⭐️⭐️⭐️⭐️
 // function getTitle2(number){
 //   const title = programData[number-1].title
 //   const link = programData[number-1].link
@@ -112,7 +166,7 @@ programData.forEach((item)=>{
 // }
 // console.log(getTitle2(1))
 
-//타이틀만 몽땅 뽑기
+// 타이틀만 몽땅 뽑기
 // let titles =[]
 // const getTitle = record.items.forEach((item)=>{
 //   titles.push(item.title)
