@@ -226,6 +226,10 @@ button:active {
   line-height: 150%;
 }
 
+.signup .button-signup-submit:disabled {
+  cursor: not-allowed;
+}
+
 @media screen and (min-width: 48rem) {
   .signup .signup .signup-form {
     max-width: 26rem;
