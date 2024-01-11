@@ -3,16 +3,18 @@ import gsap from 'gsap';
 import pb from '/src/js/pocketbase.js';
 import manageData from '/src/js/response.js'
 
-var swiper = new Swiper(".mySwiper", {
+const swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     spaceBetween: 30,
     centeredSlides: true,
     breakpoints:{
       1920:{
-        slidesPerView: 4,
+        slidesPerView: 3,
       },
     },
   });
+
+  let currentSwiperState = null; // 이전 스와이퍼 상태를 저장할 변수
 
 
   // 헤더 스크롤
@@ -64,11 +66,12 @@ async function renderSmallThumbnail(){
   });
 }
 
-async function renderSwiperThumbnail(){
+async function renderVerticelSwiper(){
   // const userData_swiper = getPbList('program_thumbnail');
   const response_swiper = await pb.collection('program_thumbnail').getList();
   const userData_swiper = response_swiper.items;
-  console.log('userdata', userData_swiper)
+  console.log('userdata', userData_swiper);
+  document.querySelector('.landing .swiper-wrapper').innerHTML = '';
   userData_swiper.forEach((item) => {
     console.log(getPbImageURL(item,"image"));
     const template = /* html */`
@@ -79,6 +82,54 @@ async function renderSwiperThumbnail(){
   });
 }
 
+async function renderHorizontalSwiper(){
+  // const userData_swiper = getPbList('program_thumbnail');
+  const response_swiper = await pb.collection('original_thumbnail_small').getList();
+  const userData_swiper = response_swiper.items;
+  console.log('userdata', userData_swiper)
+  document.querySelector('.landing .swiper-wrapper').innerHTML = '';
+  userData_swiper.forEach((item) => {
+    console.log(getPbImageURL(item,"image"));
+    const template = /* html */`
+    <div class="swiper-slide"><img src="${getPbImageURL(item,'image')}" alt="">
+    </div>
+    `;
+    insertLast('.landing .swiper-wrapper',template);
+  });
+}
 
+function initSwiper() {
+  const viewportWidth = window.innerWidth;
+  let newSwiperState = null;
+
+  if(viewportWidth<1920) {
+    newSwiperState = 'vertical';
+  }
+  else{
+    newSwiperState = 'horizontal';
+  } 
+
+  if(newSwiperState !== currentSwiperState){
+    renderSwiper(newSwiperState)
+  }
+}
+
+function renderSwiper(swiperState){
+  if(swiperState === 'vertical'){
+    currentSwiperState = 'vertical';
+    renderVerticelSwiper();
+  }else if(swiperState === 'horizontal'){
+    currentSwiperState = 'horizontal';
+    renderHorizontalSwiper();
+  }
+}
+console.log(currentSwiperState);
+
+// 초기화 시 크기를 확인
+initSwiper();
+
+// 리사이즈 이벤트에 대한 리스너 추가
+window.addEventListener('resize', initSwiper);
+
+// 추가적으로 필요한 초기화 로직이 있다면 여기에 추가
 renderSmallThumbnail();
-renderSwiperThumbnail();

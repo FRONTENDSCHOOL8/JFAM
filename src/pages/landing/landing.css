@@ -213,5 +213,11 @@
 
 @media screen and (min-width: 1920px){
   /* .landing .h1-jfamLogo svg{width: 8.25rem; height: 2.625rem;} */
+  .landing .swiper-wrapper img{
+    /* margin: 0 50px; */
+    width: 100%;
+    max-width: 900px;
+    border-radius: 10px;
+  }
   .landing .section-promotion-bottom .svg-logo{width: 17.4375rem; height: 6.875rem;}
 }
