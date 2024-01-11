@@ -20,5 +20,9 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  rules: {},
+  rules: {
+    'import/extensions': 0,
+    'import/no-unresolved': 0,
+    'import/no-absolute-path': 0,
+  },
 };
