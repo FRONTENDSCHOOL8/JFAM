@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
 import gsap from 'gsap';
 import pb from '/src/js/pocketbase.js';
-import manageData from '/src/js/response.js'
+// import manageData from '/src/js/response.js'
 
 const swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
@@ -18,9 +18,9 @@ const swiper = new Swiper(".mySwiper", {
 
 
   // 헤더 스크롤
-document.addEventListener("scroll", function() {
-  var header = document.querySelector('.landing .header')
-  var scrollPosition = window.scrollY;
+document.addEventListener("scroll", () => {
+  const header = document.querySelector('.landing .header');
+  const scrollPosition = window.scrollY;
 
   if (scrollPosition > 50) {
     header.style.backgroundColor = "rgba(0, 0, 0)"; // 스크롤 내리면 배경 불투명
@@ -31,18 +31,13 @@ document.addEventListener("scroll", function() {
 
 
 // gsap - 적용하면 얘 애니메이션 끝날때까지 기다렸다가 포켓베이스 실행됨
-// gsap.from(".p-copywriting",{ y:100, opacity: 0.2, ease: 'steps(30)'});
+gsap.from(".p-copywriting",{ y:100, opacity: 0.2, ease: 'steps(30)'});
 
 // 포켓베이스
 function insertLast(node, text){  
+  // eslint-disable-next-line no-param-reassign
   if(typeof node === 'string') node = document.querySelector(node);
   node.insertAdjacentHTML('beforeend',text);
-}
-
-async function getPbList(recordsName){
-  const response = await pb.collection(recordsName).getList();
-  console.log(response);
-  return response.items;
 }
 
 function getPbImageURL(item,fileName = 'img'){
@@ -68,12 +63,10 @@ async function renderSmallThumbnail(){
 
 async function renderVerticelSwiper(){
   // const userData_swiper = getPbList('program_thumbnail');
-  const response_swiper = await pb.collection('program_thumbnail').getList();
-  const userData_swiper = response_swiper.items;
-  console.log('userdata', userData_swiper);
+  const responseSwiper = await pb.collection('program_thumbnail').getList();
+  const userDataSwiper = responseSwiper.items;
   document.querySelector('.landing .swiper-wrapper').innerHTML = '';
-  userData_swiper.forEach((item) => {
-    console.log(getPbImageURL(item,"image"));
+  userDataSwiper.forEach((item) => {
     const template = /* html */`
     <div class="swiper-slide"><img src="${getPbImageURL(item,'image')}" alt="">
     </div>
@@ -84,18 +77,26 @@ async function renderVerticelSwiper(){
 
 async function renderHorizontalSwiper(){
   // const userData_swiper = getPbList('program_thumbnail');
-  const response_swiper = await pb.collection('original_thumbnail_small').getList();
-  const userData_swiper = response_swiper.items;
-  console.log('userdata', userData_swiper)
+  const responseSwiper = await pb.collection('original_thumbnail_small').getList();
+  const userDataSwiper = responseSwiper.items;
   document.querySelector('.landing .swiper-wrapper').innerHTML = '';
-  userData_swiper.forEach((item) => {
-    console.log(getPbImageURL(item,"image"));
+  userDataSwiper.forEach((item) => {
     const template = /* html */`
     <div class="swiper-slide"><img src="${getPbImageURL(item,'image')}" alt="">
     </div>
     `;
     insertLast('.landing .swiper-wrapper',template);
   });
+}
+
+function renderSwiper(swiperState){
+  if(swiperState === 'vertical'){
+    currentSwiperState = 'vertical';
+    renderVerticelSwiper();
+  }else if(swiperState === 'horizontal'){
+    currentSwiperState = 'horizontal';
+    renderHorizontalSwiper();
+  }
 }
 
 function initSwiper() {
@@ -114,16 +115,6 @@ function initSwiper() {
   }
 }
 
-function renderSwiper(swiperState){
-  if(swiperState === 'vertical'){
-    currentSwiperState = 'vertical';
-    renderVerticelSwiper();
-  }else if(swiperState === 'horizontal'){
-    currentSwiperState = 'horizontal';
-    renderHorizontalSwiper();
-  }
-}
-console.log(currentSwiperState);
 
 // 초기화 시 크기를 확인
 initSwiper();
