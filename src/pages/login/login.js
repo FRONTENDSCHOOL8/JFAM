@@ -1,4 +1,5 @@
-// import pb from '/src/js/pocketbase.js';
+import pb from '/src/js/pocketbase.js';
+import { getStorage, setStorage } from '/src/js/storage.js';
 
 const idInput = document.querySelector('.input-id'); // 이메일 입력하는 부분 태그
 const idCondition = document.querySelector('.id-input-condition');
@@ -6,18 +7,9 @@ const pwInput = document.querySelector('.input-password'); // 비번 입력하�
 const pwCondition = document.querySelector('.password-input-condition');
 const btnTag = document.querySelector('.login-button'); // 버튼 태그
 const checkButton = document.querySelector('.auto-login-img');
-// const unCheckButton = document.getElementById('.');
 
 let idCheck = false;
 let pwCheck = false;
-// let isImage1Visible = true;
-
-// // 객체
-
-const user = {
-  id: 'frontend',
-  pw: 'spdlqj123!@',
-};
 
 // 정규식
 
@@ -34,11 +26,22 @@ function pwReg(text) {
 
 // 아이디, 비번 체크 함수
 
+const isAuthentication = async (userName, userPassword) => {
+  try {
+    const authData = await pb
+      .collection('users')
+      .authWithPassword(userName, userPassword);
+    return authData;
+  } catch (error) {
+    window.alert(
+      '일치하는 회원정보가 없습니다. 아이디, 비밀번호를 다시 확인해주세요.'
+    );
+    return false;
+  }
+};
+
 function handleId() {
-  // const tag = e.target;
-  // const idCheck = idReg(tag.value);
   idCheck = idReg(idInput.value);
-  console.log(idCheck);
 
   if (idCheck) {
     idCondition.textContent = '';
@@ -46,15 +49,11 @@ function handleId() {
     idCondition.textContent =
       '영문 또는 영문, 숫자 조합 6~12자리로 입력해주세요.';
   }
-  // idValid(tag.value, IdInput);
-  // visitor.id = tag.value;
 }
 
 function handlePw(e) {
   const tag = e.target;
   pwCheck = pwReg(tag.value);
-
-  console.log(pwCheck);
 
   if (pwCheck) {
     pwCondition.textContent = '';
@@ -64,16 +63,25 @@ function handlePw(e) {
   }
 }
 
-function handleBtn(e) {
-  e.preventDefault();
+async function handleBtn(e) {
   if (idCheck && pwCheck) {
-    if (user.id === idInput.value && user.pw === pwInput.value) {
-      console.log('로그인 성공!');
+    e.preventDefault();
+    const userData = await isAuthentication(idInput.value, pwInput.value);
+    if (userData) {
+      // console.log('성공!');
+      // setStorage('auth', {
+      //   isAuth: true,
+      //   data: userData,
+      // });
+
+      console.log(getStorage('auth'));
     } else {
-      console.log('아이디나 비밀번호가 틀렸습니다.');
+      console.log(
+        '일치하는 회원정보가 없습니다. 아이디, 비밀번호를 다시 확인해주세요.'
+      );
     }
   } else {
-    console.log('잘못 작성하셨습니다.');
+    console.log('아이디나 비밀번호 형식을 맞춰주세요.');
   }
 }
 
@@ -93,13 +101,4 @@ function handleChecked() {
 idInput.addEventListener('input', handleId);
 pwInput.addEventListener('input', handlePw);
 btnTag.addEventListener('click', handleBtn);
-// imageContainer.addEventListener('click', function () {
-//   if (isImage1Visible) {
-//     image1.style.display = 'none';
-//     image2.style.display = 'block';
-//   } else {
-//     image1.style.display = 'block';
-//     image2.style.display = 'none';
-//   }
-// });
 checkButton.addEventListener('click', handleChecked);
