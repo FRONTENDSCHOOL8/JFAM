@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="stylesheet" href="/src/styles/reset.css" />
     <link rel="stylesheet" href="/src/pages/login/login.css" />
-    <!-- <script type="module" src="/main.js"></script> -->
+    <script type="module" src="/src/pages/login/login.js"></script>
   </head>
   <body>
     <div class="login">
@@ -40,6 +40,7 @@
               autocomplete="username"
               tabindex="1"
             />
+            <span class="id-input-condition"></span>
           </div>
           <div class="password-input-container">
             <label class="sr-only" for="input-password">비밀번호</label>
@@ -50,16 +51,20 @@
               placeholder="비밀번호"
               tabindex="2"
             />
+            <span class="password-input-condition"></span>
           </div>
         </div>
         <div class="auto-login">
-          <input
+          <!-- <input
             tabindex="3"
             type="checkbox"
             class="form-check auto-login"
             id="check-all"
-          />
-          <label class="auto-login">자동로그인</label>
+          /> -->
+          <div class="image-container">
+            <img src="/src/assets/signup/check_filled_white.svg" alt="체크박스 비활성화" class="auto-login-img" id="auto-unchecked"></img>
+          </div>
+          <label class="auto-login-text">자동로그인</label>
         </div>
         <div class="button-container">
           <button tabindex="4" class="login-button">로그인하기</button>
@@ -71,7 +76,7 @@
         </div>
         <div class="no-account-container">
           <span class="no-account">아직 계정이 없으신가요?</span>
-          <a href="" class="to-signup">회원가입하기</a>
+          <a href="/src/pages/signup/index.html" class="to-signup">회원가입하기</a>
         </div>
       </form>
     </div>
