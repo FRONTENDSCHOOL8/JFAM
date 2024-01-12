@@ -9,6 +9,8 @@
   line-height: 1.7;
   box-sizing: border-box;
   word-break: keep-all;
+  /* background: black; */
+  
 }
 .sr-only {
   background: red;
@@ -23,41 +25,48 @@
   /* border-width: 0; */
 }
 
-.main {
+body {
   background: black;
+  
 }
 
+body::-webkit-scrollbar{
+  display: none; 
+}
 /* -------------------------------------------------------------------------- */
-/* 메인 스와이퍼 */
+/* 스와이퍼 공통*/
+.swiper {
+  width: 100%;
+  height: 100%;
+
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* 빅배너 영역 */
+
 .bigbanner {
   /* background: blueviolet; */
-  width: 100%;
+  /* width: 100%; */
   /* max-height: 80vh;
   min-height: 140px; */
   position: relative;
-}
+  --swiper-navigation-sides-offset: var(--margin-m);
+  --swiper-navigation-color: white;
 
-.swiper {
-  background: darkorange;
-  width: 100%;
-  overflow: hidden;
-  /* max-height: calc(0.445 * 100vw); */
 }
-.swiper-slide {
-  background: darkorange;
-  width: 100%;
+/* ----------------------------------- */
+/* 빅배너 스와이퍼 */
+.bigbanner .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.swiper-slide img {
+.bigbanner .swiper-slide img {
   display: block;
   width: 100%;
   object-fit: cover;
 }
-
-/* -------------------------------------------------------------------------- */
-/* 최상단 영역 */
 
 .bigbanner-dim{
   width: 100%;
@@ -73,7 +82,6 @@
   z-index: 2;
   width: 100%;
   bottom: calc(var(--margin-m) * 2);
-
 }
 
 .bigbanner-container {
@@ -106,31 +114,12 @@
   color: white;
   font-size: 0.75rem;
 }
+
+/* 썸네일 @모바일 320px*/
 .programs img {
   border-radius: 4px;
   display: block;
 }
-.programs .thumbnail-wrap {
-  /* background: RosyBrown; */
-  display: flex;
-  gap: 0.5rem;
-}
-
-.now-see,
-.must-see,
-.quickvod,
-.top-title,
-.top-live,
-.onlytving {
-  /* background: SteelBlue; */
-  padding-left: var(--margin-m);
-  margin-bottom: 1rem;
-  overflow: hidden;
-}
-
-
-/* 썸네일 */
-
 .thumbnail-vertical {
   width: 92px;
 }
@@ -138,17 +127,81 @@
   width: 145px;
 }
 .thumbnail-long {
-  width: 140px;
+  /* width: 140px; */
+  /* width: 0.43vw; */
+  width: 8.9rem;
 }
 
-/* 페이지 구분 */
+.programs .thumbnail-wrap {
+  /* background: RosyBrown; */
+  display: flex;
+  gap: 0.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+.programs > section{
+  margin-bottom: 1.2rem;
+}
+.programs {
+  padding-left: var(--margin-m);
+}
+.ad-area {
+  width: 100%;
+}
+.event-area{
+  padding-bottom: 3rem;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* 오직 티빙 스와이퍼 */
+
+.onlytving{
+  width: 100%;
+  box-sizing: content-box;
+}
+.onlytving .swiper-slide {
+  width: auto;
+}
+
+.swiper-button-prev{
+  height: 100%;
+  color: white;
+  --swiper-navigation-top-offset: 21px;
+  --swiper-navigation-sides-offset: 0;
+  padding-left: 3px;
+  opacity: 0;
+  background: linear-gradient(to left, #00000000, #000000);
+}
+.swiper-button-next{
+  height: 100%;
+  color: white;
+  --swiper-navigation-top-offset: 21px;
+  --swiper-navigation-sides-offset: 0;
+  padding-left: 3px;
+  opacity: 0;
+  background: linear-gradient(to right, #00000000, #000000);
+}
+.swiper-button-prev:hover{
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+.swiper-button-next:hover{
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+/* -------------------------------------------------------------------------- */
+
+/* 기본 프로그램 */
 .now-see figcaption,
 .must-see figcaption {
   font-size: 0.75rem;
   color: var(--gray--200);
 }
 
-/* 페이지 구분  quickvod */
+/* quickvod */
 .quickvod figcaption {
   font-size: 0.75rem;
   color: var(--gray--200);
@@ -159,14 +212,14 @@
   color: var(--gray--300);
 }
 
-/* 페이지 구분 top-title */
+/* top-title */
 .top-title figcaption {
   font-size: 0.75rem;
   color: var(--gray--200);
   font-weight: 600;
   display: flex;
   align-items: baseline;
-  gap: 0.25rem;
+  /* gap: 0.25rem; */
 }
 .top-title em {
   font-family: 'Noto Sans KR';
@@ -176,7 +229,7 @@
   transform: skew(-15deg);
   line-height: 0;
 }
-/* 페이지 구분 top-live  */
+/* top-live  */
 .top-live figcaption {
   font-size: 0.75rem;
   color: var(--gray--200);
@@ -201,41 +254,25 @@
   color: var(--gray--300);
 }
 
-/* -------------------------------------------------------------------------- */
 /* 광고영역 */
 
-.ad-area {
-  /* background: SteelBlue; */
-  width: 100%;
-  padding: 1rem var(--margin-m);
-}
 .ad-area img {
   border-radius: 4px;
   display: block;
   width: 100%;
 }
-.event-area {
-  /* background: indianred; */
-  padding-left: var(--margin-m);
-  padding-bottom: 1rem;
-  overflow: hidden;
-}
-.event-banner-wrap {
-  /* background: salmon; */
-  display: flex;
-  gap: 0.5rem;
-}
+
 .event-area img {
   border-radius: 4px;
   display: block;
   width: 145px;
-  overflow: hidden;
 
 }
 
 /* ---------------------------------@@@@@@@@--------------------------------- */
 /* @미디어쿼리 - 태블릿 */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) { */
+@media (min-width: 1968px) {
   :root {
     --margin-m: 4vw;
   }
@@ -271,9 +308,9 @@
   .thumbnail-horizontal {
     width: 224px;
   }
-  .thumbnail-long {
+  /* .thumbnail-long {
     width: 168px;
-  }
+  } */
   .event-area img {
     width: 214px;
   }
@@ -321,9 +358,9 @@
   .thumbnail-horizontal {
     width: 345px;
   }
-  .thumbnail-long {
+  /* .thumbnail-long {
     width: 285px;
-  }
+  } */
   .event-area img {
     width: 346px;
   }

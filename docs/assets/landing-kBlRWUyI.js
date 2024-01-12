@@ -1,1 +1,0 @@
-import"./modulepreload-polyfill-9p4a8sJU.js";/* empty css              *//* empty css              */import{S as e}from"./swiper-core-zPFWeJGx.js";new e(".mySwiper",{slidesPerView:3,spaceBetween:30,centeredSlides:!0,pagination:{el:".swiper-pagination",clickable:!0}});
