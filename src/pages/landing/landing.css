@@ -39,7 +39,7 @@
   top: 0;  transition: background-color 0.3s ease; /* 배경 변화에 트랜지션 추가 */
   display: flex;
   justify-content: space-between;
-  padding: 0.7rem 0.9375rem;
+  padding: 0.2rem 0.6rem 0 1rem;
 }
 
 .landing .div-account{
@@ -72,7 +72,7 @@
 }
 
 .landing .h1-jfamLogo img{
-    width: calc(35px + 5vw);
+    width: calc(35px + 3vw);
     height: calc(15px + 2vw);
 }
 
@@ -260,12 +260,12 @@
 }
 
 .landing .section-promotion-bottom .img-jfamLogo{
-    width: calc(5.1875rem + 1vw);
-    height: calc(2rem + 1v2);
+    width: calc(4rem + 7vw);
 }
 
 .landing .section-promotion-bottom p{
-  margin-bottom: calc(1rem);
+  margin: 0.5vw 0;
+  font-size: calc(0.5rem + 1vw);
 }
 
 @media screen and (min-width: 768px){
@@ -274,20 +274,8 @@
 
 @media screen and (min-width: 1920px){
   .landing .skeleton-swiper-wrapper{
-    padding: 0 10px;
-    width: 100%;
     height: calc((100vw - 60px) / 5);
-    display: flex;
-    justify-content: space-between;
   }
-  
-  .landing .skeleton-swiper{
-    animation: skeleton-gradient 1.8s infinite ease-in-out;
-    width: calc((100% - 60px) / 3);
-    height: 100%;
-    border-radius: 10px;
-  }
-  
   .landing .swiper-wrapper img{
     width: 100%;
     max-width: 900px;

@@ -34,6 +34,7 @@ document.addEventListener("scroll", () => {
 // gsap.from(".p-copywriting",{ y:100, opacity: 0.2, ease: 'steps(30)'});
 
 // 포켓베이스
+
 function insertLast(node, text){  
   // eslint-disable-next-line no-param-reassign
   if(typeof node === 'string') node = document.querySelector(node);

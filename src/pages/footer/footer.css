@@ -5,6 +5,16 @@
     box-sizing: border-box;
 }
 
+.footer .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
 /* 푸터 */
 .footer{
     background: var(--black, #000);
@@ -34,18 +44,18 @@
     font-size: 0.75rem;
 }
 
-.footer .div-companyInfo{
+.footer .section-companyInfo{
     display: none;
 }
 
-.footer .div-companyInfo p{
+.footer .section-companyInfo p{
     color: var(--gray-300,#a6a6a6);
     font-size: 0.7501875rem;
     font-weight: 400;
     line-height: 160%; /* 34.125px */
 }
 
-.footer .div-companyInfo a{
+.footer .section-companyInfo a{
     color: var(--gray--300, #a6a6a6);
     text-decoration: underline;
 }
@@ -81,7 +91,7 @@
     .footer{
         padding: 4.375rem 2.5rem 6.25rem 2.5rem;
     }
-    .div-footerContent{
+    .footer .div-footerContent{
         margin: 0 auto;
     }
     .footer .ul-menu{
@@ -91,10 +101,10 @@
         gap: 2.25rem;
         border-top: 1px solid var(--gray--800,#2b2b2b);
     }
-    .footer .li-menu__item{
+    .footer .li-menu__item a{
         font-size: 0.7501875rem;
     }
-    .footer .div-companyInfo{ 
+    .footer .section-companyInfo{ 
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -114,16 +124,16 @@
         flex-direction: row;
         gap: 2.25rem;
     }
-    .footer .li-menu__item{
+    .footer .li-menu__item a{
         font-size: 1.333rem;
     }
-    .footer .div-companyInfo{ 
+    .footer .section-companyInfo{ 
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         align-self: stretch;
     }
-    .footer .div-companyInfo p{
+    .footer .section-companyInfo p{
         font-size: 1.333rem;
     }
     .footer .ul-sns li img{
