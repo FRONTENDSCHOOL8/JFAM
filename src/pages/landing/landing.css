@@ -269,14 +269,26 @@
 }
 
 @media screen and (min-width: 768px){
-  /* .landing .h1-jfamLogo svg{width: 4.8125rem; height: 1.5rem;} */
   .landing .section-promotion-bottom .svg-logo{width: 8.4375rem; height: 3.25rem;}
 }
 
 @media screen and (min-width: 1920px){
-  /* .landing .h1-jfamLogo svg{width: 8.25rem; height: 2.625rem;} */
+  .landing .skeleton-swiper-wrapper{
+    padding: 0 10px;
+    width: 100%;
+    height: calc((100vw - 60px) / 5);
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .landing .skeleton-swiper{
+    animation: skeleton-gradient 1.8s infinite ease-in-out;
+    width: calc((100% - 60px) / 3);
+    height: 100%;
+    border-radius: 10px;
+  }
+  
   .landing .swiper-wrapper img{
-    /* margin: 0 50px; */
     width: 100%;
     max-width: 900px;
     border-radius: 10px;
