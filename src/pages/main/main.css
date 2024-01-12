@@ -27,20 +27,14 @@
 
 body {
   background: black;
+  position: relative;
   
 }
 
-body::-webkit-scrollbar{
-  display: none; 
-}
-/* -------------------------------------------------------------------------- */
-/* 스와이퍼 공통*/
 .swiper {
   width: 100%;
   height: 100%;
-
 }
-
 
 /* -------------------------------------------------------------------------- */
 /* 빅배너 영역 */
@@ -51,7 +45,7 @@ body::-webkit-scrollbar{
   /* max-height: 80vh;
   min-height: 140px; */
   position: relative;
-  --swiper-navigation-sides-offset: var(--margin-m);
+  --swiper-navigation-size: 20px;
   --swiper-navigation-color: white;
 
 }
@@ -106,7 +100,7 @@ body::-webkit-scrollbar{
 }
 
 /* -------------------------------------------------------------------------- */
-/* 프로그램 영영 */
+/* 프로그램  */
 
 .programs h2 {
   font-weight: 600;
@@ -141,48 +135,38 @@ body::-webkit-scrollbar{
 }
 
 
+/* -----!!!!!!!!----------------------------------------------------- */
+/* 여백 및 스와이퍼 공통 */
+.programs {
+  margin: 0 var(--margin-m);
+  --swiper-navigation-color: white;
+}
+
 .programs > section{
   margin-bottom: 1.2rem;
-}
-.programs {
-  padding-left: var(--margin-m);
+  width: 100%;
 }
 .ad-area {
   width: 100%;
+  /* padding-right: var(--margin-m); */
 }
 .event-area{
   padding-bottom: 3rem;
 }
 
-
-/* -------------------------------------------------------------------------- */
-/* 오직 티빙 스와이퍼 */
-
-.onlytving{
-  width: 100%;
-  box-sizing: content-box;
-}
-.onlytving .swiper-slide {
+.programs .swiper-slide {
   width: auto;
 }
 
-.swiper-button-prev{
+.programs .swiper-button-prev{
   height: 100%;
-  color: white;
-  --swiper-navigation-top-offset: 21px;
-  --swiper-navigation-sides-offset: 0;
-  padding-left: 3px;
   opacity: 0;
-  background: linear-gradient(to left, #00000000, #000000);
+  /* background: linear-gradient(to left, #00000000, #000000); */
 }
-.swiper-button-next{
+.programs .swiper-button-next{
   height: 100%;
-  color: white;
-  --swiper-navigation-top-offset: 21px;
-  --swiper-navigation-sides-offset: 0;
-  padding-left: 3px;
   opacity: 0;
-  background: linear-gradient(to right, #00000000, #000000);
+  /* background: linear-gradient(to right, #00000000, #000000); */
 }
 .swiper-button-prev:hover{
   transition: opacity 0.3s ease;
@@ -212,8 +196,8 @@ body::-webkit-scrollbar{
   color: var(--gray--300);
 }
 
-/* top-title */
-.top-title figcaption {
+/* popular-title */
+.popular-title figcaption {
   font-size: 0.75rem;
   color: var(--gray--200);
   font-weight: 600;
@@ -221,7 +205,7 @@ body::-webkit-scrollbar{
   align-items: baseline;
   /* gap: 0.25rem; */
 }
-.top-title em {
+.popular-title em {
   font-family: 'Noto Sans KR';
   font-size: 2.2rem;
   font-weight: 700;
@@ -229,8 +213,8 @@ body::-webkit-scrollbar{
   transform: skew(-15deg);
   line-height: 0;
 }
-/* top-live  */
-.top-live figcaption {
+/* popular-live  */
+.popular-live figcaption {
   font-size: 0.75rem;
   color: var(--gray--200);
   font-weight: 400;
@@ -239,7 +223,7 @@ body::-webkit-scrollbar{
   gap: 0.25rem;
   line-height: 1.4;
 }
-.top-live em {
+.popular-live em {
   font-family: 'Noto Sans KR';
   font-size: 2.2rem;
   font-weight: 700;
@@ -248,7 +232,7 @@ body::-webkit-scrollbar{
   line-height: 0;
 }
 
-.top-live figcaption span {
+.popular-live figcaption span {
   display: block;
   font-weight: 400;
   color: var(--gray--300);
@@ -292,8 +276,8 @@ body::-webkit-scrollbar{
   .now-see,
   .must-see,
   .quickvod,
-  .top-title,
-  .top-live,
+  .popular-title,
+  .popular-live,
   .onlytving,
   .event-area {
     margin-bottom: 1.8rem;
@@ -341,8 +325,8 @@ body::-webkit-scrollbar{
   .now-see,
   .must-see,
   .quickvod,
-  .top-title,
-  .top-live,
+  .popular-title,
+  .popular-live,
   .onlytving,
   .event-area {
     margin-bottom: 2.25rem;
@@ -369,7 +353,7 @@ body::-webkit-scrollbar{
     font-size: 1.3rem;
   }
   .quickvod p,
-  .top-live p {
+  .popular-live p {
     font-size: 1rem;
   }
 }

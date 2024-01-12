@@ -25,7 +25,7 @@ function getPbImageURL(item){
 }
 /* -------------------------------------------------------------------------- */
 // 스와이퍼
-const swiper = new Swiper('.full-swiper', {
+const fullSwiper = new Swiper('.full-swiper', {
 
   slidesPerView: 1,
   loop: true,
@@ -43,39 +43,35 @@ const swiper = new Swiper('.full-swiper', {
     enabled: true,
   },
 });
-
-const standardSwiper = new Swiper('.standard-swiper', {
-  cssMode: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  keyboard: {
-    enabled: true,
-  },
-  spaceBetween: 0,
-  slidesPerView: "auto",  
-  slidesPerGroupAuto :true
-
-});
-
-
-
-// 노 스와이퍼 슬라이드
-// const button = getNode(".btn")
-// button.onclick  = () =>{
-//   document.getElementById("box").scrollLeft += 100
-// }
+// 프로그램 스와이퍼 유틸함수!!!! ⭐️💖⭐️💖⭐️💖⭐️💖⭐️
+function standardSwiper (node){
+  return new Swiper(node, {
+    cssMode: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    keyboard: {
+      enabled: true,
+    },
+    spaceBetween: 0,
+    slidesPerView: "auto",  
+    slidesPerGroupAuto :true,
+  });
+}
+const onlytvingSwiper = standardSwiper('.onlytving-swiper')
+const popularLiveSwiper = standardSwiper('.popular-live-swiper')
+const eventSwiper = standardSwiper('.event-swiper')
 
 /* -------------------------------------------------------------------------- */
 // 포켓베이스 연동 :: 폴더별 연동 >>>>> 함수화
-const whatchingData = await pb.collection('program_thumbnail').getFullList({
+const nowSeeData = await pb.collection('program_thumbnail').getFullList({
   sort: 'updated',
 });
 const programData = await pb.collection('program_thumbnail').getFullList({
   sort: '@random',
 });
-const topProgramData = await pb.collection('program_thumbnail').getFullList({
+const popularProgramData = await pb.collection('program_thumbnail').getFullList({
   sort: 'rank',
 });
 const vodData = await pb.collection('vod_thumbnail').getFullList({
@@ -85,13 +81,11 @@ const liveChannelData = await pb.collection('live_thumbnail').getFullList({
   sort: '-viewership',
 });
 
- 
-
 /* -------------------------------------------------------------------------- */
 // 돔 입력 함수
 
 // ::시청 콘텐츠
-whatchingData.forEach((item)=>{
+nowSeeData.forEach((item)=>{
   if (item.isClicked){
   const template = /* html */`
           <figure>
@@ -104,7 +98,7 @@ whatchingData.forEach((item)=>{
           </a>
           </figure>
           `
-  insertEnd('.now-see > div', template);
+  insertEnd('.now-see .thumbnail-wrap', template);
   }
 })
 // ::기본 컨텐츠 
@@ -120,7 +114,7 @@ programData.forEach((item)=>{
           </a>
           </figure>
   `
-  insertEnd('.must-see > div', template);
+  insertEnd('.must-see .thumbnail-wrap', template);
 })
 
 
@@ -140,10 +134,10 @@ vodData.forEach((item)=>{
           </a>
           </figure>
   `
-  insertEnd('.quickvod > div', template);
+  insertEnd('.quickvod .thumbnail-wrap', template);
 })
 // ::실시간 인기 프로그램
-topProgramData.forEach((item)=>{
+popularProgramData.forEach((item)=>{
   const template = /* html */`
           <figure>
           <a href="${item.link}">
@@ -157,11 +151,12 @@ topProgramData.forEach((item)=>{
           </a>
         </figure>
   `
-  insertEnd('.top-title > div', template);
+  insertEnd('.popular-title .thumbnail-wrap', template);
 })
 // ::인기 LIVE 채널
 liveChannelData.forEach((item)=>{
 const template = /* html */`
+      <div class="swiper-slide">
           <figure>
           <a href="${item.link}">
           <img
@@ -176,8 +171,9 @@ const template = /* html */`
           </figcaption>
           </a>
           </figure>
+      </div>
 `
-insertEnd('.top-live > div', template);
+insertEnd('.popular-live .thumbnail-wrap', template);
 })
 
 
