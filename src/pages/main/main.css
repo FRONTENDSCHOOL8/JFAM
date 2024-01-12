@@ -138,15 +138,13 @@ body {
 /* -----!!!!!!!!----------------------------------------------------- */
 /* 여백 및 스와이퍼 공통 */
 .programs {
-  margin: 0 50px;
-  /* margin: 0 var(--margin-m); */
+  margin: 0 var(--margin-m);
   --swiper-navigation-color: white;
 }
-
-.only-swiper{
-  box-sizing: content-box;
-  margin: 0 ;
-
+/* 클릭시 동적으로 추가 : 음수로 해결 네거티브 마진
+*/
+.only-swiper .clicked{
+  margin-left: calc(-1 * var(--margin-m));
 }
 
 .programs > section{
