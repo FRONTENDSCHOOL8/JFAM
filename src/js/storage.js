@@ -1,6 +1,7 @@
 const { localStorage: storage } = window;
 
 export function setStorage(key, value) {
+  // 확인하는 용도
   return new Promise((resolve, reject) => {
     if (typeof key === 'string') {
       storage.setItem(key, JSON.stringify(value));

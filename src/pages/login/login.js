@@ -27,6 +27,7 @@ function pwReg(text) {
 // 아이디, 비번 체크 함수
 
 const isAuthentication = async (userName, userPassword) => {
+  // pocketbase 에서 일치한 유저 정보 가져오기
   try {
     const authData = await pb
       .collection('users')
@@ -64,24 +65,23 @@ function handlePw(e) {
 }
 
 async function handleBtn(e) {
+  // setStorage 를 사용하여 저장
   if (idCheck && pwCheck) {
     e.preventDefault();
     const userData = await isAuthentication(idInput.value, pwInput.value);
     if (userData) {
-      // console.log('성공!');
-      // setStorage('auth', {
-      //   isAuth: true,
-      //   data: userData,
-      // });
-
-      console.log(getStorage('auth'));
+      setStorage('auth', {
+        isAuth: true,
+        userData,
+      });
+      window.location.href = '/src/pages/main/index.html';
     } else {
-      console.log(
+      alert(
         '일치하는 회원정보가 없습니다. 아이디, 비밀번호를 다시 확인해주세요.'
       );
     }
   } else {
-    console.log('아이디나 비밀번호 형식을 맞춰주세요.');
+    alert('아이디나 비밀번호 형식을 맞춰주세요.');
   }
 }
 
