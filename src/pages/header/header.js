@@ -1,7 +1,7 @@
 const buttonProfile = document.querySelector('.button-profile');
 
 function signoutPopup(){
-    location.href = '/src/assets/pages/login/'
+    window.location.href = '/src/pages/profile/'
 }
 
 buttonProfile.addEventListener('click',signoutPopup);
