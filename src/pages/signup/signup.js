@@ -313,6 +313,18 @@ document.addEventListener('DOMContentLoaded', async () => {
       receive_marketing_SNS: checkboxSNS.checked,
       receive_marketing_email: checkboxEmail.checked,
     };
+
+    // const data = {
+    //   username: 'test001',
+    //   email: 'test001@example.com',
+    //   emailVisibility: true,
+    //   password: '123!123',
+    //   passwordConfirm: '123!123',
+    //   required_agree: true,
+    //   provision_of_personal_information: true,
+    //   receive_marketing_SNS: true,
+    //   receive_marketing_email: false,
+    // };
     try {
       pb.collection('users')
         .create(data)
