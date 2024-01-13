@@ -13,10 +13,10 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
-    "pocketbase": "^0.20.1",
     "prettier": "^3.1.1"
   },
   "dependencies": {
+    "pocketbase": "^0.20.1",
     "gsap": "^3.12.4",
     "swiper": "^11.0.5",
     "vite": "^5.0.8"
