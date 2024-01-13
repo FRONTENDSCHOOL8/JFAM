@@ -30,7 +30,8 @@ function getPbImageURL(item) {
 }
 /* -------------------------------------------------------------------------- */
 // 스와이퍼
-const fullSwiper = new Swiper('.full-swiper', {
+// eslint-disable-next-line no-new
+new Swiper('.full-swiper', {
   slidesPerView: 1,
   loop: true,
   autoplay: true,

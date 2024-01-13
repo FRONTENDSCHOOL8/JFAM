@@ -1,37 +1,18 @@
 body {
   background-repeat: no-repeat;
-  background-image: url(/src/assets/bg.png);
+  background: linear-gradient(to left bottom, #3051c6 -0.3%, #6931e2 100.83%);
   height: 100vh;
-  background-size:cover;
-  
-  
+  background-size: cover;
 }
 
 #app {
-text-align: center;
-position: absolute;
-left: 50%;
-top: 50%;
-transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-53%, -54%);
 }
 
 h1 img {
-  width: 240px;
-  padding-bottom: 40px;
+  width: 320px;
 }
-
-a {
-  display: inline-block;
-  color: white;
-
-  
-
-}
-
-ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-}
-
