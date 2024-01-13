@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (!localUser.isAuth) {
     window.location.href = '/src/pages/landing/';
   }
-  userId.textContent = localUser.data.username;
+  userId.textContent = localUser.userData.record.username;
 
   const displayElement = (node, modify) => {
     const element = node;
@@ -42,10 +42,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     displayElement(userProfile, 'none');
     displayElement(logoutModal, 'block');
   };
+
   const handleSignout = () => {
     displayElement(userProfile, 'none');
     displayElement(signoutModal, 'block');
   };
+
   const handleLogoutConfirm = () => {
     // 로그 아웃(로컬 스토리 데이터 제거)
     setStorage('auth', {
@@ -54,16 +56,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
     window.location.href = '/src/pages/landing/index.html';
   };
+
   const handleLogoutCancel = () => {
     displayElement(userProfile, 'block');
     displayElement(logoutModal, 'none');
   };
+
   const handleSignoutConfirm = async () => {
     // 로그 아웃(로컬 스토리 저장된 아이디 불러오기)
-    const currentId = localUser.id;
+    const currentId = localUser.userData.record.id;
     deleteAccount(currentId);
+    setStorage('auth', {
+      isAuth: false,
+      data: {},
+    });
     window.location.href = '/src/pages/landing/index.html';
   };
+
   const handleSignoutCancel = () => {
     displayElement(userProfile, 'block');
     displayElement(signoutModal, 'none');

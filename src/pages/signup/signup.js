@@ -321,6 +321,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           window.location.href = '/src/pages/login/';
         })
         .catch(() => {
+          console.log(data);
           alert('입력 상태을 확인해주세요.');
         });
     } catch (error) {
