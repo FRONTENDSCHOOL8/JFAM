@@ -10,7 +10,6 @@
   box-sizing: border-box;
   word-break: keep-all;
   /* background: black; */
-  
 }
 .sr-only {
   background: red;
@@ -28,7 +27,6 @@
 body {
   background: black;
   position: relative;
-  
 }
 
 .swiper {
@@ -47,7 +45,6 @@ body {
   position: relative;
   --swiper-navigation-size: 20px;
   --swiper-navigation-color: white;
-
 }
 /* ----------------------------------- */
 /* 빅배너 스와이퍼 */
@@ -62,7 +59,7 @@ body {
   object-fit: cover;
 }
 
-.bigbanner-dim{
+.bigbanner-dim {
   width: 100%;
   height: 60px;
   position: absolute;
@@ -100,7 +97,7 @@ body {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 프로그램  */
+/* 프로그램 영역 */
 
 .programs h2 {
   font-weight: 600;
@@ -134,20 +131,19 @@ body {
   white-space: nowrap;
 }
 
-
-/* -----!!!!!!!!----------------------------------------------------- */
-/* 여백 및 스와이퍼 공통 */
+/* -----!!!!!!!!--------------------- */
+/* 프로그램영역 여백 및 스와이퍼 공통 */
 .programs {
   margin: 0 var(--margin-m);
   --swiper-navigation-color: white;
 }
 /* 클릭시 동적으로 추가 : 음수로 해결 네거티브 마진
 */
-.only-swiper .clicked{
+.only-swiper .clicked {
   margin-left: calc(-1 * var(--margin-m));
 }
 
-.programs > section{
+.programs > section {
   margin-bottom: 1.2rem;
   width: 100%;
 }
@@ -155,7 +151,7 @@ body {
   width: 100%;
   /* padding-right: var(--margin-m); */
 }
-.event-area{
+.event-area {
   padding-bottom: 3rem;
 }
 
@@ -163,21 +159,21 @@ body {
   width: auto;
 }
 
-.programs .swiper-button-prev{
+.programs .swiper-button-prev {
   height: 100%;
   opacity: 0;
   /* background: linear-gradient(to left, #00000000, #000000); */
 }
-.programs .swiper-button-next{
+.programs .swiper-button-next {
   height: 100%;
   opacity: 0;
   /* background: linear-gradient(to right, #00000000, #000000); */
 }
-.swiper-button-prev:hover{
+.swiper-button-prev:hover {
   transition: opacity 0.3s ease;
   opacity: 1;
 }
-.swiper-button-next:hover{
+.swiper-button-next:hover {
   transition: opacity 0.3s ease;
   opacity: 1;
 }
@@ -255,7 +251,6 @@ body {
   border-radius: 4px;
   display: block;
   width: 145px;
-
 }
 
 /* ---------------------------------@@@@@@@@--------------------------------- */
