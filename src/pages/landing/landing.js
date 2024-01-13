@@ -3,10 +3,11 @@ import Swiper from 'swiper';
 import pb from '/src/js/pocketbase.js';
 // import manageData from '/src/js/response.js'
 
-const swiper = new Swiper(".mySwiper", {
+// eslint-disable-next-line no-new
+new Swiper(".mySwiper", {
     slidesPerView: 3,
     spaceBetween: 30,
-    centeredSlides: true,
+    centeredSlides: false,
     breakpoints:{
       1920:{
       },
