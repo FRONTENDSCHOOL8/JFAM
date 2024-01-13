@@ -2,6 +2,7 @@ import Swiper from 'swiper';
 // import gsap from 'gsap';
 import pb from '/src/js/pocketbase.js';
 // import manageData from '/src/js/response.js'
+import {getNode, insertEnd, getPbImageURL} from '/src/js/common.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   // eslint-disable-next-line no-new
@@ -16,12 +17,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     let currentSwiperState = null; // 이전 스와이퍼 상태를 저장할 변수
-    const skeletonItem = document.querySelector('.skeleton-loading');
-    const animskeletonItem = document.querySelector('.animskeleton-loading');
+    const skeletonItem = getNode('.skeleton-loading');
+    const animskeletonItem = getNode('.animskeleton-loading');
 
     // 헤더 스크롤
   document.addEventListener("scroll", () => {
-    const header = document.querySelector('.landing .header');
+    const header = getNode('.landing .header');
     const scrollPosition = window.scrollY;
 
     if (scrollPosition > 50) {
@@ -37,16 +38,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // 포켓베이스
 
-  function insertLast(node, text){  
-    // eslint-disable-next-line no-param-reassign
-    if(typeof node === 'string') node = document.querySelector(node);
-    node.insertAdjacentHTML('beforeend',text);
-  }
-
-  function getPbImageURL(item,fileName = 'img'){
-    return `https://jfam.pockethost.io/api/files/${item.collectionId}/${item.id}/${item[fileName]}`
-  }
-
   async function renderSmallThumbnail(){
     try {   
       const response = await pb.collection('landing_animationImg').getList();
@@ -57,10 +48,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         const template = /* html */`
           <img src="${getPbImageURL(item)}" alt="">
         `;
-        insertLast('.landing .div-slide__one',template);
-        insertLast('.landing .div-slide__two',template);
-        insertLast('.landing .div-slide__three',template);
-        insertLast('.landing .div-slide__four',template);
+        insertEnd('.landing .div-slide__one',template);
+        insertEnd('.landing .div-slide__two',template);
+        insertEnd('.landing .div-slide__three',template);
+        insertEnd('.landing .div-slide__four',template);
         });
     }
     catch (error) {
@@ -74,13 +65,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       const userDataSwiper = responseSwiper.items;
       skeletonItem.style.display = 'none';
     
-      document.querySelector('.landing .swiper-wrapper').innerHTML = '';
+      getNode('.landing .swiper-wrapper').innerHTML = '';
       userDataSwiper.forEach((item) => {
         const template = /* html */`
         <div class="swiper-slide"><img src="${getPbImageURL(item,'image')}" alt="">
         </div>
         `;
-        insertLast('.landing .swiper-wrapper',template);
+        insertEnd('.landing .swiper-wrapper',template);
       });
     } catch (error) {
       console.log(error);
@@ -93,13 +84,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       const userDataSwiper = responseSwiper.items;
       skeletonItem.style.display = 'none';
     
-      document.querySelector('.landing .swiper-wrapper').innerHTML = '';
+      getNode('.landing .swiper-wrapper').innerHTML = '';
       userDataSwiper.forEach((item) => {
         const template = /* html */`
         <div class="swiper-slide"><img src="${getPbImageURL(item,'image')}" alt="">
         </div>
         `;
-        insertLast('.landing .swiper-wrapper',template);
+        insertEnd('.landing .swiper-wrapper',template);
       });
     } catch (error) {
       console.log(error);
