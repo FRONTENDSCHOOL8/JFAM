@@ -1,18 +1,59 @@
-body {
-  background-repeat: no-repeat;
-  background: linear-gradient(to left bottom, #3051c6 -0.3%, #6931e2 100.83%);
-  height: 100vh;
-  background-size: cover;
+@keyframes logoMotion {
+  0% {
+    /* width: 0vw; */
+    opacity: 0.2;
+  }
+  70% {
+    /* width: 32vw; */
+  }
+  90% {
+    /* width: 26vw; */
+  }
+  97% {
+    /* width: 29vw; */
+  }
+  100% {
+    opacity: 1;
+
+    /* width: 30vw; */
+  }
+}
+@keyframes bgMotion {
+  0% {
+    background-image: linear-gradient(
+      to left bottom,
+      #3051c6 -0.3%,
+      #6931e2 100.83%
+    );
+  }
+  80% {
+    background-image: linear-gradient(
+      to bottom,
+      #3051c6 -0.3%,
+      #6931e2 100.83%
+    );
+  }
+
+  100% {
+    background-image: linear-gradient(
+      to right bottom,
+      #3051c6 -0.3%,
+      #6931e2 100.83%
+    );
+  }
 }
 
-#app {
-  text-align: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-53%, -54%);
+.background {
+  width: 100%;
+  height: 100vh;
+  animation: bgMotion 2s ease-in-out 500ms forwards;
 }
 
 h1 img {
-  width: 320px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-53.8%, -56%);
+  animation: logoMotion 1s ease-out 100ms forwards;
+  width: 30vw;
 }
