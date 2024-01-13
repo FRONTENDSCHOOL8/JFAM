@@ -39,7 +39,7 @@
   top: 0;  transition: background-color 0.3s ease; /* 배경 변화에 트랜지션 추가 */
   display: flex;
   justify-content: space-between;
-  padding: 0.7rem 0.9375rem;
+  padding: 0.2rem 0.6rem 0 1rem;
 }
 
 .landing .div-account{
@@ -71,8 +71,8 @@
     text-align: center;
 }
 
-.landing .h1-jfamLogo svg{
-    width: calc(35px + 5vw);
+.landing .h1-jfamLogo img{
+    width: calc(35px + 3vw);
     height: calc(15px + 2vw);
 }
 
@@ -95,7 +95,7 @@
 
 .landing .p-promoMessage{
     margin: 0 auto 2vw auto;
-    color: var(--gray-400, #898989);
+    color: var(--gray-300,#a6a6a6);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
     /* Paragraph/Small */
     font-size: calc(0.3rem + 1vw);
@@ -136,6 +136,37 @@
     line-height: 140%; /* 29.859px */
 }
 
+/* 스켈레톤 스와이퍼 */
+@keyframes skeleton-gradient {
+  0% {
+      background-color: rgb(47, 80, 198,0.5);
+  }
+
+  50% {
+    background-color: rgb(47, 80, 198,0.7);
+  }
+
+  100% {
+    background-color: rgb(47, 80, 198,0.5);
+  }
+}
+
+.landing .skeleton-swiper-wrapper{
+  padding: 0 10px;
+  width: 100%;
+  height: calc((100vw - 60px) / 3 * 1.3 + 10px);
+  display: flex;
+  justify-content: space-between;
+}
+
+.landing .skeleton-swiper{
+  animation: skeleton-gradient 1.8s infinite ease-in-out;
+  width: calc((100% - 60px) / 3);
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* 스와이퍼 */
 .landing .swiper-wrapper img{
   /* margin: 0 50px; */
   width: 100%;
@@ -143,6 +174,37 @@
   border-radius: 10px;
 }
 
+/* 스켈레톤 슬라이더 */
+.landing .skeleton-animswiper-wrapper{
+  width: 100%;
+  height: calc(1rem + 10vw);
+  display: flex;
+  overflow: hidden;
+  /* justify-content: space-between; */
+}
+
+.landing .skeleton-animswiper-wrapper:nth-child(1) .skeleton-animswiper{
+  animation: skeleton-gradient 1.8s infinite ease-in-out;
+  margin-bottom: 0.5vw;
+  margin-right: 5px;
+  width: calc((17rem + 10vw)) ;
+  height: calc(1rem + 10vw);
+  position: relative;
+  left: 20px;
+}
+
+.landing .skeleton-animswiper-wrapper:nth-child(2) .skeleton-animswiper{
+  animation: skeleton-gradient 1.8s infinite ease-in-out;
+  margin-top: 0.5vw;
+  margin-right: 5px;
+  width: calc((17rem + 10vw)) ;
+  height: calc(1rem + 10vw);
+  position: relative;
+  left: -50px;
+}
+
+
+/* 슬라이더 */
 @keyframes sliding{
   from{
     transform: translate(0);
@@ -197,21 +259,27 @@
     padding: 0 auto;
 }
 
-.landing .section-promotion-bottom .svg-logo{
-    width: 5.1875rem;
-    height: 2rem;
+.landing .section-promotion-bottom .img-jfamLogo{
+    width: calc(4rem + 7vw);
 }
 
 .landing .section-promotion-bottom p{
-  margin-bottom: calc(1rem);
+  margin: 0.5vw 0;
+  font-size: calc(0.5rem + 1vw);
 }
 
 @media screen and (min-width: 768px){
-  /* .landing .h1-jfamLogo svg{width: 4.8125rem; height: 1.5rem;} */
   .landing .section-promotion-bottom .svg-logo{width: 8.4375rem; height: 3.25rem;}
 }
 
 @media screen and (min-width: 1920px){
-  /* .landing .h1-jfamLogo svg{width: 8.25rem; height: 2.625rem;} */
+  .landing .skeleton-swiper-wrapper{
+    height: calc((100vw - 60px) / 5);
+  }
+  .landing .swiper-wrapper img{
+    width: 100%;
+    max-width: 900px;
+    border-radius: 10px;
+  }
   .landing .section-promotion-bottom .svg-logo{width: 17.4375rem; height: 6.875rem;}
 }
