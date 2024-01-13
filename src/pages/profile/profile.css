@@ -15,6 +15,10 @@ button:active {
   box-shadow: none;
 }
 
+button:focus {
+  outline: 1px solid white;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -94,7 +98,6 @@ button:active {
 .logout-modal,
 .signout-modal {
   width: clamp(12.25rem, calc(12.25rem + 20vw), 32.875rem);
-  height: clamp(5.625rem, calc(5.625rem + 2vw), 12.5rem);
   border-radius: 2px;
   background-color: var(--brand--dark-bg-2, #212121);
 }
@@ -102,11 +105,30 @@ button:active {
 .logout-title,
 .signout-title {
   padding: 1.25rem 0;
-  color: white;
+  color: var(--gray--100, #e1e1e1);
+  font-size: clamp(0.75rem, calc(0.75rem + 0.5vw), 1.3125rem);
+  font-weight: 400;
+  line-height: 160%;
 }
 
-@media screen and (min-width: 48rem) {
+.logout-button,
+.signout-button {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 0.625rem;
+  padding-bottom: 0.625rem;
 }
 
-@media screen and (min-width: 120rem) {
+.button-logout-confirm,
+.button-logout-cancel,
+.button-signout-confirm,
+.button-signout-cancel {
+  padding: 0.6563rem 1.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--gray-300, #a6a6a6);
+  font-size: clamp(0.75rem, calc(0.75rem + 0.5vw), 1.3125rem);
+  font-weight: 400;
+  line-height: 160%;
 }
