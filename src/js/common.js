@@ -31,3 +31,9 @@ export function setClassList(node, modify, className) {
     throw new Error('setClassList 함수의 modify는 add 또는 remove 입니다');
   }
 }
+
+// ::노드의 텍스트 변경
+export function changeConditionMessage(node, message) {
+  const nodeElement = node;
+  nodeElement.textContent = message;
+}

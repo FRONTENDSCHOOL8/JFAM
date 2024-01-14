@@ -1,14 +1,15 @@
 import pb from '/src/js/pocketbase.js';
-import { setClassList } from '/src/js/common';
+import { setClassList, changeConditionMessage } from '/src/js/common';
+import { getNode, getNodes } from '../../js/common';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const input = document.querySelectorAll('.form-input');
-  const check = document.querySelectorAll('.form-check');
-  const span = document.querySelectorAll('.span-condition');
-  const buttonShowPassword = document.querySelectorAll('.button-show');
-  const buttonEraseInput = document.querySelectorAll('.button-erase');
-  const signupForm = document.querySelector('.signup-form');
-  const buttonSubmit = document.querySelector('.button-signup-submit');
+  const input = getNodes('.form-input');
+  const check = getNodes('.form-check');
+  const span = getNodes('.span-condition');
+  const buttonShowPassword = getNodes('.button-show');
+  const buttonEraseInput = getNodes('.button-erase');
+  const signupForm = getNode('.signup-form');
+  const buttonSubmit = getNode('.button-signup-submit');
 
   const [inputId, inputPassword, inputPasswordCheck, inputEmail] = input;
 
@@ -59,22 +60,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       return false;
     }
   };
-
-  const changeConditionMessage = (node, message) => {
-    const nodeElement = node;
-    nodeElement.textContent = message;
-  };
-
-  // const setClassList = (node, modify, className) => {
-  //   const nodeElement = node;
-  //   if (modify === 'add') {
-  //     nodeElement.classList.add(className);
-  //   } else if (modify === 'remove') {
-  //     nodeElement.classList.remove(className);
-  //   } else {
-  //     throw new Error('setClassList 함수의 modify는 add 또는 remove 입니다');
-  //   }
-  // };
 
   const manageConditionId = (idCondition) => {
     setClassList(eraseInputId, 'add', 'has-input');
@@ -322,7 +307,6 @@ document.addEventListener('DOMContentLoaded', async () => {
           window.location.href = '/src/pages/login/';
         })
         .catch(() => {
-          console.log(data);
           alert('입력 상태을 확인해주세요.');
         });
     } catch (error) {
