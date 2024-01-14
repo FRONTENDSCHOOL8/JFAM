@@ -1,4 +1,5 @@
 import pb from '/src/js/pocketbase.js';
+import { setClassList } from '/src/js/common';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const input = document.querySelectorAll('.form-input');
@@ -64,16 +65,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     nodeElement.textContent = message;
   };
 
-  const setClassList = (node, modify, className) => {
-    const nodeElement = node;
-    if (modify === 'add') {
-      nodeElement.classList.add(className);
-    } else if (modify === 'remove') {
-      nodeElement.classList.remove(className);
-    } else {
-      throw new Error('setClassList 함수의 modify는 add 또는 remove 입니다');
-    }
-  };
+  // const setClassList = (node, modify, className) => {
+  //   const nodeElement = node;
+  //   if (modify === 'add') {
+  //     nodeElement.classList.add(className);
+  //   } else if (modify === 'remove') {
+  //     nodeElement.classList.remove(className);
+  //   } else {
+  //     throw new Error('setClassList 함수의 modify는 add 또는 remove 입니다');
+  //   }
+  // };
 
   const manageConditionId = (idCondition) => {
     setClassList(eraseInputId, 'add', 'has-input');
@@ -305,7 +306,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const data = {
       username: inputId.value,
       email: inputEmail.value,
-      // "emailVisibility": true,
+      emailVisibility: true,
       password: inputPassword.value,
       passwordConfirm: inputPasswordCheck.value,
       required_agree: true,
@@ -313,18 +314,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       receive_marketing_SNS: checkboxSNS.checked,
       receive_marketing_email: checkboxEmail.checked,
     };
-
-    // const data = {
-    //   username: 'test001',
-    //   email: 'test001@example.com',
-    //   emailVisibility: true,
-    //   password: '123!123',
-    //   passwordConfirm: '123!123',
-    //   required_agree: true,
-    //   provision_of_personal_information: true,
-    //   receive_marketing_SNS: true,
-    //   receive_marketing_email: false,
-    // };
     try {
       pb.collection('users')
         .create(data)
