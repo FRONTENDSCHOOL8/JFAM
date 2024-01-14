@@ -11,10 +11,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       slidesPerView: 3,
       spaceBetween: 30,
       centeredSlides: false,
-      breakpoints:{
-        1920:{
-        },
-      },
     });
 
     let currentSwiperState = null; // 이전 스와이퍼 상태를 저장할 변수
