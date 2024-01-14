@@ -11,7 +11,10 @@
     <meta name="author" content="JFAM" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:title" content="JFAM | 메인" />
-    <meta property="og:url" content="https://jfam.netlify.app/src/pages/main/" />
+    <meta
+      property="og:url"
+      content="https://jfam.netlify.app/src/pages/main/"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/src/assets/opengraph_image.png" />
     <meta
@@ -19,14 +22,14 @@
       content="JFAM 오리지널부터 드라마, 예능, 영화, 해외시리즈까지! 무제한으로 스트리밍해 보세요"
     />
     <link rel="icon" type="image/svg+xml" href="/assets/favicon-GcTYRqw7.png" />
-
-    <script type="module" crossorigin src="/assets/main-x0GolWgh.js"></script>
+    <script type="module" crossorigin src="/assets/main-Q9UbAsHB.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/reset-9GtOEJoH.js">
     <link rel="modulepreload" crossorigin href="/assets/swiper-bundle-GuwshZwN.js">
     <link rel="modulepreload" crossorigin href="/assets/pocketbase-v9INCz3k.js">
+    <link rel="modulepreload" crossorigin href="/assets/common-NlTJxg5N.js">
     <link rel="stylesheet" crossorigin href="/assets/reset-elziDHyV.css">
     <link rel="stylesheet" crossorigin href="/assets/swiper-bundle-7t5sOE1N.css">
-    <link rel="stylesheet" crossorigin href="/assets/main-HJ0_GT4S.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-r-2dMHJU.css">
     <link rel="stylesheet" crossorigin href="/assets/style-HyYK2KUM.css">
   </head>
   <body>
@@ -34,38 +37,40 @@
       <!-- 본문 -->
       <section class="bigbanner">
         <h2 class="sr-only">최상단 배너 영역</h2>
-
         <div class="swiper full-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="/assets/banner_img-aCUmOzMu.png"
-                alt="재벌집 막내 아들">
+              <img
+                src="/assets/banner_img-aCUmOzMu.png"
+                alt="재벌집 막내 아들"
+              />
             </div>
             <div class="swiper-slide">
-              <img src="/assets/banner_img2-OiK0rl3A.png"
-                alt="외계인">
+              <img src="/assets/banner_img2-OiK0rl3A.png" alt="외계인" />
             </div>
             <div class="swiper-slide">
-              <img src="/assets/banner_img3-3I7FDNL2.png"
-                alt="마에스트라">
+              <img
+                src="/assets/banner_img3-3I7FDNL2.png"
+                alt="마에스트라"
+              />
             </div>
           </div>
-          <div class="swiper-pagination"></div>
-
+          <div class="bigbanner-dim"></div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
         </div>
 
-        <div class="bigbanner-dim"></div>
         <div class="bigbanner-inner">
           <div class="bigbanner-container">
-            <h3>인생 2회차를 사는 판타지 드라마</h3>
+            <h2>인생 2회차를 사는 판타지 드라마</h2>
+            <div class="swiper-pagination"></div>
             <a href="https://tv.jtbc.co.kr/">자세히보기</a>
           </div>
+        </div>
       </section>
       <div class="programs">
         <section class="now-see">
-          <h2>00님이 시청 중인 콘텐츠</h2>
+          <h2><span class="userId">00</span>님이 시청 중인 콘텐츠</h2>
           <div class="swiper now-swiper">
             <div class="swiper-wrapper thumbnail-wrap"></div>
             <div class="swiper-button-next"></div>
@@ -76,7 +81,7 @@
         <section class="must-see">
           <h2>JFAM에서 꼭 봐야하는 콘텐츠</h2>
           <div class="swiper must-swiper">
-              <div class="swiper-wrapper thumbnail-wrap"></div>
+            <div class="swiper-wrapper thumbnail-wrap"></div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
           </div>
@@ -85,18 +90,18 @@
         <section class="quickvod">
           <h2>Quick VOD</h2>
           <div class="swiper quickvod-swiper">
-              <div class="swiper-wrapper thumbnail-wrap"></div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+            <div class="swiper-wrapper thumbnail-wrap"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
         </section>
 
         <section class="popular-title">
           <h2>실시간 인기 프로그램</h2>
           <div class="swiper popular-title-swiper">
-              <div class="swiper-wrapper thumbnail-wrap"></div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+            <div class="swiper-wrapper thumbnail-wrap"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
         </section>
 
@@ -109,170 +114,170 @@
           </div>
         </section>
 
-        <section class="onlytving">
+        <section class="onlytving is-active">
           <h2>오직 JFAM에만 있어요</h2>
           <div class="swiper only-swiper">
-              <div class="swiper-wrapper thumbnail-wrap">
-                        <div class="swiper-slide">
-                          <figure>
-                            <a href="https://youtu.be/xPKyp62lL7Y?si=661aui8A2soMJZm6">
-                              <img
-                                class="thumbnail-long"
-                                src="/assets/thumbnail_long-cIDZg2ZG.png"
-                                alt="전체관람가 숏버스터 썸네일"
-                            />
-                            <figcaption class="sr-only">전체관람가 숏버스터</figcaption></a>
-                          </figure>
-                        </div>
-                        <div class="swiper-slide">
-                          <figure>
-                            <a href="https://youtu.be/fdGeDDr0s_g?si=n2widlR77z0hKlpK">
-                              <img
-                                class="thumbnail-long"
-                                src="/assets/thumbnail_long_2-TNJJDB22.png"
-                                alt="술꾼도시여자들 썸네일"
-                            />
-                            <figcaption class="sr-only">술꾼도시여자들</figcaption></a>
-                          </figure>
-                        </div>
-                        <div class="swiper-slide">
-                          <figure>
-                            <a href="https://youtu.be/3S1asSWEqpM?si=V8Uafljkmjz71zTn">
-                              <img
-                                class="thumbnail-long"
-                                src="/assets/thumbnail_long_3-XwuvvPFw.png"
-                                alt="환승연애2 썸네일"
-                            />
-                            <figcaption class="sr-only">환승연애2</figcaption></a>
-                          </figure>
-                        </div>
-                        <div class="swiper-slide">
-                          <figure>
-                            <a href="https://youtu.be/ETbAhhr-UNw?si=Rq6ZGFI0KbqV-16B">
-                              <img
-                                class="thumbnail-long"
-                                src="/assets/thumbnail_long_4-XpUsawZ-.png"
-                                alt="푸드크로니클 썸네일"
-                            />
-                            <figcaption class="sr-only">푸드크로니클</figcaption></a>
-                          </figure>
-                        </div>
-                        <div class="swiper-slide">
-                          <figure>
-                            <a href="https://youtu.be/u2k5_XYhjc4?si=wxdPCSjVJQrHbA8v">
-                              <img
-                                class="thumbnail-long"
-                                src="/assets/thumbnail_long_5-yZd1YwLc.png"
-                                alt="몸값 썸네일"
-                            />
-                            <figcaption class="sr-only">몸값</figcaption></a>
-                          </figure>
-                        </div>
-                        <div class="swiper-slide">
-                          <figure>
-                            <a href="https://youtu.be/IXNJO-4qEAw?si=tuYLYR_4XYuFHYow">
-                              <img
-                                class="thumbnail-long"
-                                src="/assets/thumbnail_long_6-8_UQO_2y.png"
-                                alt="러브캐쳐 썸네일"
-                            />
-                            <figcaption class="sr-only">러브캐쳐</figcaption></a>
-                          </figure>
-                        </div>
-                        <div class="swiper-slide">
-                          <figure>
-                            <a href="https://youtu.be/aZh0D1p_xk0?si=-Yd_D6RxuLpyah4W">
-                              <img
-                                class="thumbnail-long"
-                                src="/assets/thumbnail_long_7-ULWcQJnJ.png"
-                                alt="괴이 썸네일"
-                            />
-                            <figcaption class="sr-only">괴이</figcaption></a>
-                          </figure>
-                        </div>
-                        <div class="swiper-slide">
-                          <figure>
-                            <a href="https://youtu.be/xPKyp62lL7Y?si=661aui8A2soMJZm6">
-                              <img
-                                class="thumbnail-long"
-                                src="/assets/thumbnail_long-cIDZg2ZG.png"
-                                alt="전체관람가 숏버스터 썸네일"
-                            />
-                            <figcaption class="sr-only">전체관람가 숏버스터</figcaption></a>
-                          </figure>
-                        </div>
-                        <div class="swiper-slide">
-                          <figure>
-                            <a href="https://youtu.be/fdGeDDr0s_g?si=n2widlR77z0hKlpK">
-                              <img
-                                class="thumbnail-long"
-                                src="/assets/thumbnail_long_2-TNJJDB22.png"
-                                alt="술꾼도시여자들 썸네일"
-                            />
-                            <figcaption class="sr-only">술꾼도시여자들</figcaption></a>
-                          </figure>
-                        </div>
-                        <div class="swiper-slide">
-                          <figure>
-                            <a href="https://youtu.be/3S1asSWEqpM?si=V8Uafljkmjz71zTn">
-                              <img
-                                class="thumbnail-long"
-                                src="/assets/thumbnail_long_3-XwuvvPFw.png"
-                                alt="환승연애2 썸네일"
-                            />
-                            <figcaption class="sr-only">환승연애2</figcaption></a>
-                          </figure>
-                        </div>
-                        <div class="swiper-slide">
-                          <figure>
-                            <a href="https://youtu.be/ETbAhhr-UNw?si=Rq6ZGFI0KbqV-16B">
-                              <img
-                                class="thumbnail-long"
-                                src="/assets/thumbnail_long_4-XpUsawZ-.png"
-                                alt="푸드크로니클 썸네일"
-                            />
-                            <figcaption class="sr-only">푸드크로니클</figcaption></a>
-                          </figure>
-                        </div>
-                        <div class="swiper-slide">
-                          <figure>
-                            <a href="https://youtu.be/u2k5_XYhjc4?si=wxdPCSjVJQrHbA8v">
-                              <img
-                                class="thumbnail-long"
-                                src="/assets/thumbnail_long_5-yZd1YwLc.png"
-                                alt="몸값 썸네일"
-                            />
-                            <figcaption class="sr-only">몸값</figcaption></a>
-                          </figure>
-                        </div>
-                        <div class="swiper-slide">
-                          <figure>
-                            <a href="https://youtu.be/IXNJO-4qEAw?si=tuYLYR_4XYuFHYow">
-                              <img
-                                class="thumbnail-long"
-                                src="/assets/thumbnail_long_6-8_UQO_2y.png"
-                                alt="러브캐쳐 썸네일"
-                            />
-                            <figcaption class="sr-only">러브캐쳐</figcaption></a>
-                          </figure>
-                        </div>
-                        <div class="swiper-slide">
-                          <figure>
-                            <a href="https://youtu.be/aZh0D1p_xk0?si=-Yd_D6RxuLpyah4W">
-                              <img
-                                class="thumbnail-long"
-                                src="/assets/thumbnail_long_7-ULWcQJnJ.png"
-                                alt="괴이 썸네일"
-                            />
-                            <figcaption class="sr-only">괴이</figcaption></a>
-                          </figure>
-                        </div>
+            <div class="swiper-wrapper thumbnail-wrap">
+              <div class="swiper-slide">
+                <figure>
+                  <a href="https://youtu.be/xPKyp62lL7Y?si=661aui8A2soMJZm6">
+                    <img
+                      class="thumbnail-long"
+                      src="/assets/thumbnail_long-cIDZg2ZG.png"
+                      alt="전체관람가 숏버스터 썸네일"
+                  /></a>
+                  <figcaption class="sr-only">전체관람가 숏버스터</figcaption>
+                </figure>
               </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+              <div class="swiper-slide">
+                <figure>
+                  <a href="https://youtu.be/fdGeDDr0s_g?si=n2widlR77z0hKlpK">
+                    <img
+                      class="thumbnail-long"
+                      src="/assets/thumbnail_long_2-TNJJDB22.png"
+                      alt="술꾼도시여자들 썸네일"
+                  /></a>
+                  <figcaption class="sr-only">술꾼도시여자들</figcaption>
+                </figure>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <a href="https://youtu.be/3S1asSWEqpM?si=V8Uafljkmjz71zTn">
+                    <img
+                      class="thumbnail-long"
+                      src="/assets/thumbnail_long_3-XwuvvPFw.png"
+                      alt="환승연애2 썸네일"
+                  /></a>
+                  <figcaption class="sr-only">환승연애2</figcaption>
+                </figure>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <a href="https://youtu.be/ETbAhhr-UNw?si=Rq6ZGFI0KbqV-16B">
+                    <img
+                      class="thumbnail-long"
+                      src="/assets/thumbnail_long_4-XpUsawZ-.png"
+                      alt="푸드크로니클 썸네일"
+                  /></a>
+                  <figcaption class="sr-only">푸드크로니클</figcaption>
+                </figure>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <a href="https://youtu.be/u2k5_XYhjc4?si=wxdPCSjVJQrHbA8v">
+                    <img
+                      class="thumbnail-long"
+                      src="/assets/thumbnail_long_5-yZd1YwLc.png"
+                      alt="몸값 썸네일"
+                  /></a>
+                  <figcaption class="sr-only">몸값</figcaption>
+                </figure>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <a href="https://youtu.be/IXNJO-4qEAw?si=tuYLYR_4XYuFHYow">
+                    <img
+                      class="thumbnail-long"
+                      src="/assets/thumbnail_long_6-8_UQO_2y.png"
+                      alt="러브캐쳐 썸네일"
+                  /></a>
+                  <figcaption class="sr-only">러브캐쳐</figcaption>
+                </figure>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <a href="https://youtu.be/aZh0D1p_xk0?si=-Yd_D6RxuLpyah4W">
+                    <img
+                      class="thumbnail-long"
+                      src="/assets/thumbnail_long_7-ULWcQJnJ.png"
+                      alt="괴이 썸네일"
+                  /></a>
+                  <figcaption class="sr-only">괴이</figcaption>
+                </figure>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <a href="https://youtu.be/xPKyp62lL7Y?si=661aui8A2soMJZm6">
+                    <img
+                      class="thumbnail-long"
+                      src="/assets/thumbnail_long-cIDZg2ZG.png"
+                      alt="전체관람가 숏버스터 썸네일"
+                  /></a>
+                  <figcaption class="sr-only">전체관람가 숏버스터</figcaption>
+                </figure>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <a href="https://youtu.be/fdGeDDr0s_g?si=n2widlR77z0hKlpK">
+                    <img
+                      class="thumbnail-long"
+                      src="/assets/thumbnail_long_2-TNJJDB22.png"
+                      alt="술꾼도시여자들 썸네일"
+                  /></a>
+                  <figcaption class="sr-only">술꾼도시여자들</figcaption>
+                </figure>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <a href="https://youtu.be/3S1asSWEqpM?si=V8Uafljkmjz71zTn">
+                    <img
+                      class="thumbnail-long"
+                      src="/assets/thumbnail_long_3-XwuvvPFw.png"
+                      alt="환승연애2 썸네일"
+                  /></a>
+                  <figcaption class="sr-only">환승연애2</figcaption>
+                </figure>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <a href="https://youtu.be/ETbAhhr-UNw?si=Rq6ZGFI0KbqV-16B">
+                    <img
+                      class="thumbnail-long"
+                      src="/assets/thumbnail_long_4-XpUsawZ-.png"
+                      alt="푸드크로니클 썸네일"
+                  /></a>
+                  <figcaption class="sr-only">푸드크로니클</figcaption>
+                </figure>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <a href="https://youtu.be/u2k5_XYhjc4?si=wxdPCSjVJQrHbA8v">
+                    <img
+                      class="thumbnail-long"
+                      src="/assets/thumbnail_long_5-yZd1YwLc.png"
+                      alt="몸값 썸네일"
+                  /></a>
+                  <figcaption class="sr-only">몸값</figcaption>
+                </figure>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <a href="https://youtu.be/IXNJO-4qEAw?si=tuYLYR_4XYuFHYow">
+                    <img
+                      class="thumbnail-long"
+                      src="/assets/thumbnail_long_6-8_UQO_2y.png"
+                      alt="러브캐쳐 썸네일"
+                  /></a>
+                  <figcaption class="sr-only">러브캐쳐</figcaption>
+                </figure>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <a href="https://youtu.be/aZh0D1p_xk0?si=-Yd_D6RxuLpyah4W">
+                    <img
+                      class="thumbnail-long"
+                      src="/assets/thumbnail_long_7-ULWcQJnJ.png"
+                      alt="괴이 썸네일"
+                  /></a>
+                  <figcaption class="sr-only">괴이</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="swiper-button-next swiper-button"></div>
+            <div class="swiper-button-prev swiper-button"></div>
           </div>
         </section>
-        
+
         <section class="ad-area">
           <h2 class="sr-only">하단 광고 배너</h2>
           <figure>
@@ -290,46 +295,61 @@
           <h2>이벤트</h2>
           <div class="swiper event-swiper">
             <div class="swiper-wrapper thumbnail-wrap">
-                <div class="swiper-slide">
-                    <a href="https://www.instagram.com/tving.official/" target="_blank">
-                      <img
-                        src="/assets/event_banner_1-ftuHoBe3.png"
-                        alt="신비아파트 예매권 증정 이벤트"
-                      />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="https://www.instagram.com/tving.official/" target="_blank">
-                      <img
-                        src="/assets/event_banner_2-6HgGL5H6.jpeg"
-                        alt="렛미인 도서 증정 이벤트"
-                      />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="https://www.instagram.com/tving.official/" target="_blank">
-                      <img
-                        src="/assets/event_banner_3-NNpD8_KH.jpeg"
-                        alt="디저트 메이커 이벤트"
-                      />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="https://www.instagram.com/tving.official/" target="_blank">
-                      <img
-                        src="/assets/event_banner_4-KwPPqdwD.jpeg"
-                        alt="슈릅 굿즈 증정 이벤트"
-                      />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="https://www.instagram.com/tving.official/" target="_blank">
+              <div class="swiper-slide">
+                <a
+                  href="https://www.instagram.com/tving.official/"
+                  target="_blank"
+                >
+                  <img
+                    src="/assets/event_banner_1-ftuHoBe3.png"
+                    alt="신비아파트 예매권 증정 이벤트"
+                  />
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  href="https://www.instagram.com/tving.official/"
+                  target="_blank"
+                >
+                  <img
+                    src="/assets/event_banner_2-6HgGL5H6.jpeg"
+                    alt="렛미인 도서 증정 이벤트"
+                  />
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  href="https://www.instagram.com/tving.official/"
+                  target="_blank"
+                >
+                  <img
+                    src="/assets/event_banner_3-NNpD8_KH.jpeg"
+                    alt="디저트 메이커 이벤트"
+                  />
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  href="https://www.instagram.com/tving.official/"
+                  target="_blank"
+                >
+                  <img
+                    src="/assets/event_banner_4-KwPPqdwD.jpeg"
+                    alt="슈릅 굿즈 증정 이벤트"
+                  />
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  href="https://www.instagram.com/tving.official/"
+                  target="_blank"
+                >
                   <img
                     src="/assets/event_banner_5-oWPOe-ZB.jpeg"
                     alt="환승연애 시즌2의 진한 여운을 잇는 과몰입 도파민 충전 이벤트"
                   />
-                    </a>
-                </div>
+                </a>
+              </div>
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
