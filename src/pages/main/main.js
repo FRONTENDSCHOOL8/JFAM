@@ -149,7 +149,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
   // ::실시간 인기 프로그램
   popularProgramData.forEach((item) => {
-    const template = /* html */ `
+    if (item.rank < 11) {
+      const template = /* html */ `
   <div class="swiper-slide">
   <figure>
   <a href="${item.link}">
@@ -164,8 +165,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         </figure>
   </div>
   `;
-    insertEnd('.popular-title .thumbnail-wrap', template);
+      insertEnd('.popular-title .thumbnail-wrap', template);
+    }
   });
+
   // ::인기 LIVE 채널
   liveChannelData.forEach((item) => {
     const template = /* html */ `

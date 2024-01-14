@@ -124,7 +124,6 @@
   width: 8.9rem;
 }
 
-/* 광고영역 */
 .main .ad-area img {
   border-radius: 4px;
   display: block;
@@ -135,6 +134,15 @@
   display: block;
   width: 9rem;
 }
+
+.main .ad-area {
+  width: 100%;
+}
+.main .event-area {
+  padding-bottom: 3rem;
+}
+
+/* -------------------------------------------------------------------------- */
 .main .programs {
   overflow: hidden;
 }
@@ -144,67 +152,6 @@
   white-space: nowrap;
 }
 
-/* -------------------------------------------------------------------------- */
-/* 스와이퍼 공통 */
-
-/* 클릭시 동적으로 추가 : 음수로 해결 네거티브 마진 */
-/* .is-active {
-  background: yellow; */
-/* margin: 0 calc(-1 * var(--margin-m)); */
-/* width: 100vw; */
-/* margin-left: calc(-1 * var(--margin-m) - 92px); */
-/* transform: translateX(calc(-1 * var(--margin-m))) scaleX(100vw); */
-/* width: 100vw; */
-/* } */
-/* .onlytving .swiper-wrapper {
-  width: 100%;
-  transform: translateX(-40px);
-} */
-
-.main .ad-area {
-  width: 100%;
-}
-.main .event-area {
-  padding-bottom: 3rem;
-}
-
-.main .programs .swiper-slide {
-  width: auto;
-}
-
-.main .programs .swiper-button-prev {
-  height: 100%;
-  opacity: 0;
-}
-.main .programs .swiper-button-next {
-  height: 100%;
-  opacity: 0;
-}
-.main .swiper-button-prev:hover {
-  transition: opacity 0.3s ease;
-  opacity: 1;
-}
-.main .swiper-button-next:hover {
-  transition: opacity 0.3s ease;
-  opacity: 1;
-}
-
-/* --------------------------------------- */
-/* 화살표 커스텀 */
-.main .programs > section:not(:last-child) {
-  --swiper-navigation-color: white;
-  --swiper-navigation-size: 1.8rem;
-  --swiper-navigation-top-offset: 5%;
-  --swiper-navigation-sides-offset: calc(var(--margin-m));
-}
-.main .programs > section:last-child {
-  --swiper-navigation-color: white;
-  --swiper-navigation-size: 1.8rem;
-  --swiper-navigation-top-offset: 35%;
-  --swiper-navigation-sides-offset: calc(var(--margin-m));
-}
-
-/* -------------------------------------------------------------------------- */
 /* 기본 알맹이 디자인 */
 .main .now-see figcaption,
 .main .must-see figcaption {
@@ -334,6 +281,8 @@
   }
 }
 /* -------------------------------------------------------------------------- */
+/* 썸네일 모션 커스텀 */
+
 .main .programs .swiper-slide {
   transition: transform 0.3s ease-in-out;
 }
@@ -342,3 +291,52 @@
   transform: translateY(-10px);
   transition-property: all;
 }
+/* --------------------------------------- */
+/* 스와이퍼 커스텀 */
+.main .programs > section:not(:last-child) {
+  --swiper-navigation-color: white;
+  --swiper-navigation-size: 2.2rem;
+  --swiper-navigation-top-offset: 5%;
+  --swiper-navigation-sides-offset: calc(0.6 * var(--margin-m));
+}
+.main .programs > section:last-child {
+  --swiper-navigation-color: white;
+  --swiper-navigation-size: 2.2rem;
+  --swiper-navigation-top-offset: 35%;
+  --swiper-navigation-sides-offset: calc(0.6 * var(--margin-m));
+}
+
+.main .programs .swiper-slide {
+  width: auto;
+}
+
+.main .programs .swiper-button-prev {
+  height: 100%;
+  opacity: 0;
+}
+.main .programs .swiper-button-next {
+  height: 100%;
+  opacity: 0;
+}
+.main .swiper-button-prev:hover {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+.main .swiper-button-next:hover {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+/* 클릭시 동적으로 추가 : 음수로 해결 네거티브 마진 */
+/* .is-active {
+  background: yellow; */
+/* margin: 0 calc(-1 * var(--margin-m)); */
+/* width: 100vw; */
+/* margin-left: calc(-1 * var(--margin-m) - 92px); */
+/* transform: translateX(calc(-1 * var(--margin-m))) scaleX(100vw); */
+/* width: 100vw; */
+/* } */
+/* .onlytving .swiper-wrapper {
+  width: 100%;
+  transform: translateX(-40px);
+} */
