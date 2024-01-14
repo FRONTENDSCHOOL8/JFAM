@@ -31,14 +31,16 @@
     <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="stylesheet" href="/src/styles/reset.css" />
     <link rel="stylesheet" href="/src/pages/signup/signup.css" />
+    <script type="module" src="/src/js/include.js"></script>
     <script type="module" src="/src/pages/signup/signup.js"></script>
   </head>
   <body>
+    <header data-include-path="/src/pages/header/index.html"></header>
     <div class="signup">
-      <h1 class="title">티빙 회원가입</h1>
-      <p class="comment">아이디와 이메일로 간편하게 티빙을 시작하세요!</p>
+      <h1 class="title">JFAM 회원가입</h1>
+      <p class="comment">아이디와 이메일로 간편하게 JFAM을 시작하세요!</p>
       <form class="signup-form" action="/" onsubmit="return false">
-        <h2 class="sr-only">티빙 회원가입 폼</h2>
+        <h2 class="sr-only">JFAM 회원가입 폼</h2>
         <div class="signup-input-wrapper signup-id">
           <label class="sr-only" for="input-id">아이디</label>
           <input
@@ -184,5 +186,6 @@
         </button>
       </form>
     </div>
+    <footer data-include-path="/src/pages/footer/index.html"></footer>
   </body>
 </html>

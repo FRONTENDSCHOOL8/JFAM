@@ -11,27 +11,39 @@
     <meta name="author" content="JFAM" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:title" content="JFAM | 회원가입" />
-    <meta property="og:url" content="https://jfam.netlify.app/src/pages/signup/" />
+    <meta
+      property="og:url"
+      content="https://jfam.netlify.app/src/pages/signup/"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/src/assets/opengraph_image.png" />
     <meta
       property="og:description"
       content="JFAM 오리지널부터 드라마, 예능, 영화, 해외시리즈까지! 무제한으로 스트리밍해 보세요"
     />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon-GcTYRqw7.png" />
-    <script type="module" crossorigin src="/assets/signup-43Of-Tot.js"></script>
+    <meta id="_csrf" name="_csrf" th:content="${_csrf.token}" />
+    <meta
+      id="_csrf_header"
+      name="_csrf_header"
+      th:content="${_csrf.headerName}"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon-GcTYRqw7.png" />
+    <script type="module" crossorigin src="/assets/signup-hS5mJx0Y.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/reset-9GtOEJoH.js">
+    <link rel="modulepreload" crossorigin href="/assets/include-JfAPemNh.js">
     <link rel="modulepreload" crossorigin href="/assets/pocketbase-v9INCz3k.js">
+    <link rel="modulepreload" crossorigin href="/assets/common-NlTJxg5N.js">
     <link rel="stylesheet" crossorigin href="/assets/reset-elziDHyV.css">
-    <link rel="stylesheet" crossorigin href="/assets/signup-VP4j0HvT.css">
+    <link rel="stylesheet" crossorigin href="/assets/signup-oPIy1ifv.css">
     <link rel="stylesheet" crossorigin href="/assets/style-HyYK2KUM.css">
   </head>
   <body>
+    <header data-include-path="/src/pages/header/index.html"></header>
     <div class="signup">
-      <h1 class="title">티빙 회원가입</h1>
-      <p class="comment">아이디와 이메일로 간편하게 티빙을 시작하세요!</p>
+      <h1 class="title">JFAM 회원가입</h1>
+      <p class="comment">아이디와 이메일로 간편하게 JFAM을 시작하세요!</p>
       <form class="signup-form" action="/" onsubmit="return false">
-        <h2 class="sr-only">티빙 회원가입 폼</h2>
+        <h2 class="sr-only">JFAM 회원가입 폼</h2>
         <div class="signup-input-wrapper signup-id">
           <label class="sr-only" for="input-id">아이디</label>
           <input
@@ -177,5 +189,6 @@
         </button>
       </form>
     </div>
+    <footer data-include-path="/src/pages/footer/index.html"></footer>
   </body>
 </html>
