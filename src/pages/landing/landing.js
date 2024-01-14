@@ -1,6 +1,7 @@
-import Swiper from 'swiper';
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 // import gsap from 'gsap';
-import pb from '/src/js/pocketbase.js';
+import pb from '/src/js/pocketbase';
 // import manageData from '/src/js/response.js'
 import {getNode, insertEnd, getPbImageURL} from '/src/js/common.js';
 
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     let currentSwiperState = null; // 이전 스와이퍼 상태를 저장할 변수
     const skeletonItem = getNode('.skeleton-loading');
     const animskeletonItem = getNode('.animskeleton-loading');
-
+    
     // 헤더 스크롤
   document.addEventListener("scroll", () => {
     const header = getNode('.landing .header');
@@ -42,6 +43,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {   
       const response = await pb.collection('landing_animationImg').getList();
       const userData = response.items;
+      const randomUserData = await pb.collection('landing_animationImg').getFullList({
+        sort: '@random',
+      });
       animskeletonItem.style.display = 'none';
 
       userData.forEach((item) => {
@@ -50,9 +54,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         `;
         insertEnd('.landing .div-slide__one',template);
         insertEnd('.landing .div-slide__two',template);
-        insertEnd('.landing .div-slide__three',template);
-        insertEnd('.landing .div-slide__four',template);
         });
+
+        randomUserData.forEach((item) => {
+          const template = /* html */`
+            <img src="${getPbImageURL(item)}" alt="">
+          `;
+          insertEnd('.landing .div-slide__three',template);
+          insertEnd('.landing .div-slide__four',template);
+          });
     }
     catch (error) {
       console.log(error);
