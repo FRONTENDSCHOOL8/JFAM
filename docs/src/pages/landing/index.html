@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko-KR">
   <head>
-    <title>JFAM</title>
+    <title>JFAM - 인터넷으로 시리즈와 영화를 시청하세요.</title>
     <meta charset="UTF-8" />
     <meta
       name="description"
@@ -11,133 +11,94 @@
     <meta name="author" content="JFAM" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:title" content="JFAM" />
-    <meta property="og:url" content="---오픈그래프-url 링크" />
+    <meta property="og:url" content="https://jfam.netlify.app/src/pages/landing/" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="---오픈그래프-썸네일 이미지" />
+    <meta property="og:image" content="/src/assets/opengraph_image.png" />
     <meta
       property="og:description"
       content="JFAM 오리지널부터 드라마, 예능, 영화, 해외시리즈까지! 무제한으로 스트리밍해 보세요"
     />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon-GcTYRqw7.png" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon-GcTYRqw7.png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script type="module" crossorigin src="/assets/landing-kBlRWUyI.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-9p4a8sJU.js">
-    <link rel="modulepreload" crossorigin href="/assets/swiper-core-zPFWeJGx.js">
-    <link rel="stylesheet" crossorigin href="/assets/landing-HuMNLaSr.css">
-    <link rel="stylesheet" crossorigin href="/assets/style-XK0akEEU.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" crossorigin src="/assets/landing-SIRpyvU_.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/reset-9GtOEJoH.js">
+    <link rel="modulepreload" crossorigin href="/assets/footer--eYzTGVC.js">
+    <link rel="modulepreload" crossorigin href="/assets/swiper-core-Lw7Odmy1.js">
+    <link rel="modulepreload" crossorigin href="/assets/pocketbase-v9INCz3k.js">
     <link rel="stylesheet" crossorigin href="/assets/reset-elziDHyV.css">
+    <link rel="stylesheet" crossorigin href="/assets/footer-ApLz_SxC.css">
+    <link rel="stylesheet" crossorigin href="/assets/landing-CKVibruJ.css">
+    <link rel="stylesheet" crossorigin href="/assets/style-HyYK2KUM.css">
   </head>
   <body>
     <div class="landing">
-      <h1 class="h1-logo"><svg width="46" height="15" viewBox="0 0 765 230" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0_2862_8084)">
-        <path d="M20.91 174.72H49.15C56.5 174.72 61.44 173.34 63.97 170.58C66.5 167.82 67.76 163.92 67.76 158.86V0H143.58V171.62C143.58 192.99 138.7 208.04 128.93 216.76C119.16 225.49 103.6 229.86 82.23 229.86H0L20.91 174.72ZM169.78 0H339.58L316.7 60.31H243.18V96.81H302.81L281.11 154.02H243.18V229.86H169.78V0ZM368.56 0H423.7L510.89 229.86H438.52L430.94 209.18H361.33L353.75 229.86H281.38L368.56 0ZM414.67 161.47L396.13 113.26L377.59 161.47H414.67ZM524.05 0H584.7L644.66 88.22L704.29 0H764.94V229.86H691.54V147.15L644.67 216.07L597.46 147.15V229.86H524.06V0H524.05Z" fill="white"/>
-        </g>
-        <defs>
-        <clipPath id="clip0_2862_8084">
-        <rect width="764.94" height="229.86" fill="white"/>
-        </clipPath>
-        </defs>
-        </svg></h1>
-      <section class="section-promotionTop">
-        <p class="p-copywriting">티빙 오리지널 콘텐츠,</br> 방송, 영화, 해외시리즈까지!</br> 재미를 플레이해보세요.</p>
+      <header class="header">
+        <h1 class="h1-jfamLogo">
+        <img src="data:image/svg+xml,%3csvg%20role='img'%20aria-labelledby='title'%20width='46'%20height='15'%20viewBox='0%200%20765%20230'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ctitle%3e정가네%20로고%3c/title%3e%3cg%3e%3cpath%20d='M20.91%20174.72H49.15C56.5%20174.72%2061.44%20173.34%2063.97%20170.58C66.5%20167.82%2067.76%20163.92%2067.76%20158.86V0H143.58V171.62C143.58%20192.99%20138.7%20208.04%20128.93%20216.76C119.16%20225.49%20103.6%20229.86%2082.23%20229.86H0L20.91%20174.72ZM169.78%200H339.58L316.7%2060.31H243.18V96.81H302.81L281.11%20154.02H243.18V229.86H169.78V0ZM368.56%200H423.7L510.89%20229.86H438.52L430.94%20209.18H361.33L353.75%20229.86H281.38L368.56%200ZM414.67%20161.47L396.13%20113.26L377.59%20161.47H414.67ZM524.05%200H584.7L644.66%2088.22L704.29%200H764.94V229.86H691.54V147.15L644.67%20216.07L597.46%20147.15V229.86H524.06V0H524.05Z'%20fill='white'/%3e%3c/g%3e%3c/svg%3e" alt="정가네 로고">
+        </h1>
+        <div class="div-account">
+          <a href="/src/pages/signup/" class="signup" target="_blank">지금 가입</a>
+          <a href="/src/pages/login/" class="login" target="_blank">로그인</a>
+        </div>
+      </header>
+      <section class="section-promotion-top">
+        <h2 class="sr-only">회원가입 권유</h2>
+        <p class="p-copywriting">티빙 오리지널 콘텐츠,<br> 방송, 영화, 해외시리즈까지!<br> 재미를 플레이해보세요.</p>
         <p class="p-promoMessage">간편하게 가입하고, 원하실 때 해지할 수 있어요.</p>
-        <a class="a-signupLink" href="/src/pages/login/">새로워진 타잉을 만나보세요!</a>
+        <a class="a-signupLink" href="/src/pages/login/" target="_blank">지금 바로 시작하세요!</a>
       </section>
       <section class="section-originalContent">
         <h2 class="h2-sectionTitle">티빙에만 있는 재미</h2>
-        <p>오리지널 콘텐츠를 만나보세요!</p>
-        <p>차별화된 웰메이드 오리지널 콘텐츠</p>
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="https://i.namu.wiki/i/AH2T538ZvuqE71EBWYrBwbaWlgkKqjih6-_ADj4S_Nq_N1orPFtwEgzoZt0IdNxgWAOOj8eqG53c4SRtCSOlLoN7SqPuc24DGjXY6upeslqZWCSujIYwhvF7kYaVlqAcWDbN1L9byZMPVNPb4Vfzkg.webp" alt=""></div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            <div class="swiper-slide">Slide 4</div>
-            <div class="swiper-slide">Slide 5</div>
-            <div class="swiper-slide">Slide 6</div>
-            <div class="swiper-slide">Slide 7</div>
-            <div class="swiper-slide">Slide 8</div>
-            <div class="swiper-slide">Slide 9</div>
+        <p class="p-promoMessage">오리지널 콘텐츠를 만나보세요!<br>차별화된 웰메이드 오리지널 콘텐츠</p>
+        <div class="skeleton-loading">
+          <div class="skeleton-swiper-wrapper">
+            <div class="skeleton-swiper"></div>
+            <div class="skeleton-swiper"></div>
+            <div class="skeleton-swiper"></div>
           </div>
-          <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper"></div>
+        </div>
       </section>
       <section class="section-popularContent">
         <h2 class="h2-sectionTitle">내가 찾던 재미</h2>
-        <p>보고 싶은 콘텐츠를 발견하세요!</p>
-        <div class="div-slider">
-          <div class="div-slide__one">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
+        <p class="p-promoMessage">보고 싶은 콘텐츠를 발견하세요!</p>
+        <div class="animskeleton-loading">
+          <div class="skeleton-animswiper-wrapper">
+            <div class="skeleton-animswiper"></div>
+            <div class="skeleton-animswiper"></div>
+            <div class="skeleton-animswiper"></div>
+            <div class="skeleton-animswiper"></div>
+            <div class="skeleton-animswiper"></div>
           </div>
-          <div class="div-slide__one">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
+          <div class="skeleton-animswiper-wrapper">
+            <div class="skeleton-animswiper"></div>
+            <div class="skeleton-animswiper"></div>
+            <div class="skeleton-animswiper"></div>
+            <div class="skeleton-animswiper"></div>
+            <div class="skeleton-animswiper"></div>
           </div>
         </div>
         <div class="div-slider">
-          <div class="div-slide__two">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
+          <div class="div-slide__one">
           </div>
           <div class="div-slide__two">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
-            <img src="/assets/small_visual-wfuNCTw-.png">
+          </div>
+        </div>
+        <div class="div-slider">
+          <div class="div-slide__three">
+          </div>
+          <div class="div-slide__four">
           </div>
         </div>
       </section>
-      <section class="section-promotionBottom">
-        <div>
-          <svg width="92" height="30" viewBox="0 0 765 230" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_2862_8084)">
-            <path d="M20.91 174.72H49.15C56.5 174.72 61.44 173.34 63.97 170.58C66.5 167.82 67.76 163.92 67.76 158.86V0H143.58V171.62C143.58 192.99 138.7 208.04 128.93 216.76C119.16 225.49 103.6 229.86 82.23 229.86H0L20.91 174.72ZM169.78 0H339.58L316.7 60.31H243.18V96.81H302.81L281.11 154.02H243.18V229.86H169.78V0ZM368.56 0H423.7L510.89 229.86H438.52L430.94 209.18H361.33L353.75 229.86H281.38L368.56 0ZM414.67 161.47L396.13 113.26L377.59 161.47H414.67ZM524.05 0H584.7L644.66 88.22L704.29 0H764.94V229.86H691.54V147.15L644.67 216.07L597.46 147.15V229.86H524.06V0H524.05Z" fill="white"/>
-            </g>
-            <defs>
-            <clipPath id="clip0_2862_8084">
-            <rect width="764.94" height="229.86" fill="white"/>
-            </clipPath>
-            </defs>
-            </svg>
+      <section class="section-promotion-bottom">
+        <h2 class="sr-only h2-sectionTitle">회원가입 권유</h2>
+          <img class="img-jfamLogo" src="data:image/svg+xml,%3csvg%20role='img'%20aria-labelledby='title'%20width='46'%20height='15'%20viewBox='0%200%20765%20230'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ctitle%3e정가네%20로고%3c/title%3e%3cg%3e%3cpath%20d='M20.91%20174.72H49.15C56.5%20174.72%2061.44%20173.34%2063.97%20170.58C66.5%20167.82%2067.76%20163.92%2067.76%20158.86V0H143.58V171.62C143.58%20192.99%20138.7%20208.04%20128.93%20216.76C119.16%20225.49%20103.6%20229.86%2082.23%20229.86H0L20.91%20174.72ZM169.78%200H339.58L316.7%2060.31H243.18V96.81H302.81L281.11%20154.02H243.18V229.86H169.78V0ZM368.56%200H423.7L510.89%20229.86H438.52L430.94%20209.18H361.33L353.75%20229.86H281.38L368.56%200ZM414.67%20161.47L396.13%20113.26L377.59%20161.47H414.67ZM524.05%200H584.7L644.66%2088.22L704.29%200H764.94V229.86H691.54V147.15L644.67%20216.07L597.46%20147.15V229.86H524.06V0H524.05Z'%20fill='white'/%3e%3c/g%3e%3c/svg%3e" alt="정가네 로고">
           <p>지금 시작해보세요</p>
-          <a class="a-signupLink" href="/src/pages/login/">새로워진 타잉을 만나보세요!</a>
-        </div>
+          <a class="a-signupLink" href="/src/pages/login/" target="_blank">지금 바로 시작하세요!</a>
       </section>
     </div>
   </body>

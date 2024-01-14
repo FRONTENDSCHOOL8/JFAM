@@ -1,1 +1,0 @@
-import"./modulepreload-polyfill-9p4a8sJU.js";/* empty css              */const o=document.querySelector(".button-profile");function t(){location.href="/src/assets/pages/login/"}o.addEventListener("click",t);
