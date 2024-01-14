@@ -1,64 +1,63 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import '/src/styles/common.css';
 
 :root {
   --margin-m: 2vw;
 }
-* {
-  font-family: 'Pretendard-Regular', 'Noto Sans KR', Arial, 'sans-serif';
-    line-height: 1.7;
-    box-sizing: border-box;
-    word-break: keep-all;
-}
-
-.main {
-  background: black;
-}
-
-/* -------------------------------------------------------------------------- */
-/* 메인 스와이퍼 */
-/* .bigbanner {
-  background: blueviolet;
-  width: 100%;
-  height: 400px;
-  position: relative;
-}
 
 .swiper {
-  background: darkgoldenrod;
-  width: 100vw;
-  height: 200px;
-} */
+  width: 100%;
+  height: 100%;
+}
+
 /* -------------------------------------------------------------------------- */
-/* 최상단 영역 */
+/* 빅배너 영역 */
 
 .bigbanner {
   /* background: blueviolet; */
-  width: 100%;
   position: relative;
+  --swiper-navigation-size: 1.5rem;
+  --swiper-navigation-color: white;
 }
-.bigbanner img{
-  width: 100%;
-  display: block;
+/* ----------------------------------- */
+/* 빅배너 스와이퍼 */
+.bigbanner .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-height: 80vh;
   min-height: 140px;
+}
+.bigbanner .swiper-slide img {
+  display: block;
+  width: 100%;
   object-fit: cover;
 }
 
-.bigbanner-inner {
-  /* background: olive; */
-  position: absolute;
+.bigbanner-dim {
   width: 100%;
-  bottom: calc(var(--margin-m)*2);
+  height: 3.75rem;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black);
 }
+.bigbanner-inner {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  padding: 0 var(--margin-m);
+  bottom: calc(var(--margin-m) * 2);
+}
+
 .bigbanner-container {
-  margin: 0 var(--margin-m);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.bigbanner h3 {
+.bigbanner h2 {
   font-weight: 800;
   color: white;
   font-size: 0.75rem;
@@ -67,14 +66,19 @@
   color: white;
   font-weight: 400;
   font-size: 0.75rem;
-  padding: 4px 6px;
+  padding: 0.25rem 0.5rem;
   border: 1px solid white;
   border-radius: 4px;
 }
 
-
 /* -------------------------------------------------------------------------- */
-/* 프로그램 영영 */
+/* 프로그램 영역 */
+.programs {
+  padding: 0 var(--margin-m);
+}
+.programs > section {
+  margin-bottom: 2rem;
+}
 
 .programs h2 {
   font-weight: 600;
@@ -82,48 +86,110 @@
   color: white;
   font-size: 0.75rem;
 }
+
+/* 썸네일 @모바일 320px*/
 .programs img {
   border-radius: 4px;
   display: block;
 }
-.programs .thumbnail-wrap {
-  /* background: RosyBrown; */
-  display: flex;
-  gap: 0.5rem;
-
-}
-
-.now-see,
-.must-see,
-.quickvod,
-.top-title,
-.top-live,
-.onlytving {
-  /* background: SteelBlue; */
-  padding-left: var(--margin-m);
-  margin-bottom: 1rem;
-  overflow: hidden;
-}
-/* 썸네일 */
-
 .thumbnail-vertical {
-  width: 92px;
+  width: 5.7rem;
 }
 .thumbnail-horizontal {
-  width: 145px;
+  width: 9rem;
 }
 .thumbnail-long {
-  width: 140px;
+  width: 8.9rem;
 }
 
-/* 페이지 구분 */
+/* 광고영역 */
+.ad-area img {
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+}
+.event-area img {
+  border-radius: 4px;
+  display: block;
+  width: 9rem;
+}
+
+.programs .thumbnail-wrap {
+  display: flex;
+  gap: 0.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 스와이퍼 공통 */
+
+/* 클릭시 동적으로 추가 : 음수로 해결 네거티브 마진 */
+/* .is-active {
+  background: yellow; */
+/* margin: 0 calc(-1 * var(--margin-m)); */
+/* width: 100vw; */
+/* margin-left: calc(-1 * var(--margin-m) - 92px); */
+/* transform: translateX(calc(-1 * var(--margin-m))) scaleX(100vw); */
+/* width: 100vw; */
+/* } */
+/* .onlytving .swiper-wrapper {
+  width: 100%;
+  transform: translateX(-40px);
+} */
+
+.ad-area {
+  width: 100%;
+}
+.event-area {
+  padding-bottom: 3rem;
+}
+
+.programs .swiper-slide {
+  width: auto;
+}
+
+.programs .swiper-button-prev {
+  height: 100%;
+  opacity: 0;
+}
+.programs .swiper-button-next {
+  height: 100%;
+  opacity: 0;
+}
+.swiper-button-prev:hover {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+.swiper-button-next:hover {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+/* --------------------------------------- */
+/* 화살표 커스텀 */
+.programs > section:not(:last-child) {
+  --swiper-navigation-color: white;
+  --swiper-navigation-size: 1.8rem;
+  --swiper-navigation-top-offset: 5%;
+  --swiper-navigation-sides-offset: calc(var(--margin-m));
+}
+.programs > section:last-child {
+  --swiper-navigation-color: white;
+  --swiper-navigation-size: 1.8rem;
+  --swiper-navigation-top-offset: 35%;
+  --swiper-navigation-sides-offset: calc(var(--margin-m));
+}
+
+/* -------------------------------------------------------------------------- */
+/* 기본 알맹이 디자인 */
 .now-see figcaption,
 .must-see figcaption {
   font-size: 0.75rem;
   color: var(--gray--200);
 }
 
-/* 페이지 구분  quickvod */
+/* quickvod */
 .quickvod figcaption {
   font-size: 0.75rem;
   color: var(--gray--200);
@@ -134,16 +200,16 @@
   color: var(--gray--300);
 }
 
-/* 페이지 구분 top-title */
-.top-title figcaption {
+/* popular-title */
+.popular-title figcaption {
   font-size: 0.75rem;
   color: var(--gray--200);
   font-weight: 600;
   display: flex;
   align-items: baseline;
-  gap: 0.25rem;
+  /* gap: 0.25rem; */
 }
-.top-title em {
+.popular-title em {
   font-family: 'Noto Sans KR';
   font-size: 2.2rem;
   font-weight: 700;
@@ -151,16 +217,17 @@
   transform: skew(-15deg);
   line-height: 0;
 }
-/* 페이지 구분 top-live  */
-.top-live figcaption {
+/* popular-live  */
+.popular-live figcaption {
   font-size: 0.75rem;
   color: var(--gray--200);
   font-weight: 400;
   display: flex;
   align-items: baseline;
   gap: 0.25rem;
+  line-height: 1.4;
 }
-.top-live em {
+.popular-live em {
   font-family: 'Noto Sans KR';
   font-size: 2.2rem;
   font-weight: 700;
@@ -168,154 +235,78 @@
   transform: skew(-15deg);
   line-height: 0;
 }
-.top-live span{
-  line-height: 1.4;
 
-}
-.top-live figcaption p {
+.popular-live figcaption span {
+  display: block;
   font-weight: 400;
   color: var(--gray--300);
 }
 
-/* 페이지 구분 onlytving  */
-.onlytving figcaption{
-  display: none;
+/* ---------------------------------@@@@@@@@--------------------------------- */
+/* 1. 전체 좌우 여백    */
+/* 2. 썸넬 사이 여백    */
+/* 3. 썸넬 너비        */
+/* 4. 폰트 크기 -h2    */
+/* 5. 폰트 크기 -타이틀  */
+
+/* 썸네일 @모바일 320px */
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  html {
+    font-size: calc(16px + 0.5vw);
+
+    /* font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (768 - 320))); */
+  }
 }
 
+/* @미디어쿼리 - 태블릿  768px */
+@media screen and (min-width: 768px) {
+  :root {
+    --margin-m: 2vw;
+  }
 
-/* -------------------------------------------------------------------------- */
-/* 광고영역 */
+  html {
+    font-size: calc(16px + 0.6vw);
+  }
+  .programs .thumbnail-wrap {
+    gap: calc(0.3rem + 0.1vw);
+  }
+  .thumbnail-vertical {
+    width: 6rem;
+  }
+  .thumbnail-horizontal {
+    width: 10rem;
+  }
 
+  .event-area img {
+    width: 11rem;
+  }
 
-.ad-area{
-  /* background: SteelBlue; */
-  width: 100%;
-  padding: 1rem var(--margin-m);
-}
-.ad-area img{
-  border-radius: 4px;
-  display: block;
-  width: 100%;
-}
-.event-area {
-  /* background: indianred; */
-  padding-left: var(--margin-m);
-  padding-bottom: 1rem;
-  overflow: hidden;
-}
-.event-banner-wrap{
-  /* background: salmon; */
-  display: flex;
-  gap: 0.5rem;
-}
-.event-area img{
-  border-radius: 4px;
-  display: block;
-  width: 145px;
+  .programs figcaption {
+    font-size: 0.6rem;
+  }
+  .bigbanner a {
+    padding: calc(0.3rem + 0.1vw) calc(0.5rem + 2vw);
+  }
 }
 
-
-/* -------------------------------------------------------------------------- */
-/* 미디어쿼리 - 태블릿 */
-@media (min-width: 768px) {
+/* @미디어쿼리 - pc  1920px */
+@media screen and (min-width: 1200px) {
   :root {
     --margin-m: 4vw;
   }
-  /* 폰트 사이즈 */
-  .bigbanner-container h3,
-  .programs h2 {
-    font-size: 1rem;
+  html {
+    font-size: calc(16px + 0.6vw);
   }
-  .bigbanner-container a{
+
+  .bigbanner-inner {
+    bottom: calc(var(--margin-m) * 0.8);
+  }
+  .bigbanner h2 {
+    font-size: 0.9rem;
+  }
+  .bigbanner a {
     font-size: 0.8rem;
-    padding: 12px 34px;
-  }
-  /* 여백 */
-  .programs h2 {
-    margin-bottom: 0.5rem;
-  }
-  .now-see,
-  .must-see,
-  .quickvod,
-  .top-title,
-  .top-live,
-  .onlytving,
-  .event-area  {
-    margin-bottom: 1.8rem;
-  }
-  .ad-area{
-    padding: 1.8rem var(--margin-m);
-  }
-  /* 이미지사이즈 */
-  .thumbnail-vertical {
-    width: 130px;
-  }
-  .thumbnail-horizontal {
-    width: 224px;
-  }
-  .thumbnail-long {
-    width: 168px;
-  }
-  .event-area img{
-    width: 214px;
+    padding: calc(0.4rem + 0.1vw) calc(0.6rem + 2vw);
   }
 }
-
-/* -------------------------------------------------------------------------- */
-/* pc 사이즈 */
-@media (min-width: 1920px) {
-  :root {
-    --margin-m: 3vw;
-  }
-  .bigbanner-container h3,
-  .programs h2{
-    font-size:1.8rem;
-  }
-  .bigbanner-container a{
-    font-size: 1.5rem;
-    padding: 22px 64px;
-  }
-
-  .programs h2 {
-    margin-bottom: 0.75rem;
-  }
-  /* 여백 */
-  .programs .thumbnail-wrap {
-    gap: 1rem;
-  }
-  .now-see,
-  .must-see,
-  .quickvod,
-  .top-title,
-  .top-live,
-  .onlytving,
-  .event-area  {
-    margin-bottom: 2.25rem;
-  }
-  .ad-area{
-    padding: 2.25rem var(--margin-m);
-  }
-
-  /* 이미지 크기 */
-  .thumbnail-vertical {
-    width: 240px;
-  }
-  .thumbnail-horizontal {
-    width: 345px;
-  }
-  .thumbnail-long {
-    width: 285px;
-  }
-  .event-area img{
-    width: 346px;
-  }
-  /* 폰트 크기 */
-  .programs figcaption{
-    font-size: 1.3rem;
-  }
-  .quickvod p,
-  .top-live p{
-    font-size: 1rem;
-  }
-}
-

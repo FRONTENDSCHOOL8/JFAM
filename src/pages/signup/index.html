@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko-KR">
   <head>
-    <title>JFAM</title>
+    <title>JFAM | 회원가입</title>
     <meta charset="UTF-8" />
     <meta
       name="description"
@@ -10,13 +10,22 @@
     <meta name="keywords" content="HTML5, CSS3, Vanilla JavaScript, swiper" />
     <meta name="author" content="JFAM" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="JFAM" />
-    <meta property="og:url" content="---오픈그래프-url 링크" />
+    <meta property="og:title" content="JFAM | 회원가입" />
+    <meta
+      property="og:url"
+      content="https://jfam.netlify.app/src/pages/signup/"
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="---오픈그래프-썸네일 이미지" />
+    <meta property="og:image" content="/src/assets/opengraph_image.png" />
     <meta
       property="og:description"
       content="JFAM 오리지널부터 드라마, 예능, 영화, 해외시리즈까지! 무제한으로 스트리밍해 보세요"
+    />
+    <meta id="_csrf" name="_csrf" th:content="${_csrf.token}" />
+    <meta
+      id="_csrf_header"
+      name="_csrf_header"
+      th:content="${_csrf.headerName}"
     />
     <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.png" />
     <link rel="stylesheet" href="/src/styles/style.css" />
@@ -26,10 +35,10 @@
   </head>
   <body>
     <div class="signup">
-      <h1 class="title">티빙 회원가입</h1>
-      <p class="comment">아이디와 이메일로 간편하게 티빙을 시작하세요!</p>
+      <h1 class="title">JFAM 회원가입</h1>
+      <p class="comment">아이디와 이메일로 간편하게 JFAM을 시작하세요!</p>
       <form class="signup-form" action="/" onsubmit="return false">
-        <h2 class="sr-only">티빙 회원가입 폼</h2>
+        <h2 class="sr-only">JFAM 회원가입 폼</h2>
         <div class="signup-input-wrapper signup-id">
           <label class="sr-only" for="input-id">아이디</label>
           <input

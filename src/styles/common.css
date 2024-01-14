@@ -1,0 +1,31 @@
+* {
+  font-family:
+    'Pretendard-Regular',
+    'Noto Sans KR',
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    'sans-serif';
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-break: keep-all;
+  /* background: black; */
+}
+
+body {
+  background: black;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-width: 0;
+  clip: rect(0, 0, 0, 0);
+}
