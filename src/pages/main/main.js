@@ -1,14 +1,14 @@
 import Swiper from 'swiper/bundle';
 import pb from '/src/js/pocketbase';
 import gsap from 'gsap';
-import { getNode, getNodes, insertEnd, getPbImageURL } from '/src/js/common.js';
+import { getNodes, insertEnd, getPbImageURL } from '/src/js/common.js';
 import 'swiper/css/bundle';
 import '/src/pages/main/main.css';
 
 document.addEventListener('DOMContentLoaded', async () => {
   // 로컬유저 데이터가져오기
   // const localUser = await getStorage('auth');
-  const userId = getNode('.userId');
+  // const userId = getNode('.userId');
   /* -------------------------------------------------------------------------- */
   // 스와이퍼
   const fullSwiper = new Swiper('.full-swiper', {
@@ -28,24 +28,30 @@ document.addEventListener('DOMContentLoaded', async () => {
       enabled: true,
     },
   });
+  // 프로퍼티 변경
+  // fullSwiper.autoplay = false;
+
   // 프로그램 스와이퍼 유틸함수!!!!
   function standardSwiper(node) {
     return new Swiper(node, {
       cssMode: true,
       grabCursor: true,
+      keyboard: {
+        enabled: true,
+      },
+      allowTouchMove: true,
       centeredSlides: false,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-      keyboard: {
-        enabled: true,
-      },
+
       spaceBetween: 0,
       slidesPerView: 'auto',
       slidesPerGroupAuto: true,
     });
   }
+
   standardSwiper('.now-swiper');
   standardSwiper('.must-swiper');
   standardSwiper('.quickvod-swiper');

@@ -25,12 +25,17 @@
     <link rel="stylesheet" href="/src/styles/reset.css" />
     <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="stylesheet" href="/src/pages/main/main.css" />
+    <script type="module" src="/src/js/include.js"></script>
     <script type="module" src="/src/pages/main/main.js"></script>
   </head>
+
   <body>
     <main class="main">
       <!-- 본문 -->
       <section class="bigbanner">
+        <div class="main-header">
+          <header data-include-path="/src/pages/header/index.html"></header>
+        </div>
         <h2 class="sr-only">최상단 배너 영역</h2>
         <div class="swiper full-swiper">
           <div class="swiper-wrapper">
@@ -353,5 +358,7 @@
       </div>
       <!-- 본문 끝 -->
     </main>
+
+    <footer data-include-path="/src/pages/footer/index.html"></footer>
   </body>
 </html>
