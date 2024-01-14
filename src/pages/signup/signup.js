@@ -1,13 +1,19 @@
 import pb from '/src/js/pocketbase.js';
+import {
+  getNode,
+  getNodes,
+  setClassList,
+  changeTextContent,
+} from '/src/js/common';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const input = document.querySelectorAll('.form-input');
-  const check = document.querySelectorAll('.form-check');
-  const span = document.querySelectorAll('.span-condition');
-  const buttonShowPassword = document.querySelectorAll('.button-show');
-  const buttonEraseInput = document.querySelectorAll('.button-erase');
-  const signupForm = document.querySelector('.signup-form');
-  const buttonSubmit = document.querySelector('.button-signup-submit');
+  const input = getNodes('.form-input');
+  const check = getNodes('.form-check');
+  const span = getNodes('.span-condition');
+  const buttonShowPassword = getNodes('.button-show');
+  const buttonEraseInput = getNodes('.button-erase');
+  const signupForm = getNode('.signup-form');
+  const buttonSubmit = getNode('.button-signup-submit');
 
   const [inputId, inputPassword, inputPasswordCheck, inputEmail] = input;
 
@@ -59,43 +65,27 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   };
 
-  const changeConditionMessage = (node, message) => {
-    const nodeElement = node;
-    nodeElement.textContent = message;
-  };
-
-  const setClassList = (node, modify, className) => {
-    const nodeElement = node;
-    if (modify === 'add') {
-      nodeElement.classList.add(className);
-    } else if (modify === 'remove') {
-      nodeElement.classList.remove(className);
-    } else {
-      throw new Error('setClassList 함수의 modify는 add 또는 remove 입니다');
-    }
-  };
-
   const manageConditionId = (idCondition) => {
     setClassList(eraseInputId, 'add', 'has-input');
     switch (idCondition) {
       case 'emptyId':
-        changeConditionMessage(conditionId, '입력한 내용이 없어요.');
+        changeTextContent(conditionId, '입력한 내용이 없어요.');
         setClassList(conditionId, 'add', 'warning');
         setClassList(eraseInputId, 'remove', 'has-input');
         break;
       case 'invalidId':
-        changeConditionMessage(
+        changeTextContent(
           conditionId,
           '영문 또는 영문, 숫자 조합 6~12자리로 입력해주세요.'
         );
         setClassList(conditionId, 'add', 'warning');
         break;
       case 'duplicationId':
-        changeConditionMessage(conditionId, '이미 사용 중인 아이디입니다.');
+        changeTextContent(conditionId, '이미 사용 중인 아이디입니다.');
         setClassList(conditionId, 'add', 'warning');
         break;
       default:
-        changeConditionMessage(conditionId, '');
+        changeTextContent(conditionId, '');
         break;
     }
   };
@@ -104,19 +94,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     setClassList(eraseInputPassword, 'add', 'has-input');
     switch (passwordCondition) {
       case 'emptyPassword':
-        changeConditionMessage(conditionPassword, '입력한 내용이 없어요.');
+        changeTextContent(conditionPassword, '입력한 내용이 없어요.');
         setClassList(conditionPassword, 'add', 'warning');
         setClassList(eraseInputPassword, 'remove', 'has-input');
         break;
       case 'invalidPassword':
-        changeConditionMessage(
+        changeTextContent(
           conditionPassword,
           '특수문자(~!@#$%^&*) 포함 6~16자리로 입력해주세요.'
         );
         setClassList(conditionPassword, 'add', 'warning');
         break;
       default:
-        changeConditionMessage(conditionPassword, '');
+        changeTextContent(conditionPassword, '');
         break;
     }
   };
@@ -125,19 +115,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     setClassList(eraseInputPasswordCheck, 'add', 'has-input');
     switch (passwordCheckCondition) {
       case 'emptyPasswordCheck':
-        changeConditionMessage(conditionPasswordCheck, '입력한 내용이 없어요.');
+        changeTextContent(conditionPasswordCheck, '입력한 내용이 없어요.');
         setClassList(conditionPasswordCheck, 'add', 'warning');
         setClassList(eraseInputPasswordCheck, 'remove', 'has-input');
         break;
       case 'notMatchedPassword':
-        changeConditionMessage(
+        changeTextContent(
           conditionPasswordCheck,
           '일치하지 않습니다. 다시 입력해주세요.'
         );
         setClassList(conditionPasswordCheck, 'add', 'warning');
         break;
       default:
-        changeConditionMessage(conditionPasswordCheck, '');
+        changeTextContent(conditionPasswordCheck, '');
         break;
     }
   };
@@ -146,19 +136,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     setClassList(eraseInputEmail, 'add', 'has-input');
     switch (emailCondition) {
       case 'emptyEmail':
-        changeConditionMessage(conditionEmail, '입력한 내용이 없어요.');
+        changeTextContent(conditionEmail, '입력한 내용이 없어요.');
         setClassList(conditionEmail, 'add', 'warning');
         setClassList(eraseInputEmail, 'remove', 'has-input');
         break;
       case 'invalidEmail':
-        changeConditionMessage(
+        changeTextContent(
           conditionEmail,
           '이메일 형식이 맞지 않습니다. 다시 입력해 주세요.'
         );
         setClassList(conditionEmail, 'add', 'warning');
         break;
       default:
-        changeConditionMessage(conditionEmail, '');
+        changeTextContent(conditionEmail, '');
         break;
     }
   };
@@ -183,7 +173,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       selectedSiblingNodes[selectedSiblingNodes.length - 1];
     selectedInputNode.value = '';
     setClassList(selectedButtonNode, 'remove', 'has-input');
-    changeConditionMessage(selectedSpanNode, '입력한 내용이 없어요.');
+    changeTextContent(selectedSpanNode, '입력한 내용이 없어요.');
   };
 
   const handleAgreeAll = (e) => {
@@ -305,7 +295,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const data = {
       username: inputId.value,
       email: inputEmail.value,
-      // "emailVisibility": true,
+      emailVisibility: true,
       password: inputPassword.value,
       passwordConfirm: inputPasswordCheck.value,
       required_agree: true,
@@ -313,18 +303,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       receive_marketing_SNS: checkboxSNS.checked,
       receive_marketing_email: checkboxEmail.checked,
     };
-
-    // const data = {
-    //   username: 'test001',
-    //   email: 'test001@example.com',
-    //   emailVisibility: true,
-    //   password: '123!123',
-    //   passwordConfirm: '123!123',
-    //   required_agree: true,
-    //   provision_of_personal_information: true,
-    //   receive_marketing_SNS: true,
-    //   receive_marketing_email: false,
-    // };
     try {
       pb.collection('users')
         .create(data)
@@ -333,7 +311,6 @@ document.addEventListener('DOMContentLoaded', async () => {
           window.location.href = '/src/pages/login/';
         })
         .catch(() => {
-          console.log(data);
           alert('입력 상태을 확인해주세요.');
         });
     } catch (error) {

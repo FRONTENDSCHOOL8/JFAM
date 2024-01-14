@@ -1,33 +1,14 @@
 import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
 import pb from '/src/js/pocketbase';
 import gsap from 'gsap';
+import { getNode, getNodes, insertEnd, getPbImageURL } from '/src/js/common.js';
+import 'swiper/css/bundle';
 import '/src/pages/main/main.css';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  /* -------------------------------------------------------------------------- */
-  // 유틸함수
-  // ::돔 요소 납치하기
-  function getNode(node) {
-    if (typeof node !== 'string') {
-      throw new Error('문자열 아규먼트만 잡아오세요.');
-    }
-    return document.querySelector(node);
-  }
-  function getNodes(node) {
-    if (typeof node !== 'string') {
-      throw new Error('문자열 아규먼트만 잡아오세요.');
-    }
-    return document.querySelectorAll(node);
-  }
-  // ::돔에 노드 추가
-  function insertEnd(node, text) {
-    getNode(node).insertAdjacentHTML('beforeend', text);
-  }
-  // ::포켓베이스 이미지 url 가져오기
-  function getPbImageURL(item) {
-    return `https://jfam.pockethost.io/api/files/${item.collectionName}/${item.id}/${item.image}`;
-  }
+  // 로컬유저 데이터가져오기
+  // const localUser = await getStorage('auth');
+  const userId = getNode('.userId');
   /* -------------------------------------------------------------------------- */
   // 스와이퍼
   const fullSwiper = new Swiper('.full-swiper', {
@@ -47,11 +28,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       enabled: true,
     },
   });
-
   // 프로그램 스와이퍼 유틸함수!!!!
   function standardSwiper(node) {
     return new Swiper(node, {
       cssMode: true,
+      grabCursor: true,
+      centeredSlides: false,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -71,6 +53,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   standardSwiper('.popular-live-swiper');
   standardSwiper('.only-swiper');
   standardSwiper('.event-swiper');
+  /* -------------------------------------------------------------------------- */
+
+  // 로컬 데이터 가져오기
+  // if (!localUser.isAuth) {
+  //   window.location.href = '/src/pages/landing/';
+  // } else {
+  //   userId.textContent = localUser.userData.record.username;
+  // }
 
   /* -------------------------------------------------------------------------- */
   // 포켓베이스 연동 :: 폴더별 연동 >>>>> 함수화
@@ -106,8 +96,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             class="thumbnail-vertical"
             src="${getPbImageURL(item)}"
             alt=""/>
+            </a>
           <figcaption>${item.title}</figcaption>
-          </a>
           </figure>
           </div>
           `;
@@ -124,8 +114,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             class="thumbnail-vertical"
             src="${getPbImageURL(item)}"
             alt=""/>
+            </a>
           <figcaption>${item.title}</figcaption>
-          </a>
           </figure>
           </div>
   `;
@@ -142,11 +132,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             class="thumbnail-horizontal"
             src="${getPbImageURL(item)}"
             alt=""/>
+            </a>
           <figcaption>
             ${item.title}
             <p>${item.episode_title}</p>
           </figcaption>
-          </a>
           </figure>
           </div>
   `;
@@ -156,16 +146,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   popularProgramData.forEach((item) => {
     const template = /* html */ `
   <div class="swiper-slide">
-          <figure>
-          <a href="${item.link}">
-          <img
+  <figure>
+  <a href="${item.link}">
+  <img
             class="thumbnail-vertical"
             src="${getPbImageURL(item)}"
             alt=""/>
+            </a>
           <figcaption>
           <em>${item.rank}</em>${item.title}
           </figcaption>
-          </a>
         </figure>
   </div>
   `;
@@ -175,27 +165,40 @@ document.addEventListener('DOMContentLoaded', async () => {
   liveChannelData.forEach((item) => {
     const template = /* html */ `
       <div class="swiper-slide">
-          <figure>
-          <a href="${item.link}">
+      <figure>
+      <a href="${item.link}">
           <img
             class="thumbnail-horizontal"
             src="${getPbImageURL(item)}"
             alt=""/>
+            </a>
           <figcaption>
               <em>${item.rank}</em>
             <p>
             ${item.title}<span>${item.episode_title}<br/>${
               item.viewership
-            }</span>
+            }%</span>
             </p>
           </figcaption>
-          </a>
           </figure>
       </div>
 `;
     insertEnd('.popular-live .thumbnail-wrap', template);
   });
 
+  // 네비게이션 클릭시 여백 삭제
+
+  // const clickButton = getNode('.swiper-button');
+  // const targetClass = getNode('.onlytving');
+  // clickButton.addEventListener('click', () => {
+  //   targetClass.classList.add('is-active');
+  // });
+
+  // 버튼 클릭시 스와이퍼 프로퍼티 변경
+  const isClicked = getNode('.swiper-button');
+  isClicked.addEventListener('click', () => {
+    standardSwiper.centeredSlides(true);
+  });
   /* -------------------------------------------------------------------------- */
   // gsap 모션
 

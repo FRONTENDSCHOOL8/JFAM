@@ -1,12 +1,13 @@
-import { getStorage, setStorage } from '/src/js/storage';
+import { getStorage, setStorage } from '/src/js/storage.js';
+import { getNodes, changeTextContent, getNode } from '/src/js/common.js';
 import pb from '/src/js/pocketbase.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const buttons = document.querySelectorAll('button');
-  const userProfile = document.querySelector('.user-profile-wrapper');
-  const logoutModal = document.querySelector('.logout-modal-wrapper');
-  const signoutModal = document.querySelector('.signout-modal-wrapper');
-  const userId = document.querySelector('.user-id');
+  const buttons = getNodes('button');
+  const userProfile = getNode('.user-profile-wrapper');
+  const logoutModal = getNode('.logout-modal-wrapper');
+  const signoutModal = getNode('.signout-modal-wrapper');
+  const userId = getNode('.user-id');
   const localUser = await getStorage('auth');
 
   const [
@@ -18,13 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     signoutCancelButton,
   ] = buttons;
 
-  // auth가 없다면 랜딩페이지로..
-  if (!localUser.isAuth) {
-    window.location.href = '/src/pages/landing/';
-  }
-  userId.textContent = localUser.userData.record.username;
-
-  const displayElement = (node, modify) => {
+  const controlDisplay = (node, modify) => {
     const element = node;
     element.style.display = modify;
   };
@@ -39,17 +34,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   const handleLogout = () => {
-    displayElement(userProfile, 'none');
-    displayElement(logoutModal, 'block');
+    controlDisplay(userProfile, 'none');
+    controlDisplay(logoutModal, 'block');
   };
 
   const handleSignout = () => {
-    displayElement(userProfile, 'none');
-    displayElement(signoutModal, 'block');
+    controlDisplay(userProfile, 'none');
+    controlDisplay(signoutModal, 'block');
   };
 
   const handleLogoutConfirm = () => {
-    // 로그 아웃(로컬 스토리 데이터 제거)
     setStorage('auth', {
       isAuth: false,
       data: {},
@@ -58,25 +52,34 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   const handleLogoutCancel = () => {
-    displayElement(userProfile, 'block');
-    displayElement(logoutModal, 'none');
+    controlDisplay(userProfile, 'block');
+    controlDisplay(logoutModal, 'none');
   };
 
   const handleSignoutConfirm = async () => {
-    // 로그 아웃(로컬 스토리 저장된 아이디 불러오기)
     const currentId = localUser.userData.record.id;
-    deleteAccount(currentId);
-    setStorage('auth', {
-      isAuth: false,
-      data: {},
-    });
-    window.location.href = '/src/pages/landing/index.html';
+    deleteAccount(currentId)
+      .then(() => {
+        setStorage('auth', {
+          isAuth: false,
+          data: {},
+        });
+      })
+      .then(() => {
+        window.location.href = '/src/pages/landing/index.html';
+      });
   };
 
   const handleSignoutCancel = () => {
-    displayElement(userProfile, 'block');
-    displayElement(signoutModal, 'none');
+    controlDisplay(userProfile, 'block');
+    controlDisplay(signoutModal, 'none');
   };
+
+  if (!localUser.isAuth) {
+    window.location.href = '/src/pages/landing/';
+  } else {
+    changeTextContent(userId, localUser.userData.record.username);
+  }
 
   logoutButton.addEventListener('click', handleLogout);
   signoutButton.addEventListener('click', handleSignout);
