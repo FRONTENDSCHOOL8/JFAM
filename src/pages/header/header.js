@@ -1,4 +1,6 @@
-const buttonProfile = document.querySelector('.button-profile');
+import getNode from '/src/js/common.js'
+
+const buttonProfile = getNode('.button-profile');
 
 function signoutPopup(){
     window.location.href = '/src/pages/profile/'
