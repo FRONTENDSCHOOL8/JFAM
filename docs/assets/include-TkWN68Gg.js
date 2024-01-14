@@ -1,0 +1,1 @@
+function o(t){const{includePath:n}=t.dataset;if(n){const e=new XMLHttpRequest;e.onreadystatechange=function(){this.readyState==4&&this.status==200&&(t.outerHTML=this.responseText)},e.open("GET",n,!0),e.send()}}function a(){const t=document.getElementsByTagName("*");Array.prototype.forEach.call(t,o),console.log("include")}window.addEventListener("load",a);

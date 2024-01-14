@@ -13,6 +13,7 @@ export default defineConfig({
         landing: resolve(__dirname, 'src/pages/landing/index.html'),
         login: resolve(__dirname, 'src/pages/login/index.html'),
         signup: resolve(__dirname, 'src/pages/signup/index.html'),
+        profile: resolve(__dirname, 'src/pages/profile/index.html'),
       },
     },
   },
