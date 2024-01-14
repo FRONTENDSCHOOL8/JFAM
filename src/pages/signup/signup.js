@@ -1,6 +1,10 @@
 import pb from '/src/js/pocketbase.js';
-import { setClassList, changeTextContent } from '/src/js/common';
-import { getNode, getNodes } from '../../js/common';
+import {
+  getNode,
+  getNodes,
+  setClassList,
+  changeTextContent,
+} from '/src/js/common';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const input = getNodes('.form-input');
