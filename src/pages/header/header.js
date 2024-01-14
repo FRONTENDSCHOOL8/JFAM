@@ -1,4 +1,4 @@
-import getNode from '/src/js/common.js'
+import {getNode} from '/src/js/common.js';
 
 const buttonProfile = getNode('.button-profile');
 
