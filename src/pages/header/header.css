@@ -41,6 +41,7 @@
 }
 
 .header .button-profile{
+    display: none;
     margin: 0 3% 0 0;
     width: calc(1.3rem + 1vw);
     height: calc(1.3rem + 1vw);
