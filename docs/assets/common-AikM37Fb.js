@@ -1,1 +1,0 @@
-function n(e){if(typeof e!="string")throw new Error("문자열로만 기입해주세요.");return document.querySelector(e)}function o(e,t){n(e).insertAdjacentHTML("beforeend",t)}function r(e){return`https://jfam.pockethost.io/api/files/${e.collectionName}/${e.id}/${e.image}`}export{r as a,n as g,o as i};
