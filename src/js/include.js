@@ -1,10 +1,11 @@
 function includeHTML(element) {
-    const { includePath } = element.dataset;
+    const targetElement = element;
+    const { includePath } = targetElement.dataset;
     if (includePath) {
       const xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          element.outerHTML = this.responseText;
+      xhttp.onreadystatechange = function handleStateChange() {
+        if (this.readyState === 4 && this.status === 200) {
+          targetElement.outerHTML = this.responseText;
         }
       };
       xhttp.open('GET', includePath, true);
