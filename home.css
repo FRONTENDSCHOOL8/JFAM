@@ -26,7 +26,7 @@
     );
   }
 
-  95% {
+  80% {
     background-image: linear-gradient(
       to right bottom,
       #6931e200 -0.3%,
@@ -53,7 +53,7 @@ h1 img {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-53.8%, -56%);
+  transform: translate(-51%, -54%);
   animation: logoMotion 2.5s ease-out forwards;
   width: 30vw;
 }
