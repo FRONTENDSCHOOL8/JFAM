@@ -5,19 +5,8 @@
   box-sizing: border-box;
 }
 
-.footer .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
 /* 푸터 */
 .footer {
-  background: var(--black, #000);
   width: 100%;
   padding: 3.25rem 1rem 5.125rem 1rem;
 

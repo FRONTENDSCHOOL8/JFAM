@@ -3,20 +3,8 @@
   box-sizing: border-box;
 }
 
-.landing .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
 /* landing */
 .landing{
-    background-color: black;
     margin-top: 0;
     padding-top: 0;
     color: white;
@@ -129,7 +117,6 @@
     padding-top: 10vw;
     
     /* Heading/Large */
-    font-family: Pretendard;
     font-size:  calc(1rem + 1vw);
     font-style: normal;
     font-weight: 700;
