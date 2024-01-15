@@ -200,91 +200,13 @@ standardSwiper('.event-swiper');
 
 /* -------------------------------------------------------------------------- */
 // 클릭시 데이터 변경
-// const data = {
-//   title: 'test',
-//   link: 'https://example.com',
-//   isClicked: true,
-//   rank: 123,
-// };
-// const record = await pb
-//   .collection('program_thumbnail')
-//   .update('RECORD_ID', data);
 
-// const record2 = await pb.collection('program_thumbnail').getOne('RECORD_ID', {
-//   expand: 'relField1,relField2.subRelField',
+// const images = document.querySelectorAll('.swiper-slide');
+// images.forEach((image) => {
+//   image.addEventListener('mouseover', async () => {
+//     await pb
+//       .collection('program_thumbnail')
+//       .update('vg3dsaigp89tmcm', { isClicked: true });
+//     console.log(pb);
+//   });
 // });
-// 프로퍼티 변경
-// 1. 클릭하면 해당 슬라이드의 레코드 id 떠야함
-// 2. 해당 id의 프로퍼티를 true 바꿔주
-// fullSwiper.autoplay = false;
-
-// example update data
-
-// const data = {
-//   title: 'test',
-//   link: 'https://example.com',
-//   isClicked: true,
-//   rank: 123,
-// };
-// 비동기 : 순서를 지정, 데이터 렌더링시 중요
-
-const images = document.querySelectorAll('.swiper-slide');
-images.forEach((image) => {
-  image.addEventListener('mouseover', async () => {
-    await pb
-      .collection('program_thumbnail')
-      .update('RECORD_ID', { isClicked: true });
-    console.log(RECORD_ID);
-  });
-});
-
-/* -------------------------------------------------------------------------- */
-// gsap 모션
-
-// 머우스 호버시 figure 또는 img y-20 만큼 점프
-// const tl = gsap.timeline();
-// const thisNode = getNodes('.event-area');
-
-// 시작 시점에서 숨겨진 상태로 설정
-// gsap.set(thisNode, { autoAlpha: 0 });
-
-// tl.fromTo(
-//   thisNode,
-//   { autoAlpha: 0 },
-//   { duration: 0.5, autoAlpha: 1, repeat: 2, yoyo: true }
-// );
-// thisNode.addEventListener('mouseenter', () => {
-//   tl.play();
-// });
-// thisNode.addEventListener('mouseleave', () => {
-//   tl.pause();
-// });
-
-/* -------------------------------------------------------------------------- */
-// n번째의 데이터 뱉는 함수
-// function getTitle2(number){
-//   const title = programData[number-1].title
-//   const link = programData[number-1].link
-//   const image = programData[number-1].image
-//   return link, title, image
-// }
-
-// 타이틀만 몽땅 뽑기
-// let titles =[]
-// const getTitle = record.items.forEach((item)=>{
-//   titles.push(item.title)
-// })
-
-// 네비게이션 클릭시 여백 삭제
-
-// const clickButton = getNode('.swiper-button');
-// const targetClass = getNode('.onlytving');
-// clickButton.addEventListener('click', () => {
-//   targetClass.classList.add('is-active');
-// });
-
-// 버튼 클릭시 스와이퍼 프로퍼티 변경
-// const isClicked = getNode('.swiper-button');
-// isClicked.addEventListener('click', () => {
-//   standardSwiper.centeredSlides(true);
-// })
