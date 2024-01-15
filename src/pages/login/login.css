@@ -190,8 +190,8 @@ button:active {
 }
 
 .no-account-container {
-  background-color: black;
-} 
+  margin: 1rem auto 0;
+}
 
 .no-account {
   color: var(--gray-500, #6b6b6b);
@@ -209,7 +209,6 @@ button:active {
 }
 
 @media screen and (min-width: 48rem) {
-
   .login {
     margin-top: 2.5rem;
     background-color: var(--black, #000);
@@ -250,7 +249,7 @@ button:active {
   }
 
   .no-account-container {
-    /* margin: 1rem auto 0; */
+    margin: 1rem auto 0;
   }
 
   .no-account {
@@ -308,7 +307,7 @@ button:active {
   }
 
   .no-account-container {
-    /* margin: 2.75rem auto 0; */
+    margin: 2.75rem auto 0;
   }
 
   .no-account {
