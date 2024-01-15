@@ -40,13 +40,11 @@
   width: calc(2.5rem + 2vw);
 }
 
-.header .button-profile {
-  /* display: none; */
-  margin: 0 3% 0 0;
-  width: calc(1.3rem + 1vw);
-  height: calc(1.3rem + 1vw);
-  border: 1px solid rgba(236, 236, 236, 0.3);
-  background-image: url('/src/assets/header/profile.png');
-  background-size: cover;
-  cursor: pointer;
+.header .button-profile{
+    margin: 0 3% 0 0;
+    width: calc(1.3rem + 1vw);
+    height: calc(1.3rem + 1vw);
+    background-image: url('/src/assets/header/profile.png');
+    background-size: cover;
+    cursor: pointer;
 }
