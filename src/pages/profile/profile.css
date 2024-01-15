@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 input,
 button {
   border: none;
@@ -17,18 +13,6 @@ button:active {
 
 button:focus {
   outline: 1px solid white;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
 }
 
 .profile {

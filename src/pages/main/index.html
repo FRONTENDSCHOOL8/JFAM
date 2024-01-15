@@ -10,16 +10,22 @@
     <meta name="keywords" content="HTML5, CSS3, Vanilla JavaScript, swiper" />
     <meta name="author" content="JFAM" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="JFAM | 메인" />
+    <meta property="og:title" content="JFAM | 회원가입" />
     <meta
       property="og:url"
-      content="https://jfam.netlify.app/src/pages/main/"
+      content="https://jfam.netlify.app/src/pages/signup/"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="./src/assets/opengraph_image.png" />
+    <meta property="og:image" content="/images/opengraph_image.png" />
     <meta
       property="og:description"
       content="JFAM 오리지널부터 드라마, 예능, 영화, 해외시리즈까지! 무제한으로 스트리밍해 보세요"
+    />
+    <meta id="_csrf" name="_csrf" th:content="${_csrf.token}" />
+    <meta
+      id="_csrf_header"
+      name="_csrf_header"
+      th:content="${_csrf.headerName}"
     />
     <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.png" />
     <link rel="stylesheet" href="/src/styles/reset.css" />
@@ -35,7 +41,10 @@
       <header class="header">
         <h1 class="heading-logo">
           <a href="/src/pages/main/">
-            <img src="/src/assets/header/jfam_logo.svg" alt="JFAM 바로가기" />
+            <img
+              src="/src/assets/header/jfam_logo.svg"
+              alt="JFAM 메인 바로가기"
+            />
           </a>
         </h1>
         <button
