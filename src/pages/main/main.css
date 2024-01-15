@@ -10,23 +10,13 @@
   width: 100%;
   height: 100%;
 }
-/* .goprofile {
-  position: absolute;
-  margin-right: 20px;
-  top: 0;
-  right: 0;
-  z-index: 10;
-  background: rgba(255, 255, 0, 0);
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
+
 .main-header {
   position: absolute;
   width: 100%;
   top: 0;
   z-index: 2;
-} */
+}
 /* -------------------------------------------------------------------------- */
 /* 빅배너 영역 */
 
@@ -227,8 +217,6 @@
 @media screen and (min-width: 320px) and (max-width: 768px) {
   html {
     font-size: calc(16px + 0.5vw);
-
-    /* font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (768 - 320))); */
   }
 }
 
@@ -288,17 +276,6 @@
   }
 }
 /* -------------------------------------------------------------------------- */
-/* 썸네일 모션 커스텀 */
-
-.main .programs .swiper-slide {
-  transition: transform 0.3s ease-in-out;
-}
-
-.main .programs .swiper-slide:hover {
-  transform: translateY(-10px);
-  transition-property: all;
-}
-/* --------------------------------------- */
 /* 스와이퍼 커스텀 */
 .main .programs > section:not(:last-child) {
   --swiper-navigation-color: white;
@@ -315,6 +292,13 @@
 
 .main .programs .swiper-slide {
   width: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.main .programs .swiper-slide:hover {
+  transform: translateY(-10px);
+  transition-property: all;
+  border-radius: 4px;
 }
 
 .main .programs .swiper-button-prev {
