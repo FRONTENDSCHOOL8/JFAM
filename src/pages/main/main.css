@@ -90,7 +90,7 @@
 /* -------------------------------------------------------------------------- */
 /* 프로그램 영역 */
 .main .programs {
-  padding: 0 var(--margin-m);
+  padding-left: var(--margin-m);
 }
 .main .programs > section {
   padding-bottom: 2rem;
@@ -118,22 +118,22 @@
   width: 8.9rem;
 }
 
+.main .ad-area {
+  width: 100%;
+  padding-right: var(--margin-m);
+}
 .main .ad-area img {
   border-radius: 4px;
   display: block;
   width: 100%;
 }
+.main .event-area {
+  padding-bottom: 3rem;
+}
 .main .event-area img {
   border-radius: 4px;
   display: block;
   width: 9rem;
-}
-
-.main .ad-area {
-  width: 100%;
-}
-.main .event-area {
-  padding-bottom: 3rem;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -214,6 +214,14 @@
 /* 5. 폰트 크기 -타이틀  */
 
 /* 썸네일 @모바일 320px */
+@media screen and (max-width: 320px) {
+  .main .bigbanner-inner {
+    bottom: calc(var(--margin-m) * 1.2);
+  }
+  .main .bigbanner-inner a {
+    padding: 0.25rem 0.5rem;
+  }
+}
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
   html {
@@ -308,7 +316,7 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.main .programs > section:not(:last-child) .swiper-slide:hover {
+.main .programs .swiper-slide:hover {
   transform: translateY(-10px);
   transition-property: all;
   border-radius: 4px;
@@ -344,3 +352,4 @@
   width: 100%;
   transform: translateX(-40px);
 } */
+/* -------------------------------------------------------------------------- */
