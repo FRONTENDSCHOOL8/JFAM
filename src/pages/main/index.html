@@ -25,9 +25,34 @@
     <link rel="stylesheet" href="/src/styles/reset.css" />
     <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="stylesheet" href="/src/pages/main/main.css" />
+    <link rel="stylesheet" href="/src/pages/header/header.css" />
+    <link rel="stylesheet" href="/src/pages/footer/footer.css" />
     <script type="module" src="/src/pages/main/main.js"></script>
+    <script type="module" src="/src/js/include.js"></script>
   </head>
+
   <body>
+    <header class="header">
+      <h1 class="heading-logo">
+        <a href="/src/pages/landing/" target="_blank">
+          <img
+            src="/src/assets/header/jfam_logo.svg"
+            alt="타잉 랜딩페이지 바로가기"
+          />
+        </a>
+      </h1>
+      <button class="button-profile">
+        <span class="sr-only">계정 로그아웃 혹은 삭제 페이지 바로가기</span>
+      </button>
+    </header>
+    <!-- <div
+      onclick="location.href='/src/pages/profile/index.html'"
+      class="goprofile"
+    ></div> -->
+    <!-- <div class="main-header"> -->
+    <!-- <header data-include-path="/src/pages/header/index.html"></header> -->
+    <!-- </div> -->
+    <!-- 헤더 -->
     <main class="main">
       <!-- 본문 -->
       <section class="bigbanner">
@@ -36,31 +61,61 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img
-                src="/src/assets/main/images/banner_img.png"
-                alt="재벌집 막내 아들"
+                src="/src/assets/main/images/banner_img0.jpg"
+                alt="최강 8기 빅배너"
               />
+              <div class="bigbanner-dim"></div>
+              <div class="bigbanner-inner">
+                <div class="bigbanner-container">
+                  <h2>갑진년 우당탕탕 코딩 이야기</h2>
+                  <a href="https://tv.jtbc.co.kr/">자세히보기</a>
+                </div>
+              </div>
             </div>
             <div class="swiper-slide">
-              <img src="/src/assets/main/images/banner_img2.png" alt="외계인" />
+              <img
+                src="/src/assets/main/images/banner_img.png"
+                alt="재벌집 막내 아들 빅배너"
+              />
+              <div class="bigbanner-dim"></div>
+              <div class="bigbanner-inner">
+                <div class="bigbanner-container">
+                  <h2>자고 일어나니 인생 2회차&#63;&#33;</h2>
+                  <a href="https://tv.jtbc.co.kr/">자세히보기</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="/src/assets/main/images/banner_img2.png"
+                alt="외계인 빅배너"
+              />
+              <div class="bigbanner-dim"></div>
+              <div class="bigbanner-inner">
+                <div class="bigbanner-container">
+                  <h2>시즌 2가 훨씬 재밌다구요 &gt;_&lt;</h2>
+                  <a href="https://tv.jtbc.co.kr/">자세히보기</a>
+                </div>
+              </div>
             </div>
             <div class="swiper-slide">
               <img
                 src="/src/assets/main/images/banner_img3.png"
-                alt="마에스트라"
+                alt="마에스트라 빅배너"
               />
+              <div class="bigbanner-dim"></div>
+              <div class="bigbanner-inner">
+                <div class="bigbanner-container">
+                  <h2>노다메 칸타빌레를 아시나요..&#63;</h2>
+                  <a href="https://tv.jtbc.co.kr/">자세히보기</a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="bigbanner-dim"></div>
+          <div class="swiper-pagination"></div>
+
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
-        </div>
-
-        <div class="bigbanner-inner">
-          <div class="bigbanner-container">
-            <h2>인생 2회차를 사는 판타지 드라마</h2>
-            <div class="swiper-pagination"></div>
-            <a href="https://tv.jtbc.co.kr/">자세히보기</a>
-          </div>
         </div>
       </section>
       <div class="programs">
@@ -279,10 +334,10 @@
             <figcaption class="sr-only">
               tving sports 경기 생중계 보러가기
             </figcaption>
-            <a href="https://tvnsports.cjenm.com/ko/" target="_blank">
+            <a href="https://www.inflearn.com/roadmaps/694" target="_blank">
               <img
-                src="/src/assets/main/images/ad_long.jpeg"
-                alt="tving sports 경기 생중계 배너"
+                src="/src/assets/main/images/ad_long.jpg"
+                alt="범쌤과 함께하는 웹 애니메이션을 위한 GSAP 완벽 가이드!"
             /></a>
           </figure>
         </section>
@@ -291,32 +346,23 @@
           <div class="swiper event-swiper">
             <div class="swiper-wrapper thumbnail-wrap">
               <div class="swiper-slide">
-                <a
-                  href="https://www.instagram.com/tving.official/"
-                  target="_blank"
-                >
+                <a href="https://github.com/seulbinim/" target="_blank">
                   <img
                     src="/src/assets/main/images/event_banner_1.png"
-                    alt="신비아파트 예매권 증정 이벤트"
+                    alt="슬비쌤 깃허브"
                   />
                 </a>
               </div>
               <div class="swiper-slide">
-                <a
-                  href="https://www.instagram.com/tving.official/"
-                  target="_blank"
-                >
+                <a href="https://www.youtube.com/@AOA11Y/" target="_blank">
                   <img
                     src="/src/assets/main/images/event_banner_2.jpeg"
-                    alt="렛미인 도서 증정 이벤트"
+                    alt="웹접근성 오픈 아카데미"
                   />
                 </a>
               </div>
               <div class="swiper-slide">
-                <a
-                  href="https://www.instagram.com/tving.official/"
-                  target="_blank"
-                >
+                <a href="https://techit.education/" target="_blank">
                   <img
                     src="/src/assets/main/images/event_banner_3.jpeg"
                     alt="디저트 메이커 이벤트"
@@ -345,6 +391,39 @@
                   />
                 </a>
               </div>
+              <div class="swiper-slide">
+                <a
+                  href="https://www.instagram.com/tving.official/"
+                  target="_blank"
+                >
+                  <img
+                    src="/src/assets/main/images/event_banner_6.png"
+                    alt="환승연애 시즌2의 진한 여운을 잇는 과몰입 도파민 충전 이벤트"
+                  />
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  href="https://www.instagram.com/tving.official/"
+                  target="_blank"
+                >
+                  <img
+                    src="/src/assets/main/images/event_banner_7.jpeg"
+                    alt="환승연애 시즌2의 진한 여운을 잇는 과몰입 도파민 충전 이벤트"
+                  />
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  href="https://www.instagram.com/tving.official/"
+                  target="_blank"
+                >
+                  <img
+                    src="/src/assets/main/images/event_banner_8.jpeg"
+                    alt="환승연애 시즌2의 진한 여운을 잇는 과몰입 도파민 충전 이벤트"
+                  />
+                </a>
+              </div>
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -353,5 +432,126 @@
       </div>
       <!-- 본문 끝 -->
     </main>
+    <!-- <footer data-include-path="/src/pages/footer/index.html"></footer> -->
+    <!-- 푸터 -->
+    <footer class="footer">
+      <div class="div-footerContent">
+        <section>
+          <h2 class="sr-only">서비스 정보 링크</h2>
+          <ul class="ul-menu">
+            <li class="li-menu__item">
+              <a href="https://www.tving.com/help/notice">고객센터</a>
+            </li>
+            <li class="li-menu__item">
+              <a href="https://www.tving.com/policy/terms">이용약관</a>
+            </li>
+            <li class="li-menu__item">
+              <a href="https://www.tving.com/policy/privacy"
+                >개인정보처리방침</a
+              >
+            </li>
+            <li class="li-menu__item">
+              <a href="https://www.tving.com/policy/youth">청소년 보호정책</a>
+            </li>
+            <li class="li-menu__item">
+              <a href="https://www.tving.com/policy/legal">법적고지</a>
+            </li>
+            <li class="li-menu__item">
+              <a href="https://www.tving.com/event/kconfesta">이벤트</a>
+            </li>
+            <li class="li-menu__item">
+              <a href="https://team.tving.com/">인재채용</a>
+            </li>
+          </ul>
+        </section>
+        <section class="section-companyInfo">
+          <h2 class="sr-only">회사정보</h2>
+          <p>
+            대표이사 : 양지을<span class="span-division" aria-hidden="true"
+              >|</span
+            >
+            <a
+              href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=1888801893&apv_perm_no="
+              >사업자정보확인</a
+            ><span class="span-division" aria-hidden="true">|</span
+            >사업자등록번호 : 188-88-01893<span
+              class="span-division"
+              aria-hidden="true"
+              >|</span
+            >통신판매신고번호 : 2020-서울마포-3641호
+          </p>
+          <p>
+            사업장 : 서울특별시 마포구 상암산로 34,
+            <span lang="en">DMC</span>디지털큐브 15층(상암동)<span
+              class="span-division"
+              aria-hidden="true"
+              >|</span
+            >호스팅사업자 : 씨제이올리브네트웍스(주)
+          </p>
+          <p>
+            <a href="https://m.tving.com/guide/qna/form.tving"
+              >고객문의 바로가기</a
+            ><span class="span-division" aria-hidden="true">|</span>
+            <a href="mailto:tving@cj.net"
+              >대표메일 : <span lang="en">tving@cj.net</span></a
+            ><span class="span-division" aria-hidden="true">|</span>
+            <a href="tel:1670-1525"
+              >고객센터 : 1670-1525 (평일/주말 09시~18시, 공휴일 휴무)</a
+            >
+          </p>
+          <p>
+            <span lang="en">ENM</span> 시청자 상담실 (편성 문의 및 시청자 의견)
+            : 080-080-0780<span class="span-division" aria-hidden="true"
+              >|</span
+            >
+            <span lang="en">Mnet</span> 고객센터(반송편성문의) : 1855-1631
+          </p>
+        </section>
+        <section>
+          <h2 class="sr-only"><span lang="en">SNS</span></h2>
+          <ul class="ul-sns">
+            <li>
+              <a href="https://github.com/hyun9758">
+                <img
+                  src="/src/assets/footer/icon/jhs_icon.svg"
+                  alt="정현수 깃허브로 바로가기"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/lin0211">
+                <img
+                  src="/src/assets/footer/icon/jsl_icon.svg"
+                  alt="정서린 깃허브로 바로가기"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/1101x">
+                <img
+                  src="/src/assets/footer/icon/jhj_icon.svg"
+                  alt="정현주 깃허브로 바로가기"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/yeseul0000">
+                <img
+                  src="/src/assets/footer/icon/jys_icon.svg"
+                  alt="정예슬 깃허브로 바로가기"
+                />
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="sr-only">저작권</h2>
+          <p class="p-copyright">
+            <span lang="en">Copyright</span> © 주식회사 티빙
+            <span lang="en">All right reserved.</span>
+          </p>
+        </section>
+      </div>
+    </footer>
   </body>
 </html>
