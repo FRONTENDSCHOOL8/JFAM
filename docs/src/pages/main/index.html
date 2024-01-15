@@ -21,14 +21,9 @@
       property="og:description"
       content="JFAM 오리지널부터 드라마, 예능, 영화, 해외시리즈까지! 무제한으로 스트리밍해 보세요"
     />
-    <meta id="_csrf" name="_csrf" th:content="${_csrf.token}" />
-    <meta
-      id="_csrf_header"
-      name="_csrf_header"
-      th:content="${_csrf.headerName}"
-    />
+    <meta name="csrf-token" content="{{#_csrf}}token{{/_csrf}}" />
     <link rel="icon" type="image/svg+xml" href="/assets/favicon-GcTYRqw7.png" />
-    <script type="module" crossorigin src="/assets/main-pJGPxutL.js"></script>
+    <script type="module" crossorigin src="/assets/main-K_H5B9iN.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/reset-9GtOEJoH.js">
     <link rel="modulepreload" crossorigin href="/assets/swiper-bundle-GuwshZwN.js">
     <link rel="modulepreload" crossorigin href="/assets/pocketbase-v9INCz3k.js">
@@ -36,9 +31,9 @@
     <link rel="modulepreload" crossorigin href="/assets/storage-9woz5qE_.js">
     <link rel="stylesheet" crossorigin href="/assets/reset-elziDHyV.css">
     <link rel="stylesheet" crossorigin href="/assets/swiper-bundle-7t5sOE1N.css">
-    <link rel="stylesheet" crossorigin href="/assets/main-aPyCQ6O8.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-QLiXrXJe.css">
     <link rel="stylesheet" crossorigin href="/assets/style-HyYK2KUM.css">
-    <link rel="stylesheet" crossorigin href="/assets/footer-M7e-Rlxx.css">
+    <link rel="stylesheet" crossorigin href="/assets/footer-ZSn4QjcP.css">
   </head>
 
   <body>
@@ -65,13 +60,18 @@
 
     <main class="main">
       <!-- 본문 -->
-      <section class="bigbanner">
+      <ul class="sr-only">
+        <li><a href="#bigbanner">상단 배너 영역 바로가기</a></li>
+        <li><a href="#programs">프로그램 영역 바로가기</a></li>
+        <li><a href="#adarea">광고 영역 바로가기</a></li>
+      </ul>
+      <section class="bigbanner" id="bigbanner">
         <h2 class="sr-only">최상단 배너 영역</h2>
         <div class="swiper full-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img
-                src="/assets/banner_img0-w_XuEgGD.jpg"
+                src="/assets/banner_img0-eeYr9mqw.jpg"
                 alt="최강 8기 빅배너"
               />
               <div class="bigbanner-dim"></div>
@@ -98,7 +98,7 @@
             <div class="swiper-slide">
               <img
                 src="/assets/banner_img2-OiK0rl3A.png"
-                alt="외계인 빅배너"
+                alt="외계인 1부 빅배너"
               />
               <div class="bigbanner-dim"></div>
               <div class="bigbanner-inner">
@@ -124,39 +124,39 @@
           </div>
           <div class="swiper-pagination"></div>
 
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev" role="button"></div>
+          <div class="swiper-button-next" role="button"></div>
         </div>
       </section>
-      <div class="programs">
-        <section class="now-see">
+      <div class="programs" id="programs">
+        <section class="now-see" role="tablist">
           <h2><span class="userId">00</span>님이 시청 중인 콘텐츠</h2>
           <div class="swiper now-swiper">
             <div class="swiper-wrapper thumbnail-wrap"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next" role="button"></div>
+            <div class="swiper-button-prev" role="button"></div>
           </div>
         </section>
 
-        <section class="must-see">
+        <section class="must-see" role="tablist">
           <h2>JFAM에서 꼭 봐야하는 콘텐츠</h2>
           <div class="swiper must-swiper">
             <div class="swiper-wrapper thumbnail-wrap"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next" role="button"></div>
+            <div class="swiper-button-prev" role="button"></div>
           </div>
         </section>
 
-        <section class="quickvod">
+        <section class="quickvod" role="tablist">
           <h2>Quick VOD</h2>
           <div class="swiper quickvod-swiper">
             <div class="swiper-wrapper thumbnail-wrap"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next" role="button"></div>
+            <div class="swiper-button-prev" role="button"></div>
           </div>
         </section>
 
-        <section class="popular-title">
+        <section class="popular-title" role="tablist">
           <h2>실시간 인기 프로그램</h2>
           <div class="swiper popular-title-swiper">
             <div class="swiper-wrapper thumbnail-wrap"></div>
@@ -165,7 +165,7 @@
           </div>
         </section>
 
-        <section class="popular-live">
+        <section class="popular-live" role="tablist">
           <h2>인기 LIVE 채널</h2>
           <div class="swiper popular-live-swiper">
             <div class="swiper-wrapper thumbnail-wrap"></div>
@@ -174,7 +174,7 @@
           </div>
         </section>
 
-        <section class="onlytving is-active">
+        <section class="onlytving is-active" role="tablist">
           <h2>오직 JFAM에만 있어요</h2>
           <div class="swiper only-swiper">
             <div class="swiper-wrapper thumbnail-wrap">
@@ -338,12 +338,10 @@
           </div>
         </section>
 
-        <section class="ad-area">
+        <section class="ad-area" id="adarea" role="tablist">
           <h2 class="sr-only">하단 광고 배너</h2>
           <figure>
-            <figcaption class="sr-only">
-              tving sports 경기 생중계 보러가기
-            </figcaption>
+            <figcaption class="sr-only">범쌤 gsap 강의 보러가기</figcaption>
             <a href="https://www.inflearn.com/roadmaps/694" target="_blank">
               <img
                 src="/assets/ad_long-Z01m43M_.jpg"
@@ -351,7 +349,7 @@
             /></a>
           </figure>
         </section>
-        <section class="event-area">
+        <section class="event-area" role="tablist">
           <h2>이벤트</h2>
           <div class="swiper event-swiper">
             <div class="swiper-wrapper thumbnail-wrap">
@@ -359,7 +357,7 @@
                 <a href="https://github.com/seulbinim/" target="_blank">
                   <img
                     src="/assets/event_banner_1-djo8QN1W.png"
-                    alt="슬비쌤 깃허브"
+                    alt="슬비쌤 깃허브 바로가기"
                   />
                 </a>
               </div>
@@ -367,7 +365,7 @@
                 <a href="https://www.youtube.com/@AOA11Y/" target="_blank">
                   <img
                     src="/assets/event_banner_2-RI4ZDAdk.jpeg"
-                    alt="웹접근성 오픈 아카데미"
+                    alt="웹접근성 오픈 아카데미 유튜브 바로가기"
                   />
                 </a>
               </div>
@@ -375,7 +373,7 @@
                 <a href="https://techit.education/" target="_blank">
                   <img
                     src="/assets/event_banner_3-kCwY0zKU.jpeg"
-                    alt="디저트 메이커 이벤트"
+                    alt="광고 문의 멋쟁이사자 바로가기"
                   />
                 </a>
               </div>
@@ -386,7 +384,7 @@
                 >
                   <img
                     src="/assets/event_banner_6-ftuHoBe3.png"
-                    alt="신비아파트 증정 이벤트"
+                    alt="신비아파트 예매권 증정 이벤트"
                   />
                 </a>
               </div>
@@ -407,7 +405,7 @@
                 >
                   <img
                     src="/assets/event_banner_7-NNpD8_KH.jpeg"
-                    alt="환승연애 시즌2의 진한 여운을 잇는 과몰입 도파민 충전 이벤트"
+                    alt="대한민국 대표 디저트 메이커 이벤트"
                   />
                 </a>
               </div>
@@ -429,13 +427,13 @@
                 >
                   <img
                     src="/assets/event_banner_8-6HgGL5H6.jpeg"
-                    alt="렛미인 증정 이벤트"
+                    alt="렛미인 도서 증정 이벤트"
                   />
                 </a>
               </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next" role="button"></div>
+            <div class="swiper-button-prev" role="button"></div>
           </div>
         </section>
       </div>
@@ -555,8 +553,7 @@
         <section>
           <h2 class="sr-only">저작권</h2>
           <p class="p-copyright">
-            <span lang="en">Copyright</span> © 주식회사
-            <span lang="en">이듬</span>
+            <span lang="en">Copyright</span> © 주식회사 이듬
             <span lang="en">All right reserved.</span>
           </p>
         </section>

@@ -21,23 +21,18 @@
       property="og:description"
       content="JFAM 오리지널부터 드라마, 예능, 영화, 해외시리즈까지! 무제한으로 스트리밍해 보세요"
     />
-    <meta id="_csrf" name="_csrf" th:content="${_csrf.token}" />
-    <meta
-      id="_csrf_header"
-      name="_csrf_header"
-      th:content="${_csrf.headerName}"
-    />
+    <meta name="csrf-token" content="{{#_csrf}}token{{/_csrf}}" />
     <link rel="icon" type="image/svg+xml" href="/assets/favicon-GcTYRqw7.png" />
-    <script type="module" crossorigin src="/assets/signup-x2Q-jpzU.js"></script>
+    <script type="module" crossorigin src="/assets/signup-x02nDcbW.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/reset-9GtOEJoH.js">
     <link rel="modulepreload" crossorigin href="/assets/include-JfAPemNh.js">
     <link rel="modulepreload" crossorigin href="/assets/pocketbase-v9INCz3k.js">
     <link rel="modulepreload" crossorigin href="/assets/common-NlTJxg5N.js">
     <link rel="stylesheet" crossorigin href="/assets/reset-elziDHyV.css">
-    <link rel="stylesheet" crossorigin href="/assets/signup-oPIy1ifv.css">
+    <link rel="stylesheet" crossorigin href="/assets/signup-rqo24CC1.css">
     <link rel="stylesheet" crossorigin href="/assets/style-HyYK2KUM.css">
     <link rel="stylesheet" crossorigin href="/assets/common-yERhQuTj.css">
-    <link rel="stylesheet" crossorigin href="/assets/header-RECgdNpC.css">
+    <link rel="stylesheet" crossorigin href="/assets/header-t5sEwDLs.css">
   </head>
   <body>
     <header class="header">
@@ -195,6 +190,7 @@
             <label for="check-email">[선택] 마케팅 정보 email 수신동의</label>
           </li>
         </ul>
+        <input type="hidden" name="_csrf" value="{{#_csrf}}token{{/_csrf}}" />
         <button class="button-signup-submit" type="submit" disabled="disabled">
           확인
         </button>
