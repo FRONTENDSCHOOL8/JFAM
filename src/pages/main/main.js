@@ -200,13 +200,21 @@ document.addEventListener('DOMContentLoaded', async () => {
   /* -------------------------------------------------------------------------- */
   // 클릭시 데이터 변경
 
-  // const images = document.querySelectorAll('.swiper-slide');
-  // images.forEach((image) => {
-  //   image.addEventListener('mouseover', async () => {
-  //     await pb
-  //       .collection('program_thumbnail')
-  //       .update('vg3dsaigp89tmcm', { isClicked: true });
-  //     console.log(pb);
-  //   });
-  // });
+  const images = document.querySelectorAll('.swiper-slide');
+  const data = {
+    title: 'test',
+    link: 'https://example.com',
+    isClicked: true,
+    rank: 123,
+  };
+  images.forEach((image) => {
+    image.addEventListener('mouseenter', async () => {
+      await pb.collection('program_thumbnail').update('RECORD_ID', data);
+      // .update('RECORD_ID', { isClicked: true });
+    });
+    console.log(pb);
+    console.log(RECORD_ID);
+  });
+
+  // 마지막 닫는 문
 });
