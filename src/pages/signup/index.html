@@ -21,12 +21,7 @@
       property="og:description"
       content="JFAM 오리지널부터 드라마, 예능, 영화, 해외시리즈까지! 무제한으로 스트리밍해 보세요"
     />
-    <meta id="_csrf" name="_csrf" th:content="${_csrf.token}" />
-    <meta
-      id="_csrf_header"
-      name="_csrf_header"
-      th:content="${_csrf.headerName}"
-    />
+    <meta name="csrf-token" content="{{#_csrf}}token{{/_csrf}}" />
     <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.png" />
     <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="stylesheet" href="/src/styles/reset.css" />
@@ -192,6 +187,7 @@
             <label for="check-email">[선택] 마케팅 정보 email 수신동의</label>
           </li>
         </ul>
+        <input type="hidden" name="_csrf" value="{{#_csrf}}token{{/_csrf}}" />
         <button class="button-signup-submit" type="submit" disabled="disabled">
           확인
         </button>
