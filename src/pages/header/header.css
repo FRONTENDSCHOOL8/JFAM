@@ -17,7 +17,11 @@
 
 /* 헤더 */
 .header{
-    background: black;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -41,7 +45,7 @@
 }
 
 .header .button-profile{
-    display: none;
+    /* display: none; */
     margin: 0 3% 0 0;
     width: calc(1.3rem + 1vw);
     height: calc(1.3rem + 1vw);
