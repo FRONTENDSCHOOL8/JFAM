@@ -1,8 +1,6 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
-// import gsap from 'gsap';
 import pb from '/src/js/pocketbase';
-// import manageData from '/src/js/response.js'
 import {getNode, insertEnd, getPbImageURL} from '/src/js/common.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -29,10 +27,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
   });
-
-
-  // gsap - 적용하면 얘 애니메이션 끝날때까지 기다렸다가 포켓베이스 실행됨
-  // gsap.from(".p-copywriting",{ y:100, opacity: 0.2, ease: 'steps(30)'});
 
   // 포켓베이스
 

@@ -97,7 +97,6 @@
     display: flex;
     width: calc(15rem + 10vw);
     font-size: calc(0.8rem + 0.3vw);
-    /* width: 60%; */
     height: calc(2.5rem + 1vw);
     padding: 0rem 1.75rem 0rem 2.7rem;
     flex-direction: row;
@@ -159,7 +158,6 @@
 
 /* 스와이퍼 */
 .landing .swiper-wrapper img{
-  /* margin: 0 50px; */
   width: 100%;
   max-width: 470px;
   border-radius: 10px;
@@ -171,7 +169,6 @@
   height: calc(1rem + 10vw);
   display: flex;
   overflow: hidden;
-  /* justify-content: space-between; */
 }
 
 .landing .skeleton-animswiper-wrapper:nth-child(1) .skeleton-animswiper{
