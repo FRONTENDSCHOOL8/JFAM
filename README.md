@@ -41,4 +41,5 @@
 ![로그인](https://github.com/FRONTENDSCHOOL8/JFAM/assets/148925429/6d30714c-b0cb-44ae-be88-722d2c02dede)
 
   -  프로필
-![프로필](https://github.com/FRONTENDSCHOOL8/JFAM/assets/148925429/05699f8f-2cb0-426d-9af5-bda5efd273f4)
+![프로필](https://github.com/FRONTENDSCHOOL8/JFAM/assets/148925429/5b0740f2-ae4f-4d8e-95e9-77a89139bb28)
+
