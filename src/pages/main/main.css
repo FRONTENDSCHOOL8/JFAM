@@ -288,16 +288,6 @@
   }
 }
 /* -------------------------------------------------------------------------- */
-/* 썸네일 모션 커스텀 */
-
-.main .programs .swiper-slide {
-  transition: transform 0.3s ease-in-out;
-}
-
-.main .programs .swiper-slide:hover {
-  transform: translateY(-10px);
-  transition-property: all;
-}
 /* --------------------------------------- */
 /* 스와이퍼 커스텀 */
 .main .programs > section:not(:last-child) {
@@ -315,6 +305,13 @@
 
 .main .programs .swiper-slide {
   width: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.main .programs .swiper-slide:hover {
+  transform: translateY(-10px);
+  transition-property: all;
+  border-radius: 4px;
 }
 
 .main .programs .swiper-button-prev {

@@ -8,17 +8,15 @@ import '/src/pages/main/main.css';
 
 document.addEventListener('DOMContentLoaded', async () => {
   /* -------------------------------------------------------------------------- */
-  // const localUser = await getStorage('auth');
-  // const userId = getNode('.userId');
-
-  /* -------------------------------------------------------------------------- */
   // 로컬 데이터 가져오기
-  // 로컬유저 데이터가져오기
-  // if (!localUser.isAuth) {
-  //   window.location.href = '/src/pages/landing/';
-  // } else {
-  //   userId.textContent = localUser.userData.record.username;
-  // }
+  const localUser = await getStorage('auth');
+  const userId = getNode('.userId');
+
+  if (!localUser.isAuth) {
+    window.location.href = '/src/pages/landing/';
+  } else {
+    userId.textContent = localUser.userData.record.username;
+  }
 
   /* -------------------------------------------------------------------------- */
   // 포켓베이스 연동 :: 폴더별 연동 >>>>> 함수화
@@ -150,11 +148,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 /* -------------------------------------------------------------------------- */
 // 스와이퍼
-// 스와이퍼
 const fullSwiper = new Swiper('.full-swiper', {
   slidesPerView: 1,
   loop: true,
-  autoplay: true,
+  autoplay: {
+    delay: 3200,
+  },
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
@@ -174,13 +173,12 @@ function standardSwiper(node) {
   return new Swiper(node, {
     grabCursor: true,
     touchEventsTarget: 'container',
-    slideToClickedSlide: false,
+    allowTouchMove: true,
     cssMode: true,
+
     keyboard: {
       enabled: true,
     },
-    allowTouchMove: true,
-    centeredSlides: false,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -220,12 +218,25 @@ standardSwiper('.event-swiper');
 // 2. 해당 id의 프로퍼티를 true 바꿔주
 // fullSwiper.autoplay = false;
 
-// const images = document.querySelectorAll('.swiper-slide');
-// images.forEach((image) => {
-//   image.addEventListener('mouseover', () => {
-//     console.log(nowSeeData);
-//   });
-// });
+// example update data
+
+// const data = {
+//   title: 'test',
+//   link: 'https://example.com',
+//   isClicked: true,
+//   rank: 123,
+// };
+// 비동기 : 순서를 지정, 데이터 렌더링시 중요
+
+const images = document.querySelectorAll('.swiper-slide');
+images.forEach((image) => {
+  image.addEventListener('mouseover', async () => {
+    await pb
+      .collection('program_thumbnail')
+      .update('RECORD_ID', { isClicked: true });
+    console.log(RECORD_ID);
+  });
+});
 
 /* -------------------------------------------------------------------------- */
 // gsap 모션
