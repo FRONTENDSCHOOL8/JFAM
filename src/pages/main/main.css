@@ -1,6 +1,7 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import '/src/styles/common.css';
+@import '/src/styles/common.css';
 
 :root {
   --margin-m: 2vw;
@@ -218,6 +219,10 @@
   html {
     font-size: calc(16px + 0.5vw);
   }
+  /* .header .button-profile {
+    width: calc(20.8px + 1vw);
+    height: calc(20.8px + 1vw);
+  } */
 }
 
 /* @미디어쿼리 - 태블릿  768px */
@@ -253,6 +258,10 @@
     padding: 0 calc(1.2 * var(--margin-m));
     bottom: calc(var(--margin-m) * 1.2 + 1vw);
   }
+  /* .header .button-profile {
+    width: calc(20.8px + 1vw);
+    height: calc(20.8px + 1vw);
+  } */
 }
 
 /* @미디어쿼리 - pc  1920px */
@@ -274,6 +283,10 @@
     font-size: 0.8rem;
     padding: calc(0.4rem + 0.1vw) calc(0.6rem + 2vw);
   }
+  /* .header .button-profile {
+    width: calc(20.8px + 1vw);
+    height: calc(20.8px + 1vw);
+  } */
 }
 /* -------------------------------------------------------------------------- */
 /* 스와이퍼 커스텀 */
@@ -295,7 +308,7 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.main .programs .swiper-slide:hover {
+.main .programs > section:not(:last-child) .swiper-slide:hover {
   transform: translateY(-10px);
   transition-property: all;
   border-radius: 4px;
