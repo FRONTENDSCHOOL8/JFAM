@@ -22,9 +22,11 @@
     <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="stylesheet" href="/src/styles/reset.css" />
     <link rel="stylesheet" href="/src/pages/login/login.css" />
+    <script type="module" src="/src/js/include.js"></script>
     <script type="module" src="/src/pages/login/login.js"></script>
   </head>
   <body>
+    <header data-include-path="/src/pages/header/index.html"></header>
     <div class="login">
       <h1 class="login-title">JFAM ID 로그인</h1>
       <form class="login-wrapper">
@@ -47,7 +49,7 @@
             <input
               id="input-password"
               class="input-password"
-              type="text"
+              type="password"
               placeholder="비밀번호"
               tabindex="2"
             />
@@ -55,12 +57,6 @@
           </div>
         </div>
         <div class="auto-login">
-          <!-- <input
-            tabindex="3"
-            type="checkbox"
-            class="form-check auto-login"
-            id="check-all"
-          /> -->
           <div class="image-container">
             <img src="/src/assets/signup/check_filled_white.svg" alt="체크박스 비활성화" class="auto-login-img" id="auto-unchecked" tabindex="4">
           </div>
@@ -73,12 +69,21 @@
           <a href="" class="find-id">아이디 찾기</a>
           <span>|</span>
           <a href="" class="find-password">비밀번호 찾기</a>
+          </div>
         </div>
         <div class="no-account-container">
           <span class="no-account">아직 계정이 없으신가요?</span>
           <a href="/src/pages/signup/index.html" class="to-signup">회원가입하기</a>
         </div>
       </form>
+      <div class="modal-container">
+        <div class="modal-content">
+          <h2>서비스 준비중입니다.</h2>
+          <p>잠시 후에 다시 시도해주세요.</p>
+          <button class="closeButton">닫기</button>
+        </div>
+      </div>
     </div>
+    <footer data-include-path="/src/pages/footer/index.html"></footer>
   </body>
 </html>

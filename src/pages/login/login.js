@@ -7,6 +7,10 @@ const pwInput = document.querySelector('.input-password'); // 비번 입력하�
 const pwCondition = document.querySelector('.password-input-condition');
 const btnTag = document.querySelector('.login-button'); // 버튼 태그
 const checkButton = document.querySelector('.auto-login-img');
+const idModal = document.querySelector('.find-id')
+const pwModal = document.querySelector('.find-password');
+const modalContainer = document.querySelector('.modal-container');
+const closeButton = document.querySelector('.closeButton');
 
 let idCheck = false;
 let pwCheck = false;
@@ -97,8 +101,21 @@ function handleChecked() {
   }
 }
 
+function handleModal(e) {
+  e.preventDefault();
+  modalContainer.style.display = 'block';
+}
+
+function handleCloseModal(e) {
+  e.preventDefault();
+  modalContainer.style.display = 'none';
+}
+
 // 이벤트 부여
 idInput.addEventListener('input', handleId);
 pwInput.addEventListener('input', handlePw);
 btnTag.addEventListener('click', handleBtn);
 checkButton.addEventListener('click', handleChecked);
+idModal.addEventListener('click', handleModal);
+pwModal.addEventListener('click', handleModal);
+closeButton.addEventListener('click', handleCloseModal)
