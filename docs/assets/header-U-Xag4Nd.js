@@ -1,1 +1,0 @@
-import"./reset-9GtOEJoH.js";/* empty css               */import{a as o}from"./common-6v7X-qfQ.js";const t=o(".button-profile");function i(){window.location.href="/src/pages/profile/"}t.addEventListener("click",i);
