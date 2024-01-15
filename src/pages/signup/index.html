@@ -30,12 +30,23 @@
     <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.png" />
     <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="stylesheet" href="/src/styles/reset.css" />
+    <link rel="stylesheet" href="/src/pages/header/header.css" />
     <link rel="stylesheet" href="/src/pages/signup/signup.css" />
     <script type="module" src="/src/js/include.js"></script>
     <script type="module" src="/src/pages/signup/signup.js"></script>
   </head>
   <body>
-    <header data-include-path="/src/pages/header/index.html"></header>
+    <!-- <header data-include-path="/src/pages/header/index.html"></header> -->
+    <header class="header">
+      <h1 class="heading-logo">
+        <a href="/src/pages/landing/">
+          <img
+            src="/src/assets/header/jfam_logo.svg"
+            alt="타잉 랜딩페이지 바로가기"
+          />
+        </a>
+      </h1>
+    </header>
     <div class="signup">
       <h1 class="title">JFAM 회원가입</h1>
       <p class="comment">아이디와 이메일로 간편하게 JFAM을 시작하세요!</p>

@@ -11,7 +11,10 @@
     <meta name="author" content="JFAM" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:title" content="JFAM" />
-    <meta property="og:url" content="https://jfam.netlify.app/src/pages/landing/" />
+    <meta
+      property="og:url"
+      content="https://jfam.netlify.app/src/pages/landing/"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="./src/assets/opengraph_image.png" />
     <meta
@@ -19,38 +22,51 @@
       content="JFAM 오리지널부터 드라마, 예능, 영화, 해외시리즈까지! 무제한으로 스트리밍해 보세요"
     />
     <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.png" />
-    <link rel="stylesheet" href="/src/pages/landing/landing.css">
+    <link rel="stylesheet" href="/src/pages/landing/landing.css" />
     <link rel="stylesheet" href="/src/pages/footer/footer.css" />
     <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="stylesheet" href="/src/styles/reset.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="/src/js/include.js"></script>
     <script type="module" src="/src/pages/landing/landing.js"></script>
     <script type="module" src="/src/pages/footer/footer.js"></script>
   </head>
   <body>
-    <header data-include-path="/src/pages/header/index.html"></header>
+    <!-- <header data-include-path="/src/pages/header/index.html"></header> -->
 
     <div class="landing">
-      <!-- <header class="header">
+      <header class="header">
         <h1 class="h1-jfamLogo">
-        <img src="/src/assets/landing/jfam_logo.svg" alt="정가네 로고">
+          <img src="/src/assets/landing/jfam_logo.svg" alt="정가네 로고" />
         </h1>
         <div class="div-account">
           <a href="/src/pages/signup/" class="signup">지금 가입</a>
           <a href="/src/pages/login/" class="login">로그인</a>
         </div>
-      </header> -->
+      </header>
       <section class="section-promotion-top">
         <h2 class="sr-only">회원가입 권유</h2>
-        <p class="p-copywriting">JFAM 오리지널 콘텐츠,<br> 방송, 영화, 해외시리즈까지!<br> 재미를 플레이해보세요.</p>
-        <p class="p-promoMessage">간편하게 가입하고, 원하실 때 해지할 수 있어요.</p>
-        <a class="a-signupLink" href="/src/pages/login/">지금 바로 시작하세요!</a>
+        <p class="p-copywriting">
+          JFAM 오리지널 콘텐츠,<br />
+          방송, 영화, 해외시리즈까지!<br />
+          재미를 플레이해보세요.
+        </p>
+        <p class="p-promoMessage">
+          간편하게 가입하고, 원하실 때 해지할 수 있어요.
+        </p>
+        <a class="a-signupLink" href="/src/pages/login/"
+          >지금 바로 시작하세요!</a
+        >
       </section>
       <section class="section-originalContent">
         <h2 class="h2-sectionTitle">JFAM에만 있는 재미</h2>
-        <p class="p-promoMessage">오리지널 콘텐츠를 만나보세요!<br>차별화된 웰메이드 오리지널 콘텐츠</p>
+        <p class="p-promoMessage">
+          오리지널 콘텐츠를 만나보세요!<br />차별화된 웰메이드 오리지널 콘텐츠
+        </p>
         <div class="skeleton-loading">
           <div class="skeleton-swiper-wrapper">
             <div class="skeleton-swiper"></div>
@@ -82,23 +98,25 @@
           </div>
         </div>
         <div class="div-slider">
-          <div class="div-slide__one">
-          </div>
-          <div class="div-slide__two">
-          </div>
+          <div class="div-slide__one"></div>
+          <div class="div-slide__two"></div>
         </div>
         <div class="div-slider">
-          <div class="div-slide__three">
-          </div>
-          <div class="div-slide__four">
-          </div>
+          <div class="div-slide__three"></div>
+          <div class="div-slide__four"></div>
         </div>
       </section>
       <section class="section-promotion-bottom">
         <h2 class="sr-only h2-sectionTitle">회원가입 권유</h2>
-          <img class="img-jfamLogo" src="/src/assets/landing/jfam_logo.svg" alt="정가네 로고">
-          <p>지금 시작해보세요</p>
-          <a class="a-signupLink" href="/src/pages/login/">지금 바로 시작하세요!</a>
+        <img
+          class="img-jfamLogo"
+          src="/src/assets/landing/jfam_logo.svg"
+          alt="정가네 로고"
+        />
+        <p>지금 시작해보세요</p>
+        <a class="a-signupLink" href="/src/pages/login/"
+          >지금 바로 시작하세요!</a
+        >
       </section>
     </div>
     <footer data-include-path="/src/pages/footer/index.html"></footer>
