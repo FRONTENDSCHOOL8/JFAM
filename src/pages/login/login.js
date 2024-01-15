@@ -12,7 +12,6 @@ let idCheck = false;
 let pwCheck = false;
 
 // 정규식
-
 function idReg(text) {
   const re = /^[a-zA-Z0-9]{6,12}$/;
 
@@ -20,7 +19,8 @@ function idReg(text) {
 }
 
 function pwReg(text) {
-  const re = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^*+=-]).{6,16}$/;
+  const re = /^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
   return re.test(String(text).toLowerCase());
 }
 
