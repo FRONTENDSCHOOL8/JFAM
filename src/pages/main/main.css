@@ -35,11 +35,10 @@
   position: relative;
   --swiper-navigation-size: 1.5rem;
   --swiper-navigation-color: white;
+  --swiper-pagination-color: white;
+  --swiper-pagination-bullet-inactive-color: #b3b3b3;
 }
 
-.main .bigbanner .swiper {
-  position: relative;
-}
 .main .bigbanner .swiper-slide {
   display: flex;
   justify-content: center;
@@ -66,8 +65,8 @@
   position: absolute;
   z-index: 2;
   width: 100%;
-  padding: 0 var(--margin-m);
-  bottom: calc(var(--margin-m) * 2);
+  padding: 0 calc(2 * var(--margin-m));
+  bottom: calc(var(--margin-m) * 1.5 + 1vw);
 }
 .main .bigbanner-container {
   z-index: 3;
@@ -261,6 +260,10 @@
   }
   .main .bigbanner-inner a {
     padding: calc(0.3rem + 0.1vw) calc(0.5rem + 2vw);
+  }
+  .main .bigbanner-inner {
+    padding: 0 calc(1.2 * var(--margin-m));
+    bottom: calc(var(--margin-m) * 1.2 + 1vw);
   }
 }
 

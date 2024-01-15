@@ -10,53 +10,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   /* -------------------------------------------------------------------------- */
   // const localUser = await getStorage('auth');
   // const userId = getNode('.userId');
-  // 스와이퍼
-  const fullSwiper = new Swiper('.full-swiper', {
-    slidesPerView: 1,
-    loop: true,
-    autoplay: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    keyboard: {
-      enabled: true,
-    },
-  });
-
-  // 프로그램 스와이퍼 유틸함수!!!!
-  function standardSwiper(node) {
-    return new Swiper(node, {
-      cssMode: true,
-      grabCursor: true,
-      keyboard: {
-        enabled: true,
-      },
-      allowTouchMove: true,
-      centeredSlides: false,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-
-      spaceBetween: 0,
-      slidesPerView: 'auto',
-      slidesPerGroupAuto: true,
-    });
-  }
-
-  standardSwiper('.now-swiper');
-  standardSwiper('.must-swiper');
-  standardSwiper('.quickvod-swiper');
-  standardSwiper('.popular-title-swiper');
-  standardSwiper('.popular-live-swiper');
-  standardSwiper('.only-swiper');
-  standardSwiper('.event-swiper');
 
   /* -------------------------------------------------------------------------- */
   // 로컬 데이터 가져오기
@@ -194,32 +147,85 @@ document.addEventListener('DOMContentLoaded', async () => {
     insertEnd('.popular-live .thumbnail-wrap', template);
   });
 });
+
+/* -------------------------------------------------------------------------- */
+// 스와이퍼
+// 스와이퍼
+const fullSwiper = new Swiper('.full-swiper', {
+  slidesPerView: 1,
+  loop: true,
+  autoplay: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  keyboard: {
+    enabled: true,
+  },
+});
+
+// 프로그램 스와이퍼 유틸함수!!!!
+function standardSwiper(node) {
+  return new Swiper(node, {
+    grabCursor: true,
+    touchEventsTarget: 'container',
+    slideToClickedSlide: false,
+    cssMode: true,
+    keyboard: {
+      enabled: true,
+    },
+    allowTouchMove: true,
+    centeredSlides: false,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    spaceBetween: 0,
+    slidesPerView: 'auto',
+    slidesPerGroupAuto: true,
+  });
+}
+
+standardSwiper('.now-swiper');
+standardSwiper('.must-swiper');
+standardSwiper('.quickvod-swiper');
+standardSwiper('.popular-title-swiper');
+standardSwiper('.popular-live-swiper');
+standardSwiper('.only-swiper');
+standardSwiper('.event-swiper');
+
 /* -------------------------------------------------------------------------- */
 // 클릭시 데이터 변경
-const data = {
-  title: 'test',
-  link: 'https://example.com',
-  isClicked: true,
-  rank: 123,
-};
-const record = await pb
-  .collection('program_thumbnail')
-  .update('RECORD_ID', data);
+// const data = {
+//   title: 'test',
+//   link: 'https://example.com',
+//   isClicked: true,
+//   rank: 123,
+// };
+// const record = await pb
+//   .collection('program_thumbnail')
+//   .update('RECORD_ID', data);
 
-const record2 = await pb.collection('program_thumbnail').getOne('RECORD_ID', {
-  expand: 'relField1,relField2.subRelField',
-});
+// const record2 = await pb.collection('program_thumbnail').getOne('RECORD_ID', {
+//   expand: 'relField1,relField2.subRelField',
+// });
 // 프로퍼티 변경
 // 1. 클릭하면 해당 슬라이드의 레코드 id 떠야함
 // 2. 해당 id의 프로퍼티를 true 바꿔주
 // fullSwiper.autoplay = false;
 
-const images = document.querySelectorAll('.swiper-slide');
-images.forEach((image) => {
-  image.addEventListener('mouseover', () => {
-    console.log(nowSeeData);
-  });
-});
+// const images = document.querySelectorAll('.swiper-slide');
+// images.forEach((image) => {
+//   image.addEventListener('mouseover', () => {
+//     console.log(nowSeeData);
+//   });
+// });
 
 /* -------------------------------------------------------------------------- */
 // gsap 모션
