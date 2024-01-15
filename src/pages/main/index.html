@@ -25,26 +25,28 @@
     <link rel="stylesheet" href="/src/styles/reset.css" />
     <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="stylesheet" href="/src/pages/main/main.css" />
-    <link rel="stylesheet" href="/src/pages/header/header.css" />
+    <link rel="stylesheet" href="/src/pages/main/header_for_main.css" />
     <link rel="stylesheet" href="/src/pages/footer/footer.css" />
     <script type="module" src="/src/pages/main/main.js"></script>
-    <script type="module" src="/src/js/include.js"></script>
   </head>
 
   <body>
-    <header class="header">
-      <h1 class="heading-logo">
-        <a href="/src/pages/main/">
-          <img src="/src/assets/header/jfam_logo.svg" alt="JFAM 바로가기" />
-        </a>
-      </h1>
-      <button
-        onclick="location.href='/src/pages/profile'"
-        class="button-profile"
-      >
-        <span class="sr-only">프로필 페이지 바로가기</span>
-      </button>
-    </header>
+    <div class="main-header">
+      <header class="header">
+        <h1 class="heading-logo">
+          <a href="/src/pages/main/">
+            <img src="/src/assets/header/jfam_logo.svg" alt="JFAM 바로가기" />
+          </a>
+        </h1>
+        <button
+          onclick="location.href='/src/pages/profile/index.html';"
+          style="cursor: pointer"
+          class="button-profile"
+        >
+          <span class="sr-only">프로필 페이지 바로가기</span>
+        </button>
+      </header>
+    </div>
     <!-- 헤더 -->
 
     <main class="main">
@@ -62,7 +64,7 @@
               <div class="bigbanner-inner">
                 <div class="bigbanner-container">
                   <h2>갑진년 우당탕탕 코딩 이야기</h2>
-                  <a href="https://tv.jtbc.co.kr/">자세히보기</a>
+                  <a href="https://k-digital.likelion.net/fes">자세히보기</a>
                 </div>
               </div>
             </div>
@@ -539,7 +541,8 @@
         <section>
           <h2 class="sr-only">저작권</h2>
           <p class="p-copyright">
-            <span lang="en">Copyright</span> © 주식회사 티빙
+            <span lang="en">Copyright</span> © 주식회사
+            <span lang="en">이듬</span>
             <span lang="en">All right reserved.</span>
           </p>
         </section>

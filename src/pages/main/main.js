@@ -144,69 +144,69 @@ document.addEventListener('DOMContentLoaded', async () => {
 `;
     insertEnd('.popular-live .thumbnail-wrap', template);
   });
-});
 
-/* -------------------------------------------------------------------------- */
-// 스와이퍼
-const fullSwiper = new Swiper('.full-swiper', {
-  slidesPerView: 1,
-  loop: true,
-  autoplay: {
-    delay: 3200,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  keyboard: {
-    enabled: true,
-  },
-});
-
-// 프로그램 스와이퍼 유틸함수!!!!
-function standardSwiper(node) {
-  return new Swiper(node, {
-    grabCursor: true,
-    touchEventsTarget: 'container',
-    allowTouchMove: true,
-    cssMode: true,
-
-    keyboard: {
-      enabled: true,
+  /* -------------------------------------------------------------------------- */
+  // 스와이퍼
+  const fullSwiper = new Swiper('.full-swiper', {
+    slidesPerView: 1,
+    loop: true,
+    autoplay: {
+      delay: 3200,
     },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-
-    spaceBetween: 0,
-    slidesPerView: 'auto',
-    slidesPerGroupAuto: true,
+    keyboard: {
+      enabled: true,
+    },
   });
-}
 
-standardSwiper('.now-swiper');
-standardSwiper('.must-swiper');
-standardSwiper('.quickvod-swiper');
-standardSwiper('.popular-title-swiper');
-standardSwiper('.popular-live-swiper');
-standardSwiper('.only-swiper');
-standardSwiper('.event-swiper');
+  // 프로그램 스와이퍼 유틸함수!!!!
+  function standardSwiper(node) {
+    return new Swiper(node, {
+      grabCursor: true,
+      simulateTouch: true,
+      allowTouchMove: true,
+      cssMode: false,
 
-/* -------------------------------------------------------------------------- */
-// 클릭시 데이터 변경
+      keyboard: {
+        enabled: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
 
-// const images = document.querySelectorAll('.swiper-slide');
-// images.forEach((image) => {
-//   image.addEventListener('mouseover', async () => {
-//     await pb
-//       .collection('program_thumbnail')
-//       .update('vg3dsaigp89tmcm', { isClicked: true });
-//     console.log(pb);
-//   });
-// });
+      spaceBetween: 0,
+      slidesPerView: 'auto',
+      slidesPerGroupAuto: true,
+    });
+  }
+
+  standardSwiper('.now-swiper');
+  standardSwiper('.must-swiper');
+  standardSwiper('.quickvod-swiper');
+  standardSwiper('.popular-title-swiper');
+  standardSwiper('.popular-live-swiper');
+  standardSwiper('.only-swiper');
+  standardSwiper('.event-swiper');
+
+  /* -------------------------------------------------------------------------- */
+  // 클릭시 데이터 변경
+
+  // const images = document.querySelectorAll('.swiper-slide');
+  // images.forEach((image) => {
+  //   image.addEventListener('mouseover', async () => {
+  //     await pb
+  //       .collection('program_thumbnail')
+  //       .update('vg3dsaigp89tmcm', { isClicked: true });
+  //     console.log(pb);
+  //   });
+  // });
+});

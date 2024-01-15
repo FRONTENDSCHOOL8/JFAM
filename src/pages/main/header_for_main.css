@@ -18,7 +18,7 @@
 /* 헤더 */
 
 .header {
-  background: linear-gradient(to bottom #000000 #00000000);
+  background: linear-gradient(to bottom, #000 14%, #0000 100%);
   width: 100%;
   display: flex;
   justify-content: space-between;
