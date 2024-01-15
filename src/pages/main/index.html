@@ -25,34 +25,30 @@
     <link rel="stylesheet" href="/src/styles/reset.css" />
     <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="stylesheet" href="/src/pages/main/main.css" />
-    <link rel="stylesheet" href="/src/pages/header/header.css" />
+    <link rel="stylesheet" href="/src/pages/main/header_for_main.css" />
     <link rel="stylesheet" href="/src/pages/footer/footer.css" />
     <script type="module" src="/src/pages/main/main.js"></script>
-    <script type="module" src="/src/js/include.js"></script>
   </head>
 
   <body>
-    <header class="header">
-      <h1 class="heading-logo">
-        <a href="/src/pages/landing/" target="_blank">
-          <img
-            src="/src/assets/header/jfam_logo.svg"
-            alt="타잉 랜딩페이지 바로가기"
-          />
-        </a>
-      </h1>
-      <button class="button-profile">
-        <span class="sr-only">계정 로그아웃 혹은 삭제 페이지 바로가기</span>
-      </button>
-    </header>
-    <!-- <div
-      onclick="location.href='/src/pages/profile/index.html'"
-      class="goprofile"
-    ></div> -->
-    <!-- <div class="main-header"> -->
-    <!-- <header data-include-path="/src/pages/header/index.html"></header> -->
-    <!-- </div> -->
+    <div class="main-header">
+      <header class="header">
+        <h1 class="heading-logo">
+          <a href="/src/pages/main/">
+            <img src="/src/assets/header/jfam_logo.svg" alt="JFAM 바로가기" />
+          </a>
+        </h1>
+        <button
+          onclick="location.href='/src/pages/profile/index.html';"
+          style="cursor: pointer"
+          class="button-profile"
+        >
+          <span class="sr-only">프로필 페이지 바로가기</span>
+        </button>
+      </header>
+    </div>
     <!-- 헤더 -->
+
     <main class="main">
       <!-- 본문 -->
       <section class="bigbanner">
@@ -68,7 +64,7 @@
               <div class="bigbanner-inner">
                 <div class="bigbanner-container">
                   <h2>갑진년 우당탕탕 코딩 이야기</h2>
-                  <a href="https://tv.jtbc.co.kr/">자세히보기</a>
+                  <a href="https://k-digital.likelion.net/fes">자세히보기</a>
                 </div>
               </div>
             </div>
@@ -375,33 +371,21 @@
                   target="_blank"
                 >
                   <img
-                    src="/src/assets/main/images/event_banner_4.jpeg"
-                    alt="슈릅 굿즈 증정 이벤트"
+                    src="/src/assets/main/images/event_banner_6.png"
+                    alt="신비아파트 증정 이벤트"
                   />
                 </a>
               </div>
+
               <div class="swiper-slide">
-                <a
-                  href="https://www.instagram.com/tving.official/"
-                  target="_blank"
-                >
+                <a href="https://github.com/seulbinim/" target="_blank">
                   <img
                     src="/src/assets/main/images/event_banner_5.jpeg"
                     alt="환승연애 시즌2의 진한 여운을 잇는 과몰입 도파민 충전 이벤트"
                   />
                 </a>
               </div>
-              <div class="swiper-slide">
-                <a
-                  href="https://www.instagram.com/tving.official/"
-                  target="_blank"
-                >
-                  <img
-                    src="/src/assets/main/images/event_banner_6.png"
-                    alt="환승연애 시즌2의 진한 여운을 잇는 과몰입 도파민 충전 이벤트"
-                  />
-                </a>
-              </div>
+
               <div class="swiper-slide">
                 <a
                   href="https://www.instagram.com/tving.official/"
@@ -419,8 +403,19 @@
                   target="_blank"
                 >
                   <img
+                    src="/src/assets/main/images/event_banner_4.jpeg"
+                    alt="슈릅 굿즈 증정 이벤트"
+                  />
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  href="https://www.instagram.com/tving.official/"
+                  target="_blank"
+                >
+                  <img
                     src="/src/assets/main/images/event_banner_8.jpeg"
-                    alt="환승연애 시즌2의 진한 여운을 잇는 과몰입 도파민 충전 이벤트"
+                    alt="렛미인 증정 이벤트"
                   />
                 </a>
               </div>
@@ -432,7 +427,6 @@
       </div>
       <!-- 본문 끝 -->
     </main>
-    <!-- <footer data-include-path="/src/pages/footer/index.html"></footer> -->
     <!-- 푸터 -->
     <footer class="footer">
       <div class="div-footerContent">
@@ -547,7 +541,8 @@
         <section>
           <h2 class="sr-only">저작권</h2>
           <p class="p-copyright">
-            <span lang="en">Copyright</span> © 주식회사 티빙
+            <span lang="en">Copyright</span> © 주식회사
+            <span lang="en">이듬</span>
             <span lang="en">All right reserved.</span>
           </p>
         </section>
