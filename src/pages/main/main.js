@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <img
             class="thumbnail-vertical"
             src="${getPbImageURL(item)}"
-            alt=""/>
+            alt="${item.title}"/>
             </a>
           <figcaption>${item.title}</figcaption>
           </figure>
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <img
             class="thumbnail-vertical"
             src="${getPbImageURL(item)}"
-            alt=""/>
+            alt="${item.title}"/>
             </a>
           <figcaption>${item.title}</figcaption>
           </figure>
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <img
             class="thumbnail-horizontal"
             src="${getPbImageURL(item)}"
-            alt=""/>
+            alt="${item.title}"/>
             </a>
           <figcaption>
             ${item.title}
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   <img
             class="thumbnail-vertical"
             src="${getPbImageURL(item)}"
-            alt=""/>
+            alt="${item.title}"/>
             </a>
           <figcaption>
           <em>${item.rank}</em>${item.title}
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <img
             class="thumbnail-horizontal"
             src="${getPbImageURL(item)}"
-            alt=""/>
+            alt="${item.title}"/>
             </a>
           <figcaption>
               <em>${item.rank}</em>
@@ -208,28 +208,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   //1  '.swiper-slide' 클릭시 유저데아터에 새로 프로퍼티 넣기 isCLiekd : ture
   // 2. 포켓호스트가 가져온 뭔가..
 
-  const imagess = document.querySelectorAll('.swiper-slide');
+  // const imagess = document.querySelectorAll('.swiper-slide');
 
-  images.forEach((image) => {
-    image.addEventListener('mouseover', () => {
-      console.log('ya');
-    });
-  });
-  // console.log(images);
-  // console.log(localUser);
-
-  //   images.forEach((image) => {
-  //     image.addEventListener('mouseenter', async () => {
-  //       await pb.collection('program_thumbnail').update('RECORD_ID', data);
-  //       // .update('RECORD_ID', { isClicked: true });
-  //     });
-  //     console.log(pb + '일번');
-  //     console.log(data + '이번');
-  //     // console.log(RECORD_ID + '삼번');
-  //     console.log(image + '사');
-  //     console.log(images + '오');
+  // images.forEach((image) => {
+  //   image.addEventListener('mouseover', () => {
+  //     console.log('ya');
   //   });
-  // }
+  // });
 
   // // 마지막 닫는 문
 });
