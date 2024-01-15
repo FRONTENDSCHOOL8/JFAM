@@ -1,0 +1,52 @@
+/* header reset */
+.header button {
+  background: none;
+  border: none;
+}
+
+.header .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* 헤더 */
+
+.header {
+  background: linear-gradient(180deg, rgba(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(2rem + 1vw);
+
+  /* 드래그 방지 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.header .heading-logo {
+  padding: 5px 0 0 3%;
+}
+
+.header .heading-logo img {
+  width: calc(2.5rem + 2vw);
+}
+
+.header .button-profile {
+  /* display: none; */
+  margin: 0 3% 0 0;
+  width: calc(1.3rem + 1vw);
+  height: calc(1.3rem + 1vw);
+  border: 1px solid rgba(236, 236, 236, 0.3);
+  background-image: url('/src/assets/header/profile.png');
+  background-size: cover;
+  cursor: pointer;
+}
