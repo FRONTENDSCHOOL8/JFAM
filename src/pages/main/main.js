@@ -11,13 +11,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 로컬 데이터 가져오기
   const localUser = await getStorage('auth');
   const userId = getNode('.userId');
-
   if (!localUser.isAuth) {
     window.location.href = '/src/pages/landing/';
   } else {
     userId.textContent = localUser.userData.record.username;
   }
-
   /* -------------------------------------------------------------------------- */
   // 포켓베이스 연동 :: 폴더별 연동 >>>>> 함수화
   const nowSeeData = await pb.collection('program_thumbnail').getFullList({
@@ -199,22 +197,39 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   /* -------------------------------------------------------------------------- */
   // 클릭시 데이터 변경
+  // const localUser = await getStorage('auth');
+  // const userId = getNode('.userId');
+  // console.log(localUser);
+  // if (!localUser.isAuth) {
+  //   window.location.href = '/src/pages/landing/';
+  // } else {
+  //   userId.textContent = localUser.userData.record.username;
+  // }
+  //1  '.swiper-slide' 클릭시 유저데아터에 새로 프로퍼티 넣기 isCLiekd : ture
+  // 2. 포켓호스트가 가져온 뭔가..
 
-  const images = document.querySelectorAll('.swiper-slide');
-  const data = {
-    title: 'test',
-    link: 'https://example.com',
-    isClicked: true,
-    rank: 123,
-  };
+  const imagess = document.querySelectorAll('.swiper-slide');
+
   images.forEach((image) => {
-    image.addEventListener('mouseenter', async () => {
-      await pb.collection('program_thumbnail').update('RECORD_ID', data);
-      // .update('RECORD_ID', { isClicked: true });
+    image.addEventListener('mouseover', () => {
+      console.log('ya');
     });
-    console.log(pb);
-    console.log(RECORD_ID);
   });
+  // console.log(images);
+  // console.log(localUser);
 
-  // 마지막 닫는 문
+  //   images.forEach((image) => {
+  //     image.addEventListener('mouseenter', async () => {
+  //       await pb.collection('program_thumbnail').update('RECORD_ID', data);
+  //       // .update('RECORD_ID', { isClicked: true });
+  //     });
+  //     console.log(pb + '일번');
+  //     console.log(data + '이번');
+  //     // console.log(RECORD_ID + '삼번');
+  //     console.log(image + '사');
+  //     console.log(images + '오');
+  //   });
+  // }
+
+  // // 마지막 닫는 문
 });
