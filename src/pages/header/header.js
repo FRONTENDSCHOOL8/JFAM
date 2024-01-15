@@ -3,8 +3,8 @@ import { getStorage } from '/src/js/storage';
 
 const buttonProfile = getNode('.button-profile');
 
-function signoutPopup(){
-    window.location.href = '/src/pages/profile/'
+function signoutPopup() {
+  window.location.href = '/src/pages/profile/';
 }
 
     if(!getStorage('auth')){

@@ -325,6 +325,12 @@ button:active {
     right: 5.75rem;
   }
 
+  .signup .button-erase.has-input {
+    width: 2.25rem;
+    height: 2.25rem;
+    background-size: 2.25rem 2.25rem;
+  }
+
   .signup .button-show-password.is-checked,
   .signup .button-show-password-check.is-checked {
     background-size: 2.25rem 2.25rem;

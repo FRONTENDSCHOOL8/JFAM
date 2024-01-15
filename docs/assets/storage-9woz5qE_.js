@@ -1,0 +1,1 @@
+const{localStorage:o}=window;function s(e,r){return new Promise((t,n)=>{typeof e=="string"?(o.setItem(e,JSON.stringify(r)),t()):n(new Error("key는 문자 타입 이어야 합니다."))})}function i(e){return new Promise((r,t)=>{typeof e=="string"?r(JSON.parse(o.getItem(e))):t(new Error("key는 문자 타입 이어야 합니다."))})}export{i as g,s};
