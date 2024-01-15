@@ -116,3 +116,10 @@ button:focus {
   font-weight: 400;
   line-height: 160%;
 }
+
+.button-logout-confirm:hover,
+.button-logout-cancel:hover,
+.button-signout-confirm:hover,
+.button-signout-cancel:hover {
+  color: var(--brand--red-1, #446bf9);
+}
