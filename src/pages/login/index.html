@@ -11,12 +11,21 @@
     <meta name="author" content="JFAM" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:title" content="JFAM | 로그인" />
-    <meta property="og:url" content="https://jfam.netlify.app/src/pages/login/" />
+    <meta
+      property="og:url"
+      content="https://jfam.netlify.app/src/pages/login/"
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/src/assets/opengraph_image.png" />
+    <meta property="og:image" content="./src/assets/opengraph_image.png" />
     <meta
       property="og:description"
       content="JFAM 오리지널부터 드라마, 예능, 영화, 해외시리즈까지! 무제한으로 스트리밍해 보세요"
+    />
+    <meta id="_csrf" name="_csrf" th:content="${_csrf.token}" />
+    <meta
+      id="_csrf_header"
+      name="_csrf_header"
+      th:content="${_csrf.headerName}"
     />
     <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.png" />
     <link rel="stylesheet" href="/src/styles/style.css" />
@@ -62,7 +71,12 @@
             id="check-all"
           /> -->
           <div class="image-container">
-            <img src="/src/assets/signup/check_filled_white.svg" alt="체크박스 비활성화" class="auto-login-img" id="auto-unchecked"></img>
+            <img
+              src="/images/check_filled_white.svg"
+              alt="체크박스 비활성화"
+              class="auto-login-img"
+              id="auto-unchecked"
+            />
           </div>
           <label class="auto-login-text">자동로그인</label>
         </div>
@@ -76,7 +90,9 @@
         </div>
         <div class="no-account-container">
           <span class="no-account">아직 계정이 없으신가요?</span>
-          <a href="/src/pages/signup/index.html" class="to-signup">회원가입하기</a>
+          <a href="/src/pages/signup/index.html" class="to-signup"
+            >회원가입하기</a
+          >
         </div>
       </form>
     </div>
