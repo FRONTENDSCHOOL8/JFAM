@@ -1,5 +1,5 @@
 import pb from '/src/js/pocketbase.js';
-import { getStorage, setStorage } from '/src/js/storage.js';
+import { setStorage } from '/src/js/storage.js';
 
 const idInput = document.querySelector('.input-id'); // 이메일 입력하는 부분 태그
 const idCondition = document.querySelector('.id-input-condition');
@@ -79,11 +79,7 @@ async function handleBtn(e) {
         userData,
       });
       window.location.href = '/src/pages/main/index.html';
-    } else {
-      alert(
-        '일치하는 회원정보가 없습니다. 아이디, 비밀번호를 다시 확인해주세요.'
-      );
-    }
+    } 
   } else {
     alert('아이디나 비밀번호 형식을 맞춰주세요.');
   }
