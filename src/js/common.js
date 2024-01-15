@@ -33,7 +33,7 @@ export function setClassList(node, modify, className) {
 }
 
 // ::노드의 텍스트 변경
-export function changeConditionMessage(node, message) {
+export function changeTextContent(node, message) {
   const nodeElement = node;
   nodeElement.textContent = message;
 }

@@ -11,10 +11,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       slidesPerView: 3,
       spaceBetween: 30,
       centeredSlides: false,
-      breakpoints:{
-        1920:{
-        },
-      },
     });
 
     let currentSwiperState = null; // 이전 스와이퍼 상태를 저장할 변수
@@ -25,12 +21,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.addEventListener("scroll", () => {
     const header = getNode('.landing .header');
     const scrollPosition = window.scrollY;
-
+  if(header){
     if (scrollPosition > 50) {
       header.style.backgroundColor = "rgba(0, 0, 0)"; // 스크롤 내리면 배경 불투명
     } else {
       header.style.backgroundColor = "rgba(0, 0, 0, 0)"; // 스크롤 올리면 배경 투명
     }
+  }
   });
 
 

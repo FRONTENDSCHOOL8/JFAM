@@ -1,6 +1,10 @@
 import pb from '/src/js/pocketbase.js';
-import { setClassList, changeConditionMessage } from '/src/js/common';
-import { getNode, getNodes } from '../../js/common';
+import {
+  getNode,
+  getNodes,
+  setClassList,
+  changeTextContent,
+} from '/src/js/common';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const input = getNodes('.form-input');
@@ -65,23 +69,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     setClassList(eraseInputId, 'add', 'has-input');
     switch (idCondition) {
       case 'emptyId':
-        changeConditionMessage(conditionId, '입력한 내용이 없어요.');
+        changeTextContent(conditionId, '입력한 내용이 없어요.');
         setClassList(conditionId, 'add', 'warning');
         setClassList(eraseInputId, 'remove', 'has-input');
         break;
       case 'invalidId':
-        changeConditionMessage(
+        changeTextContent(
           conditionId,
           '영문 또는 영문, 숫자 조합 6~12자리로 입력해주세요.'
         );
         setClassList(conditionId, 'add', 'warning');
         break;
       case 'duplicationId':
-        changeConditionMessage(conditionId, '이미 사용 중인 아이디입니다.');
+        changeTextContent(conditionId, '이미 사용 중인 아이디입니다.');
         setClassList(conditionId, 'add', 'warning');
         break;
       default:
-        changeConditionMessage(conditionId, '');
+        changeTextContent(conditionId, '');
         break;
     }
   };
@@ -90,19 +94,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     setClassList(eraseInputPassword, 'add', 'has-input');
     switch (passwordCondition) {
       case 'emptyPassword':
-        changeConditionMessage(conditionPassword, '입력한 내용이 없어요.');
+        changeTextContent(conditionPassword, '입력한 내용이 없어요.');
         setClassList(conditionPassword, 'add', 'warning');
         setClassList(eraseInputPassword, 'remove', 'has-input');
         break;
       case 'invalidPassword':
-        changeConditionMessage(
+        changeTextContent(
           conditionPassword,
           '특수문자(~!@#$%^&*) 포함 6~16자리로 입력해주세요.'
         );
         setClassList(conditionPassword, 'add', 'warning');
         break;
       default:
-        changeConditionMessage(conditionPassword, '');
+        changeTextContent(conditionPassword, '');
         break;
     }
   };
@@ -111,19 +115,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     setClassList(eraseInputPasswordCheck, 'add', 'has-input');
     switch (passwordCheckCondition) {
       case 'emptyPasswordCheck':
-        changeConditionMessage(conditionPasswordCheck, '입력한 내용이 없어요.');
+        changeTextContent(conditionPasswordCheck, '입력한 내용이 없어요.');
         setClassList(conditionPasswordCheck, 'add', 'warning');
         setClassList(eraseInputPasswordCheck, 'remove', 'has-input');
         break;
       case 'notMatchedPassword':
-        changeConditionMessage(
+        changeTextContent(
           conditionPasswordCheck,
           '일치하지 않습니다. 다시 입력해주세요.'
         );
         setClassList(conditionPasswordCheck, 'add', 'warning');
         break;
       default:
-        changeConditionMessage(conditionPasswordCheck, '');
+        changeTextContent(conditionPasswordCheck, '');
         break;
     }
   };
@@ -132,19 +136,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     setClassList(eraseInputEmail, 'add', 'has-input');
     switch (emailCondition) {
       case 'emptyEmail':
-        changeConditionMessage(conditionEmail, '입력한 내용이 없어요.');
+        changeTextContent(conditionEmail, '입력한 내용이 없어요.');
         setClassList(conditionEmail, 'add', 'warning');
         setClassList(eraseInputEmail, 'remove', 'has-input');
         break;
       case 'invalidEmail':
-        changeConditionMessage(
+        changeTextContent(
           conditionEmail,
           '이메일 형식이 맞지 않습니다. 다시 입력해 주세요.'
         );
         setClassList(conditionEmail, 'add', 'warning');
         break;
       default:
-        changeConditionMessage(conditionEmail, '');
+        changeTextContent(conditionEmail, '');
         break;
     }
   };
@@ -169,7 +173,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       selectedSiblingNodes[selectedSiblingNodes.length - 1];
     selectedInputNode.value = '';
     setClassList(selectedButtonNode, 'remove', 'has-input');
-    changeConditionMessage(selectedSpanNode, '입력한 내용이 없어요.');
+    changeTextContent(selectedSpanNode, '입력한 내용이 없어요.');
   };
 
   const handleAgreeAll = (e) => {
