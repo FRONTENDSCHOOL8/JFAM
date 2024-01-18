@@ -1,5 +1,4 @@
-import pb from '/src/js/pocketbase.js';
-import { setStorage } from '/src/js/storage.js';
+import { setStorage, pb } from '/src/js/index.js';
 
 const idInput = document.querySelector('.input-id'); // 이메일 입력하는 부분 태그
 const idCondition = document.querySelector('.id-input-condition');
@@ -7,7 +6,7 @@ const pwInput = document.querySelector('.input-password'); // 비번 입력하�
 const pwCondition = document.querySelector('.password-input-condition');
 const btnTag = document.querySelector('.login-button'); // 버튼 태그
 const checkButton = document.querySelector('.auto-login-img');
-const idModal = document.querySelector('.find-id')
+const idModal = document.querySelector('.find-id');
 const pwModal = document.querySelector('.find-password');
 const modalContainer = document.querySelector('.modal-container');
 const closeButton = document.querySelector('.closeButton');
@@ -79,7 +78,7 @@ async function handleBtn(e) {
         userData,
       });
       window.location.href = '/src/pages/main/index.html';
-    } 
+    }
   } else {
     alert('아이디나 비밀번호 형식을 맞춰주세요.');
   }
@@ -114,4 +113,4 @@ btnTag.addEventListener('click', handleBtn);
 checkButton.addEventListener('click', handleChecked);
 idModal.addEventListener('click', handleModal);
 pwModal.addEventListener('click', handleModal);
-closeButton.addEventListener('click', handleCloseModal)
+closeButton.addEventListener('click', handleCloseModal);

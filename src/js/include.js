@@ -16,7 +16,6 @@ function includeHTML(element) {
 function loadIncludedHTML() {
   const allElements = document.getElementsByTagName('*');
   Array.prototype.forEach.call(allElements, includeHTML);
-  console.log('include');
 }
 
 window.addEventListener('load', loadIncludedHTML);

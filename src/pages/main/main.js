@@ -1,8 +1,11 @@
 import Swiper from 'swiper/bundle';
-import pb from '/src/js/pocketbase';
-import gsap from 'gsap';
-import { getNode, getNodes, insertEnd, getPbImageURL } from '/src/js/common.js';
-import { getStorage } from '/src/js/storage.js';
+import {
+  getNode,
+  insertEnd,
+  getPbImageURL,
+  getStorage,
+  pb,
+} from '/src/js/index.js';
 import 'swiper/css/bundle';
 import '/src/pages/main/main.css';
 

@@ -1,6 +1,11 @@
-import { getStorage, setStorage } from '/src/js/storage.js';
-import { getNodes, changeTextContent, getNode } from '/src/js/common.js';
-import pb from '/src/js/pocketbase.js';
+import {
+  getStorage,
+  setStorage,
+  getNodes,
+  changeTextContent,
+  getNode,
+  pb,
+} from '/src/js/index.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const buttons = getNodes('button');
