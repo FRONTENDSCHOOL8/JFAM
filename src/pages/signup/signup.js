@@ -177,27 +177,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
 
     const handleAgreeAll = (e) => {
-        if (e.target.checked === true) {
-            check.forEach((node) => {
-                const checkNode = node;
-                checkNode.checked = true;
-            });
-        } else {
-            check.forEach((node) => {
-                const checkNode = node;
-                checkNode.checked = false;
-            });
-        }
+        check.forEach((node) => {
+            const checkNode = node;
+            checkNode.checked = e.target.checked;
+        });
     };
 
     const handleAgreeMarketing = (e) => {
-        if (e.target.checked === true) {
-            checkboxSNS.checked = true;
-            checkboxEmail.checked = true;
-        } else {
-            checkboxSNS.checked = false;
-            checkboxEmail.checked = false;
-        }
+        checkboxSNS.checked = e.target.checked;
+        checkboxEmail.checked = e.target.checked;
     };
 
     const isValidId = async (userInput) => {
