@@ -20,16 +20,22 @@ export function getPbImageURL(item) {
   return `https://jfam.pockethost.io/api/files/${item.collectionName}/${item.id}/${item.image}`;
 }
 
-// ::노드에 클래스 추가,삭제
-export function setClassList(node, modify, className) {
-  const nodeElement = node;
-  if (modify === 'add') {
-    nodeElement.classList.add(className);
-  } else if (modify === 'remove') {
-    nodeElement.classList.remove(className);
-  } else {
-    throw new Error('setClassList 함수의 modify는 add 또는 remove 입니다');
-  }
+/**
+ * ::노드에 클래스 추가
+ * @param node{HTMLElement}
+ * @param className{string}
+ */
+export function addClass(node, className) {
+  node.classList.add(className);
+}
+
+/**
+ * ::노드에 클래스 삭제
+ * @param node{HTMLElement}
+ * @param className{string}
+ */
+export function removeClass(node, className) {
+  node.classList.add(className);
 }
 
 // ::노드의 텍스트 변경

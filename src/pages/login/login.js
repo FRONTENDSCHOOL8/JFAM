@@ -4,32 +4,27 @@ const idInput = document.querySelector('.input-id'); // 이메일 입력하는 �
 const idCondition = document.querySelector('.id-input-condition');
 const pwInput = document.querySelector('.input-password'); // 비번 입력하는 부분 태그
 const pwCondition = document.querySelector('.password-input-condition');
-const btnTag = document.querySelector('.login-button'); // 버튼 태그
-const checkButton = document.querySelector('.auto-login-img');
+const loginForm = document.querySelector('#loginForm'); // 버튼 태그
 const idModal = document.querySelector('.find-id');
 const pwModal = document.querySelector('.find-password');
 const modalContainer = document.querySelector('.modal-container');
 const closeButton = document.querySelector('.closeButton');
 
-let idCheck = false;
-let pwCheck = false;
-
 // 정규식
-function idReg(text) {
-  const re = /^[a-zA-Z0-9]{6,12}$/;
+function isValidID(text) {
+  const idRegex = /^[a-zA-Z0-9]{6,12}$/;
 
-  return re.test(String(text).toLowerCase());
+  return idRegex.test(String(text).toLowerCase());
 }
 
-function pwReg(text) {
-  const re = /^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+function isValidPassword(text) {
+  const passwordRegex = /^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
-  return re.test(String(text).toLowerCase());
+  return passwordRegex.test(String(text).toLowerCase());
 }
 
 // 아이디, 비번 체크 함수
-
-const isAuthentication = async (userName, userPassword) => {
+const getUser = async (userName, userPassword) => {
   // pocketbase 에서 일치한 유저 정보 가져오기
   try {
     const authData = await pb
@@ -44,55 +39,43 @@ const isAuthentication = async (userName, userPassword) => {
   }
 };
 
-function handleId() {
-  idCheck = idReg(idInput.value);
-
-  if (idCheck) {
+function handleId(e) {
+  if (isValidID(e.target.value)) {
     idCondition.textContent = '';
-  } else {
-    idCondition.textContent =
-      '영문 또는 영문, 숫자 조합 6~12자리로 입력해주세요.';
+    return
   }
+
+  idCondition.textContent = '영문 또는 영문, 숫자 조합 6~12자리로 입력해주세요.';
+
 }
 
 function handlePw(e) {
-  const tag = e.target;
-  pwCheck = pwReg(tag.value);
-
-  if (pwCheck) {
+  if (isValidPassword(e.target.value)) {
     pwCondition.textContent = '';
-  } else {
-    pwCondition.textContent =
-      '특수문자(~!@#$%^&*) 포함 6~16자리로 입력해주세요.';
+    return;
   }
+
+  pwCondition.textContent =
+      '특수문자(~!@#$%^&*) 포함 6~16자리로 입력해주세요.';
 }
 
-async function handleBtn(e) {
+async function handleSubmit(e) {
+  // 폼의 기본 동작을 취소
+  e.preventDefault();
+  // 폼에서 폼 데이터를 추출
+  const formData = new FormData(e.currentTarget);
+  // 폼 데이터를 객체로 변환
+  const values = Object.fromEntries(formData.entries());
+
   // setStorage 를 사용하여 저장
-  if (idCheck && pwCheck) {
-    e.preventDefault();
-    const userData = await isAuthentication(idInput.value, pwInput.value);
-    if (userData) {
-      setStorage('auth', {
-        isAuth: true,
-        userData,
-      });
+  if (isValidID(values.id) && isValidPassword(values.password)) {
+    const user = await getUser(values.id, values.password);
+    if (user) {
+      await setStorage('auth', { isAuth: true, userData: user });
       window.location.href = '/src/pages/main/index.html';
     }
   } else {
     alert('아이디나 비밀번호 형식을 맞춰주세요.');
-  }
-}
-
-function handleChecked() {
-  if (checkButton.id === 'auto-unchecked') {
-    checkButton.src = '/images/check_filled_blue.svg';
-    checkButton.id = 'auto-checked';
-    checkButton.alt = '체크박스 활성화';
-  } else {
-    checkButton.src = '/images/check_filled_white.svg';
-    checkButton.id = 'auto-unchecked';
-    checkButton.alt = '체크박스 비활성화';
   }
 }
 
@@ -109,8 +92,7 @@ function handleCloseModal(e) {
 // 이벤트 부여
 idInput.addEventListener('input', handleId);
 pwInput.addEventListener('input', handlePw);
-btnTag.addEventListener('click', handleBtn);
-checkButton.addEventListener('click', handleChecked);
+loginForm.addEventListener('submit', handleSubmit);
 idModal.addEventListener('click', handleModal);
 pwModal.addEventListener('click', handleModal);
 closeButton.addEventListener('click', handleCloseModal);

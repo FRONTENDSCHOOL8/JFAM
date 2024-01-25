@@ -24,10 +24,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     signoutCancelButton,
   ] = buttons;
 
-  const controlDisplay = (node, modify) => {
+  /**
+   * @param node{HTMLElement}
+   */
+  const show = (node) => {
     const element = node;
-    element.style.display = modify;
-  };
+    element.style.display = 'block';
+  }
+
+  /**
+   * @param node{HTMLElement}
+   */
+  const hide = (node) => {
+    const element = node;
+    element.style.display = 'none';
+  }
 
   const deleteAccount = async (recordId) => {
     try {
@@ -39,13 +50,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   const handleLogout = () => {
-    controlDisplay(userProfile, 'none');
-    controlDisplay(logoutModal, 'block');
+    hide(userProfile);
+    show(logoutModal);
   };
 
   const handleSignout = () => {
-    controlDisplay(userProfile, 'none');
-    controlDisplay(signoutModal, 'block');
+    hide(userProfile);
+    show(signoutModal);
   };
 
   const handleLogoutConfirm = () => {
@@ -57,8 +68,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   const handleLogoutCancel = () => {
-    controlDisplay(userProfile, 'block');
-    controlDisplay(logoutModal, 'none');
+    show(userProfile);
+    hide(logoutModal);
   };
 
   const handleSignoutConfirm = async () => {
@@ -76,8 +87,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   const handleSignoutCancel = () => {
-    controlDisplay(userProfile, 'block');
-    controlDisplay(signoutModal, 'none');
+    show(userProfile);
+    hide(signoutModal);
   };
 
   if (!localUser.isAuth) {

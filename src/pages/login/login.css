@@ -132,6 +132,27 @@ button:active {
 
 .image-container {
   background-color: transparent;
+  height: 16px;
+}
+
+.auto-login-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+#auto-login-id ~ #auto-checked {
+  display: none;
+}
+#auto-login-id:checked ~ #auto-unchecked {
+  display: inline-block;
+}
+#auto-login-id:checked ~ #auto-checked {
+  display: inline-block;
+}
+#auto-login-id:checked ~ #auto-unchecked {
+  display: none;
 }
 
 .login-button {
