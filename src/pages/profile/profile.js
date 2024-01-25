@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
    */
   const show = (node) => {
     const element = node;
-    element.hidden = false;
+    element.style.display = 'block';
   }
 
   /**
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', async () => {
    */
   const hide = (node) => {
     const element = node;
-    element.hidden = true;
+    element.style.display = 'none';
   }
 
   const deleteAccount = async (recordId) => {
