@@ -44,13 +44,14 @@
     </header>
     <div class="login">
       <h1 class="login-title">JFAM ID 로그인</h1>
-      <form class="login-wrapper">
+      <form class="login-wrapper" id="loginForm">
         <h2 class="sr-only">JFAM 로그인 폼</h2>
         <div class="login-input">
           <div class="id-input-container">
             <label class="sr-only" for="input-id">아이디</label>
             <input
               id="input-id"
+              name="id"
               class="input-id"
               type="text"
               placeholder="아이디"
@@ -63,6 +64,7 @@
             <label class="sr-only" for="input-password">비밀번호</label>
             <input
               id="input-password"
+              name="password"
               class="input-password"
               type="password"
               placeholder="비밀번호"
@@ -73,18 +75,27 @@
         </div>
         <div class="auto-login">
           <div class="image-container">
+            <label class="auto-login-text">
+            <input type="checkbox" id="auto-login-id" name="autoLogin" hidden>
+            <img
+              src="/images/check_filled_blue.svg"
+              alt="체크박스 활성화"
+              class="auto-login-img"
+              id="auto-checked"
+            />
             <img
               src="/images/check_filled_white.svg"
               alt="체크박스 비활성화"
               class="auto-login-img"
               id="auto-unchecked"
             />
+              <span>자동로그인</span></label>
           </div>
-          <label class="auto-login-text">자동로그인</label>
+
         </div>
         <input type="hidden" name="_csrf" value="{{#_csrf}}token{{/_csrf}}" />
         <div class="button-container">
-          <button tabindex="4" class="login-button">로그인하기</button>
+          <button tabindex="4" class="login-button" type="submit">로그인하기</button>
         </div>
         <div class="find-login">
           <a href="" class="find-id">아이디 찾기</a>
