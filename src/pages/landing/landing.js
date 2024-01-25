@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   let currentSwiperState = null; // 이전 스와이퍼 상태를 저장할 변수
-  const skeletonItem = getNode('.skeleton-loading');
-  const animskeletonItem = getNode('.animskeleton-loading');
+
+
 
   // 헤더 스크롤
   document.addEventListener('scroll', () => {
@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         .getFullList({
           sort: '@random',
         });
+      const animskeletonItem = getNode('.animskeleton-loading');
       animskeletonItem.style.display = 'none';
 
       userData.forEach((item) => {
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
       const responseSwiper = await pb.collection('program_thumbnail').getList();
       const userDataSwiper = responseSwiper.items;
+      const skeletonItem = getNode('.skeleton-loading');
       skeletonItem.style.display = 'none';
 
       getNode('.landing .swiper-wrapper').innerHTML = '';
@@ -88,6 +90,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         .collection('original_thumbnail_small')
         .getList();
       const userDataSwiper = responseSwiper.items;
+      const skeletonItem = getNode('.skeleton-loading');
       skeletonItem.style.display = 'none';
 
       getNode('.landing .swiper-wrapper').innerHTML = '';
@@ -116,15 +119,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  function initSwiper() {
+  function getNewSwiperState() {
     const viewportWidth = window.innerWidth;
-    let newSwiperState = null;
 
     if (viewportWidth < 1920) {
-      newSwiperState = 'vertical';
-    } else {
-      newSwiperState = 'horizontal';
+      return  'vertical';
     }
+
+    return 'horizontal';
+  }
+
+  function initSwiper() {
+    const newSwiperState = getNewSwiperState();
 
     if (newSwiperState !== currentSwiperState) {
       renderSwiper(newSwiperState);
